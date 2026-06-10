@@ -49,7 +49,7 @@
         "No scroll-jacking; page scrolls normally",
         "No console errors"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T5",

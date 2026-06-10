@@ -248,6 +248,34 @@ section { padding-block: var(--amd-layout-section-y); }
 .curve-fig .qol-stage { display: grid; gap: var(--amd-space-4); }
 .chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--amd-color-surface-card); border: 1px solid var(--amd-color-border-subtle); }
 .qol-svg { width: 100%; min-width: 680px; height: auto; display: block; }
+.curve-fig .curve-base,
+.curve-fig .curve-lift {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+.curve-fig.drawn:not(.curve-draw-complete) .curve-base {
+  animation: curveDraw 1500ms var(--amd-ease-standard) forwards;
+}
+.curve-fig.drawn:not(.curve-draw-complete) .curve-lift {
+  animation: curveDraw 1500ms var(--amd-ease-standard) 850ms forwards;
+}
+.curve-fig.curve-draw-complete .curve-base,
+.curve-fig.curve-draw-complete .curve-lift {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  animation: none;
+}
+@keyframes curveDraw {
+  to { stroke-dashoffset: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .curve-fig .curve-base,
+  .curve-fig .curve-lift {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+}
 .curve-fig .figcap {
   margin-top: var(--amd-space-4);
   padding: 0 clamp(4px, 1vw, 12px);
@@ -986,10 +1014,21 @@ section { padding-block: var(--amd-layout-section-y); }
   var targets = [].slice.call(document.querySelectorAll('.reveal, .img-reveal'));
   var curveFig = document.getElementById('curveFig');
   if (curveFig) targets.push(curveFig);
+  var curveDrawDoneTimer = null;
 
   function markIn(el) {
     el.classList.add('in-view');
-    if (el === curveFig) el.classList.add('drawn');
+    if (el === curveFig) {
+      el.classList.add('drawn');
+      if (reduce) {
+        el.classList.add('curve-draw-complete');
+      } else {
+        if (curveDrawDoneTimer) clearTimeout(curveDrawDoneTimer);
+        curveDrawDoneTimer = setTimeout(function () {
+          el.classList.add('curve-draw-complete');
+        }, 2700);
+      }
+    }
   }
 
   if (reduce || !('IntersectionObserver' in window)) {
@@ -1241,6 +1280,11 @@ section { padding-block: var(--amd-layout-section-y); }
       var input = document.getElementById(id);
       if (!input) return;
       input.addEventListener('input', renderCurve);
+    });
+    curveSvg.addEventListener('animationend', function (e) {
+      if (e.target && e.target.classList && e.target.classList.contains('curve-lift') && curveFig) {
+        curveFig.classList.add('curve-draw-complete');
+      }
     });
     renderCurve();
   }

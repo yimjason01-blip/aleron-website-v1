@@ -7,3 +7,6 @@ Next iteration: T3 is the capability-curve slider port. Keep hero copy untouched
 T3: Replaced the static Figure 01 SVG with the landing-a three-slider live capability curve inside the existing editorial figure.
 T3: Widening the SVG left padding was necessary so VO2 tick values and lived-capability labels do not collide or clip.
 Next iteration: T4 can build scroll-assembly on top of the dynamic paths. Target .curve-base first, then .curve-lift, and keep reduced-motion immediate.
+T4: Added a one-time scroll draw to the live curve: .curve-base draws first, then .curve-lift follows after a short delay.
+T4: The completion class is necessary because renderCurve() replaces SVG paths; without it, slider input would replay the intro animation.
+Next iteration: T5 is a new physician profile section between signals/engine and proof. Keep the curve mechanics untouched unless verification fails.
