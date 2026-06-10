@@ -24,7 +24,7 @@
         "CTA labels unchanged; no 'Join' anywhere",
         "No em dashes introduced"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T3",
