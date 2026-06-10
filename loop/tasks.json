@@ -12,7 +12,7 @@
         "Rust block edge is either flush with viewport right edge or fully inside the image panel; no mid-air cut",
         "No layout regression elsewhere in hero (text column unchanged)"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T2",
