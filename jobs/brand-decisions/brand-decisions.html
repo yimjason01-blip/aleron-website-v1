@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aleron MD · Brand Decision Guide</title>
+<meta name="description" content="The Aleron MD brand decision log and living guideline. Ten decisions, each demonstrated in the brand's own visual system." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   Aleron MD Brand Decision Guide.
+   Palette values pulled verbatim from jobs/landing-loop/index.html
+   custom properties. Square edges only. No border-radius anywhere.
+   ===================================================================== */
+:root {
+  --navy: #1E2A4A;
+  --gold: #CD9453;
+  --gold-on-dark: #D9A765;
+  --rust: #B9562A;
+  --rust-deep: #922E20;
+  --cream: #EFEAE0;
+  --paper: #F6F4EE;
+  --page: #FFFEFB;
+  --bone: #ECE5D6;
+  --ink: #242426;
+  --ink-2: #565659;
+  --ink-3: #6E6E72;
+  --accent-text: #6E3D1C;
+  --line: rgba(36, 36, 38, 0.14);
+  --line-soft: rgba(36, 36, 38, 0.08);
+  --line-inverse: rgba(255, 254, 251, 0.22);
+  --inverse: #FFFEFB;
+  --inverse-muted: rgba(255, 254, 251, 0.78);
+
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "Inter Tight", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  --max: 1180px;
+  --gutter: clamp(20px, 4vw, 64px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+.mono-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ===================== sticky ratification bar ===================== */
+.rat-bar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 56px;
+  padding: 8px var(--gutter);
+  background: rgba(255, 254, 251, 0.96);
+  border-bottom: 1px solid var(--line-soft);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.rat-bar .bar-mark {
+  font-family: var(--sans); font-weight: 600; font-size: 15px; letter-spacing: -0.03em;
+  text-decoration: none; white-space: nowrap;
+}
+.rat-bar .bar-mark sup { font-size: 0.62em; color: var(--accent-text); letter-spacing: 0.02em; }
+.rat-bar .bar-title { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+.rat-dots { display: flex; gap: 6px; }
+.rat-dots a {
+  display: grid; place-items: center;
+  width: 30px; height: 22px;
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.rat-dots a.locked { background: var(--navy); color: var(--inverse); }
+.rat-dots a.proposed { background: transparent; color: var(--rust); border: 1px solid var(--rust); }
+@media (max-width: 760px) { .rat-bar .bar-title { display: none; } }
+@media (max-width: 560px) { .rat-dots { display: none; } }
+
+/* ===================== masthead ===================== */
+.masthead { padding: clamp(72px, 9vw, 130px) 0 clamp(48px, 6vw, 80px); border-bottom: 1px solid var(--line); }
+.masthead .kicker { color: var(--rust); margin-bottom: 28px; }
+.masthead h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(44px, 6.4vw, 88px); line-height: 1.02; letter-spacing: -0.025em;
+  max-width: 14ch;
+}
+.masthead .standfirst {
+  margin-top: 28px;
+  font-family: var(--serif); font-size: clamp(18px, 1.7vw, 22px); line-height: 1.55;
+  color: var(--ink-2); max-width: 58ch;
+}
+.masthead .oneliner {
+  margin-top: 36px;
+  border-left: 3px solid var(--gold);
+  padding-left: clamp(18px, 2.5vw, 30px);
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(19px, 2vw, 26px); line-height: 1.45;
+  max-width: 44ch;
+}
+.masthead .oneliner-src { margin-top: 12px; color: var(--ink-3); }
+.masthead .meta-row {
+  margin-top: 44px; display: flex; gap: 14px 36px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3);
+}
+.masthead .meta-row b { color: var(--ink); font-weight: 500; }
+
+/* ===================== status tags ===================== */
+.tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.tag::before { content: ""; width: 8px; height: 8px; background: currentColor; }
+.tag.locked { background: var(--navy); color: var(--inverse); }
+.tag.locked::before { background: var(--gold-on-dark); }
+.tag.proposed { background: transparent; color: var(--rust); border: 1.5px solid var(--rust); }
+
+/* ===================== table of contents ===================== */
+.toc { padding: clamp(48px, 6vw, 84px) 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+.toc .toc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; margin-bottom: 28px; }
+.toc h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); letter-spacing: -0.02em; }
+.toc .toc-note { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+.toc ol { border-top: 1px solid var(--line); }
+.toc li a {
+  display: grid; grid-template-columns: 64px 1fr auto; gap: 20px; align-items: center;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+.toc li a:hover { background: var(--cream); }
+.toc .t-num { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--rust); }
+.toc .t-title { font-family: var(--sans); font-weight: 500; font-size: 15.5px; letter-spacing: -0.01em; }
+@media (max-width: 600px) { .toc li a { grid-template-columns: 44px 1fr auto; gap: 10px; } .toc .t-title { font-size: 14px; } }
+
+/* ===================== decision sections ===================== */
+.decision { padding: clamp(72px, 9vw, 128px) 0; border-bottom: 1px solid var(--line); }
+.decision.on-paper { background: var(--paper); }
+.d-head { display: grid; gap: 18px; margin-bottom: clamp(36px, 5vw, 56px); }
+.d-flags { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.d-eyebrow {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rust);
+}
+.d-eyebrow .sep { color: var(--ink-3); margin: 0 10px; }
+.d-sentence {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(28px, 3.6vw, 48px); line-height: 1.12; letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+.d-reason { font-size: 16px; line-height: 1.65; color: var(--ink-2); max-width: 66ch; }
+.d-reason b { color: var(--ink); font-weight: 600; }
+
+/* demonstration + not-this frames */
+.demo { border: 1px solid var(--line); background: #FFFFFF; }
+.demo-cap {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.demo-cap .dc-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-text); }
+.demo-cap .dc-src { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-3); }
+.demo-body { padding: clamp(20px, 3vw, 40px); }
+.demo-body.flush { padding: 0; }
+
+.notthis { border: 1.5px solid var(--rust); background: #FFFFFF; margin-top: 20px; }
+.notthis .demo-cap { border-bottom-color: rgba(185, 86, 42, 0.25); }
+.notthis .demo-cap .dc-k { color: var(--rust-deep); }
+
+.figcap {
+  margin-top: 14px;
+  font-family: var(--serif); font-style: italic; font-size: 14.5px; color: var(--ink-3);
+}
+
+/* ===================== D1 thesis hero ===================== */
+.thesis-hero { position: relative; min-height: clamp(380px, 46vw, 620px); overflow: hidden; background: var(--navy); }
+.thesis-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 42%; }
+.thesis-hero .scrim { position: absolute; inset: 0; background: linear-gradient(200deg, rgba(30,42,74,0.06) 30%, rgba(30,42,74,0.62) 100%); }
+.thesis-hero .thesis-copy {
+  position: absolute; left: clamp(24px, 4vw, 56px); right: clamp(24px, 4vw, 56px); bottom: clamp(28px, 4vw, 52px);
+  color: var(--inverse);
+}
+.thesis-hero .thesis-line {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(26px, 3.8vw, 52px); line-height: 1.12; letter-spacing: -0.018em;
+  max-width: 22ch;
+  text-shadow: 0 2px 24px rgba(30, 42, 74, 0.45);
+}
+.thesis-hero .thesis-src { display: block; margin-top: 18px; color: var(--inverse-muted); }
+.thesis-hero .blk { position: absolute; }
+.thesis-hero .blk-navy { left: 0; top: 14%; width: 22%; height: 9%; background: var(--navy); opacity: 0.92; }
+.thesis-hero .blk-rust { right: 0; top: 26%; width: 13%; height: 6%; background: var(--rust); opacity: 0.8; }
+
+/* ===================== D2 magnetism ===================== */
+.pass-fig { position: relative; overflow: hidden; }
+.pass-fig img { width: 100%; height: clamp(320px, 38vw, 520px); object-fit: cover; object-position: 50% 30%; }
+.pass-tag {
+  position: absolute; left: 0; top: clamp(18px, 3vw, 32px);
+  background: var(--navy); color: var(--inverse);
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 10px 18px;
+}
+.pass-tag b { color: var(--gold-on-dark); font-weight: 500; }
+.anno-rows { display: grid; gap: 0; border-top: 1px solid var(--line-soft); }
+.anno-rows .anno {
+  display: grid; grid-template-columns: 14px 1fr; gap: 14px; align-items: baseline;
+  padding: 12px clamp(16px, 2.5vw, 28px);
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 14.5px; color: var(--ink-2);
+}
+.anno-rows .anno:last-child { border-bottom: 0; }
+.anno-rows .anno i { width: 10px; height: 10px; background: var(--gold); align-self: center; }
+.anno-rows .anno b { color: var(--ink); font-weight: 600; }
+.fail-frames { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 720px) { .fail-frames { grid-template-columns: 1fr; } }
+.fail-frame {
+  border: 1.5px dashed var(--rust);
+  min-height: 230px;
+  padding: clamp(20px, 3vw, 32px);
+  display: grid; gap: 12px; align-content: center;
+  background: repeating-linear-gradient(135deg, rgba(185, 86, 42, 0.035) 0 14px, transparent 14px 28px);
+}
+.fail-frame .ff-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rust-deep); }
+.fail-frame h4 { font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: -0.015em; }
+.fail-frame p { font-size: 14px; color: var(--ink-2); max-width: 38ch; }
+
+/* ===================== D3 type rack ===================== */
+.type-rack { display: grid; }
+.type-row {
+  display: grid; grid-template-columns: 220px 1fr; gap: clamp(20px, 3vw, 48px);
+  padding: clamp(20px, 3vw, 32px) 0;
+  border-bottom: 1px solid var(--line-soft);
+  align-items: center;
+}
+.type-row:last-child { border-bottom: 0; }
+@media (max-width: 720px) { .type-row { grid-template-columns: 1fr; gap: 10px; } }
+.type-row .spec { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); line-height: 1.8; }
+.type-row .spec b { display: block; color: var(--accent-text); font-weight: 500; }
+.t-display { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5vw, 68px); line-height: 1.02; letter-spacing: -0.025em; }
+.t-h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 3.2vw, 42px); line-height: 1.1; letter-spacing: -0.02em; max-width: 24ch; }
+.t-h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; letter-spacing: -0.015em; }
+.t-body { font-family: var(--sans); font-size: 16px; line-height: 1.65; color: var(--ink-2); max-width: 54ch; }
+.t-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-text); }
+
+/* ===================== D4 palette ===================== */
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 880px) { .swatches { grid-template-columns: 1fr 1fr; } }
+.sw { display: grid; gap: 0; border: 1px solid var(--line); background: #FFFFFF; }
+.sw .chip { height: 130px; }
+.sw .sw-meta { padding: 14px 16px 16px; display: grid; gap: 6px; }
+.sw .sw-hex { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink); }
+.sw .sw-role { font-family: var(--sans); font-weight: 600; font-size: 14px; letter-spacing: -0.005em; }
+.sw .sw-job { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+.palette-excerpt { margin-top: 24px; background: var(--paper); border: 1px solid var(--line); padding: clamp(24px, 4vw, 48px); }
+.palette-excerpt .pe-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); }
+.palette-excerpt h4 {
+  margin-top: 14px;
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(24px, 2.8vw, 36px); line-height: 1.12; letter-spacing: -0.02em; max-width: 24ch;
+}
+.palette-excerpt .pe-card {
+  margin-top: 24px; max-width: 480px;
+  background: var(--navy); color: var(--inverse);
+  padding: clamp(22px, 3vw, 36px); display: grid; gap: 10px;
+}
+.palette-excerpt .pe-card .pl { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-on-dark); }
+.palette-excerpt .pe-card .pp { font-family: var(--sans); font-weight: 600; font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -0.02em; }
+.palette-excerpt .pe-card .ps { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--inverse-muted); }
+
+/* ===================== D5 blocks ===================== */
+.blocks-fig { position: relative; overflow: hidden; }
+.blocks-fig img { width: 100%; height: clamp(340px, 40vw, 540px); object-fit: cover; object-position: 50% 38%; }
+.blocks-fig .blk { position: absolute; }
+.blocks-fig .blk-navy { left: 0; bottom: 15%; width: 26%; height: 11%; background: var(--navy); opacity: 0.94; }
+.blocks-fig .blk-rust { right: clamp(48px, 9vw, 140px); bottom: 8%; width: min(34%, 280px); height: 8%; background: var(--rust); opacity: 0.82; }
+.blocks-fig .ftag {
+  position: absolute; left: 0; top: clamp(20px, 3vw, 36px);
+  background: var(--navy); color: var(--inverse);
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 10px 16px;
+}
+.blocks-fig .mk {
+  position: absolute; display: grid; place-items: center;
+  width: 24px; height: 24px;
+  background: var(--page); color: var(--ink); border: 1.5px solid var(--ink);
+  font-family: var(--mono); font-size: 11px;
+}
+.blocks-fig .mk1 { left: calc(26% + 10px); bottom: calc(15% + 4px); }
+.blocks-fig .mk2 { right: clamp(20px, 4vw, 110px); bottom: calc(8% + 4px); }
+.blocks-fig .mk3 { left: clamp(150px, 22vw, 230px); top: clamp(20px, 3vw, 36px); }
+.block-legend { border-top: 1px solid var(--line-soft); }
+.block-legend .bl {
+  display: grid; grid-template-columns: 24px 150px 1fr; gap: 16px; align-items: baseline;
+  padding: 13px clamp(16px, 2.5vw, 28px);
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 14.5px; color: var(--ink-2);
+}
+.block-legend .bl:last-child { border-bottom: 0; }
+@media (max-width: 640px) { .block-legend .bl { grid-template-columns: 24px 1fr; } .block-legend .bl b { grid-column: 2; } }
+.block-legend .bl .n { font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+.block-legend .bl b { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); font-weight: 500; }
+.pill-exhibit { display: flex; align-items: center; gap: clamp(20px, 4vw, 48px); flex-wrap: wrap; }
+.pill-exhibit svg { width: 250px; height: auto; flex: 0 0 auto; }
+.pill-exhibit p { font-size: 14.5px; color: var(--ink-2); max-width: 48ch; }
+
+/* ===================== D6 photography ===================== */
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 880px) { .photo-grid { grid-template-columns: 1fr; } }
+.photo-card { border: 1px solid var(--line); background: #FFFFFF; }
+.photo-card img { width: 100%; height: 240px; object-fit: cover; }
+.photo-card .pc-meta { padding: 16px 18px 20px; display: grid; gap: 8px; }
+.photo-card .pc-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); }
+.photo-card h4 { font-family: var(--serif); font-weight: 500; font-size: 19px; letter-spacing: -0.012em; }
+.photo-card p { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+
+/* ===================== D7 voice rewrites ===================== */
+.rw-rows { display: grid; gap: 20px; }
+.rw {
+  display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); background: #FFFFFF;
+}
+@media (max-width: 760px) { .rw { grid-template-columns: 1fr; } }
+.rw .cell { padding: clamp(20px, 2.6vw, 32px); display: grid; gap: 12px; align-content: start; }
+.rw .cell.weak { border-right: 1px solid var(--line-soft); background: repeating-linear-gradient(135deg, rgba(185, 86, 42, 0.03) 0 12px, transparent 12px 24px); }
+@media (max-width: 760px) { .rw .cell.weak { border-right: 0; border-bottom: 1px solid var(--line-soft); } }
+.rw .ck { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+.rw .weak .ck { color: var(--rust-deep); }
+.rw .brand .ck { color: var(--accent-text); }
+.rw .weak p { font-family: var(--serif); font-style: italic; font-size: 16.5px; line-height: 1.5; color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rust-deep); text-decoration-thickness: 1.5px; }
+.rw .brand p { font-family: var(--sans); font-size: 16.5px; line-height: 1.55; color: var(--ink); }
+.unit-note {
+  margin-top: 20px; display: flex; gap: 14px 28px; flex-wrap: wrap; align-items: center;
+  border: 1px solid var(--line); background: #FFFFFF; padding: 16px clamp(16px, 2.5vw, 28px);
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.02em;
+}
+.unit-note .bad { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--rust-deep); }
+.unit-note .ok { color: var(--ink); }
+.unit-note .ok b { color: var(--accent-text); font-weight: 500; }
+.unit-note .lbl { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+/* ===================== D8 + D9 close excerpts ===================== */
+.paths { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 20px; }
+@media (max-width: 820px) { .paths { grid-template-columns: 1fr; } }
+.path { border: 1px solid var(--line); background: #FFFFFF; padding: clamp(26px, 3.4vw, 48px); display: grid; gap: 20px; align-content: start; }
+.path.primary { background: var(--navy); border-color: var(--navy); color: var(--inverse); }
+.path .plabel { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); }
+.path.primary .plabel { color: var(--gold-on-dark); }
+.path h4 { font-family: var(--serif); font-weight: 500; font-size: clamp(21px, 2.2vw, 28px); line-height: 1.22; letter-spacing: -0.018em; max-width: 20ch; }
+.path p { color: var(--ink-2); font-size: 15px; max-width: 44ch; }
+.path .price { font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 2vw, 28px); letter-spacing: -0.02em; }
+.path .price small { display: block; font-family: var(--mono); font-weight: 400; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--inverse-muted); margin-top: 6px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 26px;
+  border: 1px solid currentColor;
+  font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  text-decoration: none; cursor: pointer; justify-self: start;
+}
+.btn-fill-light { background: var(--inverse); color: var(--ink); border-color: var(--inverse); }
+.btn-outline { background: transparent; color: var(--ink); border-color: rgba(36, 36, 38, 0.34); }
+.lane-note { margin-top: 20px; font-size: 13.5px; color: var(--ink-3); max-width: 70ch; }
+
+.price-stage { background: var(--navy); color: var(--inverse); padding: clamp(48px, 7vw, 96px) clamp(24px, 5vw, 72px); display: grid; gap: 16px; justify-items: start; }
+.price-stage .pl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-on-dark); }
+.price-stage .big-price { font-family: var(--sans); font-weight: 600; font-size: clamp(56px, 8vw, 120px); line-height: 0.95; letter-spacing: -0.045em; }
+.price-stage .big-price small { font-size: 0.32em; font-weight: 600; letter-spacing: -0.01em; color: var(--gold-on-dark); }
+.price-stage .all-in { font-family: var(--mono); font-size: clamp(12px, 1.3vw, 15px); letter-spacing: 0.22em; text-transform: uppercase; color: var(--inverse-muted); }
+.price-field { border-top: 1px solid var(--line-inverse); margin-top: 18px; padding-top: 18px; font-size: 13.5px; color: var(--inverse-muted); max-width: 62ch; }
+.price-field b { color: var(--inverse); font-weight: 500; }
+
+/* ===================== D10 wordmark ===================== */
+.mark-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 760px) { .mark-panels { grid-template-columns: 1fr; } }
+.mark-panel { padding: clamp(28px, 4vw, 56px); display: grid; gap: clamp(18px, 2.5vw, 30px); align-content: center; justify-items: start; }
+.mark-panel.on-navy { background: var(--navy); color: var(--inverse); }
+.mark-panel.on-cream { background: var(--cream); color: var(--ink); border: 1px solid var(--line); }
+.wordmark { font-family: var(--sans); font-weight: 600; letter-spacing: -0.045em; line-height: 0.95; }
+.wordmark sup { font-size: 0.3em; letter-spacing: 0.02em; margin-left: 0.06em; }
+.mark-panel.on-navy .wordmark sup { color: var(--gold-on-dark); }
+.mark-panel.on-cream .wordmark sup { color: var(--gold); }
+.wm-xl { font-size: clamp(64px, 7.5vw, 104px); }
+.wm-md { font-size: 48px; }
+.wm-sm { font-size: 24px; }
+.mark-panel .mp-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; }
+.misuse-list { display: grid; gap: 0; }
+.misuse-list li {
+  display: grid; grid-template-columns: 16px 1fr; gap: 14px; align-items: baseline;
+  padding: 12px clamp(16px, 2.5vw, 28px);
+  border-bottom: 1px solid rgba(185, 86, 42, 0.18);
+  font-size: 14.5px; color: var(--ink-2);
+}
+.misuse-list li:last-child { border-bottom: 0; }
+.misuse-list li::before { content: "×"; color: var(--rust-deep); font-family: var(--mono); font-size: 15px; line-height: 1; align-self: center; }
+.misuse-list li b { color: var(--ink); font-weight: 600; }
+
+/* ===================== footer ===================== */
+.guide-footer {
+  background: linear-gradient(195deg, #1E2A4A 0%, #232C4B 42%, #2C1F29 72%, #532F4B 96%);
+  color: var(--inverse);
+  padding: clamp(72px, 9vw, 120px) var(--gutter) clamp(40px, 5vw, 56px);
+}
+.guide-footer .ft-wrap { max-width: var(--max); margin-inline: auto; }
+.guide-footer .ft-rule {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(26px, 3.4vw, 44px); line-height: 1.18; letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+.guide-footer .ft-arrow {
+  margin-top: 32px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--inverse-muted);
+}
+.guide-footer .ft-arrow .node { border: 1px solid var(--line-inverse); padding: 10px 16px; color: var(--inverse); }
+.guide-footer .ft-arrow .arr { color: var(--gold-on-dark); font-size: 16px; letter-spacing: 0; }
+.guide-footer .ft-meta {
+  margin-top: clamp(48px, 6vw, 72px); padding-top: 24px;
+  border-top: 1px solid var(--line-inverse);
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--inverse-muted);
+}
+.guide-footer .ft-meta .wm { font-family: var(--sans); font-weight: 600; font-size: 15px; letter-spacing: -0.03em; text-transform: none; color: var(--inverse); }
+.guide-footer .ft-meta .wm sup { font-size: 0.62em; color: var(--gold-on-dark); }
+</style>
+</head>
+<body>
+
+<!-- ============ sticky ratification bar ============ -->
+<nav class="rat-bar" aria-label="Ratification state">
+  <a class="bar-mark" href="#top">aleron<sup>MD</sup></a>
+  <span class="bar-title">Brand Decision Guide · 6 locked · 4 proposed</span>
+  <div class="rat-dots" aria-label="Decisions D1 to D10 with status">
+    <a class="locked" href="#d1" title="D1 LOCKED">D1</a>
+    <a class="locked" href="#d2" title="D2 LOCKED">D2</a>
+    <a class="proposed" href="#d3" title="D3 PROPOSED">D3</a>
+    <a class="locked" href="#d4" title="D4 LOCKED">D4</a>
+    <a class="proposed" href="#d5" title="D5 PROPOSED">D5</a>
+    <a class="proposed" href="#d6" title="D6 PROPOSED">D6</a>
+    <a class="locked" href="#d7" title="D7 LOCKED">D7</a>
+    <a class="locked" href="#d8" title="D8 LOCKED">D8</a>
+    <a class="locked" href="#d9" title="D9 LOCKED">D9</a>
+    <a class="proposed" href="#d10" title="D10 PROPOSED">D10</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ masthead ============ -->
+<header class="masthead">
+  <div class="wrap">
+    <p class="kicker mono-label">Aleron MD · Internal · Ratification artifact</p>
+    <h1>Ten decisions that are the brand.</h1>
+    <p class="standfirst">A decision log and a living guideline, merged. Each decision is stated in one sentence, reasoned in two, then demonstrated live in the brand's own visual system with real Aleron content. This page is built in the system it describes.</p>
+    <blockquote class="oneliner">"Aleron MD exists to make 'I'm just getting started' a medically defensible position at any age."</blockquote>
+    <p class="oneliner-src mono-label">North star · loop/VISION.md</p>
+    <div class="meta-row">
+      <span>Status: <b>6 locked, 4 proposed</b></span>
+      <span>Ratify by flipping a flag from <b>proposed</b> to <b>locked</b></span>
+      <span>10 June 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ table of contents ============ -->
+<nav class="toc" aria-label="Decisions">
+  <div class="wrap">
+    <div class="toc-head">
+      <h2>The decisions</h2>
+      <span class="toc-note">Navy solid = locked · Rust outline = proposed</span>
+    </div>
+    <ol>
+      <li><a href="#d1"><span class="t-num">D1</span><span class="t-title">Brand thesis and attractor state</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d2"><span class="t-num">D2</span><span class="t-title">Imagery age band and the magnetism test</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d3"><span class="t-num">D3</span><span class="t-title">Typography pairing</span><span class="tag proposed">Proposed</span></a></li>
+      <li><a href="#d4"><span class="t-num">D4</span><span class="t-title">Palette and roles</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d5"><span class="t-num">D5</span><span class="t-title">Block grammar</span><span class="tag proposed">Proposed</span></a></li>
+      <li><a href="#d6"><span class="t-num">D6</span><span class="t-title">Photography treatment</span><span class="tag proposed">Proposed</span></a></li>
+      <li><a href="#d7"><span class="t-num">D7</span><span class="t-title">Voice</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d8"><span class="t-num">D8</span><span class="t-title">CTA and lane rules</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d9"><span class="t-num">D9</span><span class="t-title">Price presentation</span><span class="tag locked">Locked</span></a></li>
+      <li><a href="#d10"><span class="t-num">D10</span><span class="t-title">Wordmark behavior</span><span class="tag proposed">Proposed</span></a></li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ============ D1 ============ -->
+<section class="decision" id="d1">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D1<span class="sep">·</span>Brand thesis and attractor state</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">The brand sells one belief, that you might be just getting started, and every surface embodies disciplined vitality.</h2>
+      <p class="d-reason">Most longevity brands sell not dying, which collapses into sterile dashboards or vain immortality, and both are repulsive futures. The feeling we build instead is <b>future nostalgia</b>: missing, in advance, a future you now intend to have. Confidence not vanity. Expression not competition.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration</span><span class="dc-src">Thesis verbatim · the-meridian-project.com/brand.html · image: landing-loop hero</span></div>
+      <div class="demo-body flush">
+        <div class="thesis-hero">
+          <img src="../landing-loop/assets/hero-runner.jpg" alt="A mid-life man trail running above a coastline at first light" />
+          <span class="scrim" aria-hidden="true"></span>
+          <span class="blk blk-navy" aria-hidden="true"></span>
+          <span class="blk blk-rust" aria-hidden="true"></span>
+          <div class="thesis-copy">
+            <p class="thesis-line">"The visual identity is not decoration. It is the embodiment of disciplined vitality."</p>
+            <span class="thesis-src mono-label">Brand thesis, set in the system it demands</span>
+          </div>
+        </div>
+      </div>
+    </figure>
+    <p class="figcap">The buyer test: an executive looks at this and thinks "that's me in 10 years, and I'm behind on getting there."</p>
+  </div>
+</section>
+
+<!-- ============ D2 ============ -->
+<section class="decision on-paper" id="d2">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D2<span class="sep">·</span>Imagery age band and the magnetism test</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">Hero subjects read 45 to 60, mid-experience, golden hour, visibly fitter than the viewer at five honest years of work, not a different species.</h2>
+      <p class="d-reason">The 70s are narrated by the curve and the copy, never cast in imagery. Both failure modes are rejected: the <b>weathered survivor</b> and the <b>airbrushed immortal</b>. The subject is the buyer a decade out, close enough to reach, far enough to want.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Pass</span><span class="dc-src">jobs/landing-loop/assets/hero-runner.jpg, the live hero crop</span></div>
+      <div class="demo-body flush">
+        <div class="pass-fig">
+          <img src="../landing-loop/assets/hero-runner.jpg" alt="A mid-life man trail running above a coastline at first light" />
+          <span class="pass-tag"><b>Pass</b> · Magnetism test</span>
+        </div>
+        <div class="anno-rows">
+          <div class="anno"><i></i><span><b>Age band.</b> Reads late 40s to 50s. Mid-experience, mid-stride, not posed at the camera.</span></div>
+          <div class="anno"><i></i><span><b>Light.</b> First light over the coast. Golden hour warmth, environment present.</span></div>
+          <div class="anno"><i></i><span><b>Distance.</b> Fitter than the viewer at five honest years of work. Reachable, therefore magnetic.</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <div class="notthis">
+      <div class="demo-cap"><span class="dc-k">Not this · Both failure modes, described, never rendered</span><span class="dc-src">We do not generate failure imagery</span></div>
+      <div class="demo-body">
+        <div class="fail-frames">
+          <div class="fail-frame">
+            <span class="ff-k">Rejected · Failure mode 1</span>
+            <h4>The weathered survivor</h4>
+            <p>Leathered skin, grim endurance, age worn as battle damage. It sells survival, not appetite. The reader feels braced for decline instead of hungry for decades.</p>
+          </div>
+          <div class="fail-frame">
+            <span class="ff-k">Rejected · Failure mode 2</span>
+            <h4>The airbrushed immortal</h4>
+            <p>Poreless, ageless, lit like a serum ad. It sells vanity, and vanity fails the surgeon test. A different species cannot be a destination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D3 ============ -->
+<section class="decision" id="d3">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D3<span class="sep">·</span>Typography pairing</span>
+        <span class="tag proposed">Proposed</span>
+      </div>
+      <h2 class="d-sentence">Serif carries the thesis, manifesto, and section headlines. Sans carries body, labels, and data.</h2>
+      <p class="d-reason">Source Serif 4 plus Inter Tight, the lineage shared by the deck and landing-loop. The grammar: <b>the headline names the job, the body explains the path, the label locates the reader.</b> Proposed, not locked, because the three landing permutations disagreed on where serif begins. landing-loop currently sets headlines in Inter Tight and reserves serif for ledes and quotes. This page sets headlines in serif as the codification candidate. Jason ratifies.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Real headlines at three scales</span><span class="dc-src">Copy verbatim from jobs/messaging/MESSAGING_RACK.md, sections 1, 2, 4</span></div>
+      <div class="demo-body">
+        <div class="type-rack">
+          <div class="type-row">
+            <span class="spec"><b>Display · Source Serif 4</b>Hero scale · names the job</span>
+            <p class="t-display">Your best days are still ahead.</p>
+          </div>
+          <div class="type-row">
+            <span class="spec"><b>Section · Source Serif 4</b>H2 scale · names the job</span>
+            <p class="t-h2">The story of your future is written on top of this curve.</p>
+          </div>
+          <div class="type-row">
+            <span class="spec"><b>Step · Source Serif 4</b>H3 scale · names the job</span>
+            <p class="t-h3">A small kit arrives at your door.</p>
+          </div>
+          <div class="type-row">
+            <span class="spec"><b>Body · Inter Tight</b>Explains the path</span>
+            <p class="t-body">Spit in the tube, drop it in the prepaid mailer. The 163-gene Invitae panel screens for the variants that actually change a care plan.</p>
+          </div>
+          <div class="type-row">
+            <span class="spec"><b>Label · JetBrains Mono</b>Locates the reader</span>
+            <p class="t-label">Step 02 · Genetics</p>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D4 ============ -->
+<section class="decision on-paper" id="d4">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D4<span class="sep">·</span>Palette and roles</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">Four colors, four jobs. Navy is authority, bronze is accent, rust is signal, cream is ground.</h2>
+      <p class="d-reason">A color without a role is decoration, and decoration is banned. Every hex below is pulled verbatim from the CSS custom properties in <b>jobs/landing-loop/index.html</b>. No new values were invented for this guide.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Swatches with roles</span><span class="dc-src">Values verbatim from landing-loop :root tokens</span></div>
+      <div class="demo-body">
+        <div class="swatches">
+          <div class="sw">
+            <div class="chip" style="background:#1E2A4A"></div>
+            <div class="sw-meta">
+              <span class="sw-hex">#1E2A4A</span>
+              <span class="sw-role">Navy · Authority</span>
+              <span class="sw-job">Dark fields, the primary membership card, the footer, block anchors.</span>
+            </div>
+          </div>
+          <div class="sw">
+            <div class="chip" style="background:#CD9453"></div>
+            <div class="sw-meta">
+              <span class="sw-hex">#CD9453 · on dark #D9A765</span>
+              <span class="sw-role">Bronze · Accent</span>
+              <span class="sw-job">The wordmark MD, gold keys on the curve, labels on navy. Text accent runs #6E3D1C.</span>
+            </div>
+          </div>
+          <div class="sw">
+            <div class="chip" style="background:#B9562A"></div>
+            <div class="sw-meta">
+              <span class="sw-hex">#B9562A · deep #922E20</span>
+              <span class="sw-role">Rust · Signal</span>
+              <span class="sw-job">Risk, the serious-event marker, eyebrow labels, proposed flags. Never a background wash.</span>
+            </div>
+          </div>
+          <div class="sw">
+            <div class="chip" style="background:#EFEAE0; border-bottom:1px solid rgba(36,36,38,0.1)"></div>
+            <div class="sw-meta">
+              <span class="sw-hex">#EFEAE0 · paper #F6F4EE · page #FFFEFB</span>
+              <span class="sw-role">Cream · Ground</span>
+              <span class="sw-job">The warm field everything sits on. Editorial, not clinical white.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="palette-excerpt">
+          <p class="pe-eyebrow">07 · Membership</p>
+          <h4>Your curve is already being written. Decide who holds the pen.</h4>
+          <div class="pe-card">
+            <span class="pl">For individuals</span>
+            <span class="pp">$4,200/yr</span>
+            <span class="ps">All in. No add-on billing.</span>
+          </div>
+        </div>
+        <p class="figcap">One real excerpt, all four roles live: rust eyebrow, serif headline on cream paper, navy card carrying authority, bronze label on dark. Source: jobs/landing-loop close section.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D5 ============ -->
+<section class="decision" id="d5">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D5<span class="sep">·</span>Block grammar</span>
+        <span class="tag proposed">Proposed</span>
+      </div>
+      <h2 class="d-sentence">Square geometric blocks anchor photography. Squares everywhere, zero border-radius, and every block must earn a job.</h2>
+      <p class="d-reason">Navy and rust blocks are compositional instruments with exactly three legal jobs: <b>frame, anchor, label</b>. A block doing none of those is decoration and gets cut. No pills, no capsules, no glows. The CSS of this page contains zero border-radius declarations.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Each block annotated with its job</span><span class="dc-src">Composition: landing-loop hero art · image: landing-loop surfer</span></div>
+      <div class="demo-body flush">
+        <div class="blocks-fig">
+          <img src="../landing-loop/assets/surfer.jpg" alt="A silver-haired man carving a wave on a surfboard" />
+          <span class="ftag" aria-hidden="true">Members in motion</span>
+          <span class="blk blk-navy" aria-hidden="true"></span>
+          <span class="blk blk-rust" aria-hidden="true"></span>
+          <span class="mk mk1" aria-hidden="true">1</span>
+          <span class="mk mk2" aria-hidden="true">2</span>
+          <span class="mk mk3" aria-hidden="true">3</span>
+        </div>
+        <div class="block-legend">
+          <div class="bl"><span class="n">1</span><b>Navy block · Anchor</b><span>Bleeds off the left edge and ties the photograph to the page structure. The image stops floating.</span></div>
+          <div class="bl"><span class="n">2</span><b>Rust block · Frame</b><span>Holds the lower right and frames where the next action lands. Rust signals, so it points.</span></div>
+          <div class="bl"><span class="n">3</span><b>Navy tag · Label</b><span>Mono, square, on navy. Locates the reader inside the story without captioning the photo to death.</span></div>
+        </div>
+      </div>
+    </figure>
+
+    <div class="notthis">
+      <div class="demo-cap"><span class="dc-k">Not this · The pill</span><span class="dc-src">Quarantined as an SVG exhibit. This page's CSS stays radius-free.</span></div>
+      <div class="demo-body">
+        <div class="pill-exhibit">
+          <svg viewBox="0 0 250 70" role="img" aria-label="A pill-shaped tag, crossed out">
+            <rect x="3" y="11" width="244" height="48" rx="24" fill="none" stroke="#B9562A" stroke-width="2" />
+            <text x="125" y="41" text-anchor="middle" fill="#6E6E72" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="3">LONGEVITY+</text>
+            <line x1="6" y1="66" x2="244" y2="4" stroke="#922E20" stroke-width="3" />
+          </svg>
+          <p>The rounded capsule is the universal costume of the wellness app. The moment a tag goes pill-shaped, Aleron reads like everyone else's free trial. Corners stay at 90 degrees, including eyebrows, buttons, image masks, and chart markers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D6 ============ -->
+<section class="decision on-paper" id="d6">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D6<span class="sep">·</span>Photography treatment</span>
+        <span class="tag proposed">Proposed</span>
+      </div>
+      <h2 class="d-sentence">Golden-hour warmth, motion or mid-experience, environment present. Never clinical, never posed at camera, never stock happy senior.</h2>
+      <p class="d-reason">Forest, ocean, road, canyon. The environment does half the talking because the product is a life, not a clinic. <b>Tribes and singular experiences are both valid</b>: the solo runner and the surfers together pass the same test. Patients, models, and exam rooms never appear.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Why each frame passes</span><span class="dc-src">figma-snapshot/hero_2.png, hero_3.png, hero_4.png</span></div>
+      <div class="demo-body">
+        <div class="photo-grid">
+          <div class="photo-card">
+            <img src="../../figma-snapshot/hero_2.png" alt="Figma hero frame: a woman running along the ocean at sunrise" />
+            <div class="pc-meta">
+              <span class="pc-k">Pass · Singular experience</span>
+              <h4>The runner at first light</h4>
+              <p>Golden hour over open water, earbuds in, eyes on the road not the lens. Motion is the subject. The viewer recognizes a routine, not a photoshoot.</p>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="../../figma-snapshot/hero_3.png" alt="Figma hero frame: a surfer wading into golden water at sunset" />
+            <div class="pc-meta">
+              <span class="pc-k">Pass · Environment present</span>
+              <h4>The surfer in golden water</h4>
+              <p>Backlit, effort visible, ocean everywhere. No clinic could be further away. The warmth is literal, the light does the brand's emotional work.</p>
+            </div>
+          </div>
+          <div class="photo-card">
+            <img src="../../figma-snapshot/hero_4.png" alt="Figma hero frame: a silver-haired woman looking up inside a red slot canyon" />
+            <div class="pc-meta">
+              <span class="pc-k">Pass · Mid-experience</span>
+              <h4>The canyon, looking up</h4>
+              <p>Awe instead of a posed smile. Silver hair without surrender, mid-experience inside the landscape. This is future nostalgia in a single frame.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D7 ============ -->
+<section class="decision" id="d7">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D7<span class="sep">·</span>Voice</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">Say the specific true thing. No adjectives doing the work of facts, and clinical values always carry units.</h2>
+      <p class="d-reason">Banned filler: best life, optimize your health, unlock, journey, empower, holistic. Vanilla copy is a content problem, not a tone problem: if a line could fit any concierge clinic, it carries no information. <b>No em dashes anywhere</b>, including this artifact. Periods and commas.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Three rewrites</span><span class="dc-src">Brand lines verbatim from jobs/landing-loop signals, experience, and care sections</span></div>
+      <div class="demo-body">
+        <div class="rw-rows">
+          <div class="rw">
+            <div class="cell weak">
+              <span class="ck">Weak · Adjectives doing the work</span>
+              <p>We use cutting-edge biomarker testing to optimize your health.</p>
+            </div>
+            <div class="cell brand">
+              <span class="ck">Brand · The specific true thing</span>
+              <p>The Elite panel through Quest. ApoB, Lp(a), hsCRP, fasting insulin, and 80+ markers across metabolic, cardiovascular, inflammatory, renal, hepatic, and micronutrient domains.</p>
+            </div>
+          </div>
+          <div class="rw">
+            <div class="cell weak">
+              <span class="ck">Weak · Generic longevity filler</span>
+              <p>Comprehensive genetic insights to empower your wellness journey.</p>
+            </div>
+            <div class="cell brand">
+              <span class="ck">Brand · The specific true thing</span>
+              <p>The 163-gene Invitae panel screens for the variants that actually change a care plan: moderate-penetrance cancer risks, cardiovascular variants, and pharmacogenomic markers that change which drugs work for you.</p>
+            </div>
+          </div>
+          <div class="rw">
+            <div class="cell weak">
+              <span class="ck">Weak · Could fit any clinic</span>
+              <p>Unlimited concierge access so you can live your best life.</p>
+            </div>
+            <div class="cell brand">
+              <span class="ck">Brand · The specific true thing</span>
+              <p>24/7 telemedicine with a physician who already has your full picture: your data, your genetics, your history. No repeating yourself.</p>
+            </div>
+          </div>
+        </div>
+        <div class="unit-note">
+          <span class="lbl">Units rule</span>
+          <span class="bad">Lp(a) 72</span>
+          <span class="ok">Lp(a) 72 <b>nmol/L</b></span>
+          <span class="lbl">A clinical value without its unit is an adjective</span>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D8 ============ -->
+<section class="decision on-paper" id="d8">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D8<span class="sep">·</span>CTA and lane rules</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">Acquisition says Apply for Membership, the header says Log In, and every page closes with both lanes.</h2>
+      <p class="d-reason">Application implies selection, which is the truthful posture of a practice that opens in waves. The casual four-letter invite verb is banned on every surface. The close is always dual: <b>individual lane on navy with the price visible, employer and broker lane on light</b>, visually distinct, individual dominant.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · The dual-path close</span><span class="dc-src">Excerpted from jobs/landing-loop/index.html, section S9</span></div>
+      <div class="demo-body">
+        <div class="paths">
+          <div class="path primary">
+            <span class="plabel">For individuals</span>
+            <h4>One physician, your full data picture, and a plan that keeps working between visits.</h4>
+            <div class="price">$4,200/yr<small>All in. No add-on billing.</small></div>
+            <a class="btn btn-fill-light" href="#d8">Apply for Membership</a>
+          </div>
+          <div class="path">
+            <span class="plabel">For employers and brokers</span>
+            <h4>Bring physician-led preventive care to the people you cover.</h4>
+            <p>We'll show you how Aleron fits alongside your existing benefits.</p>
+            <a class="btn btn-outline" href="#d8">For Employers</a>
+          </div>
+        </div>
+        <p class="lane-note">Header carries Log In for returning members. Buttons here are inert excerpts. On mobile the lanes stack, individual first.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D9 ============ -->
+<section class="decision" id="d9">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D9<span class="sep">·</span>Price presentation</span>
+        <span class="tag locked">Locked</span>
+      </div>
+      <h2 class="d-sentence">$4,200/yr, stated plainly. All in. No add-on billing.</h2>
+      <p class="d-reason">Confidence, not apology. Against an executive-health field that hides its math, stating the number in the open <b>is</b> the premium signal. The price never shrinks, never hides behind a call, and never gains an asterisk.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · The price block</span><span class="dc-src">From the landing-loop close · field figures from jobs/messaging rack, section 8</span></div>
+      <div class="demo-body flush">
+        <div class="price-stage">
+          <span class="pl">Membership · For individuals</span>
+          <p class="big-price">$4,200<small>/yr</small></p>
+          <span class="all-in">All in. No add-on billing.</span>
+          <p class="price-field">Field reference: Human Longevity runs <b>$8,000 to $19,500/yr</b>. Fountain Life starts at <b>$10,500/yr</b>. Wild Health runs <b>$25,000+/yr</b>. Aleron states its number in the open and lets the comparison do the selling.</p>
+        </div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ D10 ============ -->
+<section class="decision on-paper" id="d10">
+  <div class="wrap">
+    <div class="d-head">
+      <div class="d-flags">
+        <span class="d-eyebrow">D10<span class="sep">·</span>Wordmark behavior</span>
+        <span class="tag proposed">Proposed</span>
+      </div>
+      <h2 class="d-sentence">The lockup is lowercase aleron with a superscript bronze MD, on navy or cream only.</h2>
+      <p class="d-reason">Running prose may say Aleron MD, but the lockup never mixes case. <b>No glow, no fade, no recolor outside the palette.</b> The superscript MD is the one place bronze is mandatory rather than optional.</p>
+    </div>
+
+    <figure class="demo">
+      <div class="demo-cap"><span class="dc-k">Demonstration · Three sizes on both grounds</span><span class="dc-src">Lockup grammar from the landing-loop footer mark</span></div>
+      <div class="demo-body flush">
+        <div class="mark-panels">
+          <div class="mark-panel on-navy">
+            <span class="mp-k">On navy #1E2A4A · MD in #D9A765</span>
+            <p class="wordmark wm-xl">aleron<sup>MD</sup></p>
+            <p class="wordmark wm-md">aleron<sup>MD</sup></p>
+            <p class="wordmark wm-sm">aleron<sup>MD</sup></p>
+          </div>
+          <div class="mark-panel on-cream">
+            <span class="mp-k">On cream #EFEAE0 · MD in #CD9453</span>
+            <p class="wordmark wm-xl">aleron<sup>MD</sup></p>
+            <p class="wordmark wm-md">aleron<sup>MD</sup></p>
+            <p class="wordmark wm-sm">aleron<sup>MD</sup></p>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <div class="notthis">
+      <div class="demo-cap"><span class="dc-k">Not this · Misuse, described in text only</span><span class="dc-src">Misuse is never rendered, even as a warning</span></div>
+      <div class="demo-body flush">
+        <ul class="misuse-list">
+          <li><span><b>Mixed-case "Aleron" in the lockup.</b> The lowercase a is the mark. Prose may capitalize, the lockup may not.</span></li>
+          <li><span><b>A glow, drop shadow, or outer halo behind the mark.</b> Glows are the grammar of crypto landing pages.</span></li>
+          <li><span><b>A fade or gradient fill inside the letterforms.</b> The mark is solid ink or solid inverse, nothing in between.</span></li>
+          <li><span><b>Any recolor outside navy, ink, cream inverse, and the bronze MD.</b> No seasonal variants, no partner tints.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="guide-footer">
+  <div class="ft-wrap">
+    <p class="ft-rule">Brand decisions feed the design system. One-way arrow. This guide never specifies tokens.</p>
+    <div class="ft-arrow" aria-label="Brand decisions flow one way into the design system">
+      <span class="node">Brand decisions</span>
+      <span class="arr">&#8594;</span>
+      <span class="node">Design system</span>
+      <span class="arr">&#8594;</span>
+      <span class="node">Surfaces</span>
+    </div>
+    <div class="ft-meta">
+      <span class="wm">aleron<sup>MD</sup></span>
+      <span>Brand Decision Guide · v1 ratification draft</span>
+      <span>10 June 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Height probe for the verification screenshot. Runs only when the page
+   is opened with #measure, never in normal viewing. */
+if (location.hash === '#measure') {
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.title = String(Math.ceil(document.documentElement.scrollHeight));
+    }, 300);
+  });
+}
+</script>
+</body>
+</html>

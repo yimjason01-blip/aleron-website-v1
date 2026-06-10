@@ -1,0 +1,12 @@
+# RATIONALE: demo content provenance, one line per decision
+
+- D1: Thesis quoted verbatim from the-meridian-project.com/brand.html, set over jobs/landing-loop/assets/hero-runner.jpg (the live S1 hero); VISION one-liner quoted in the masthead from loop/VISION.md line 9.
+- D2: PASS crop is jobs/landing-loop/assets/hero-runner.jpg (landing-loop S1 hero); annotations restate the magnetism test from loop/VISION.md verifier test 5; both failure modes rendered as labeled empty frames with text only, per brief.
+- D3: All five specimens are verbatim copy from jobs/messaging/MESSAGING_RACK.md (hero headline section 1, curve headline section 2, "A small kit arrives at your door" plus genetics body and "Step 02 · Genetics" label from section 4).
+- D4: All hex values pulled verbatim from jobs/landing-loop/index.html :root custom properties (lines 24 to 45); the four-roles excerpt reproduces the S9 close head and individual price card from the same file.
+- D5: Block composition (navy anchor block, rust block, navy mono tag) reproduces the landing-loop .hero-art and .ftag grammar over jobs/landing-loop/assets/surfer.jpg; the NOT-THIS pill is a quarantined inline SVG so the page CSS stays radius-free.
+- D6: The three captioned frames are figma-snapshot/hero_2.png, hero_3.png, and hero_4.png (exported brand reference heroes); captions apply the photography rules from the brief and VISION.md tests 4 and 5.
+- D7: The three brand rewrites are verbatim lines from jobs/landing-loop/index.html (signals stream 01, signals stream 02 / experience step 02, and care module "Unlimited physician access"); weak lines are composed counterexamples using the banned filler list; units example follows SHARED_CONTEXT.md ("Lp(a) 72 nmol/L").
+- D8: The dual-path close is excerpted from jobs/landing-loop/index.html section S9 (.paths markup: navy individual card with price, light employer card), with CTA labels per SHARED_CONTEXT.md hard rules.
+- D9: Price block content ($4,200/yr, "All in. No add-on billing.") from the landing-loop S9 individual card; competitor field figures (Human Longevity, Fountain Life, Wild Health) from jobs/messaging/MESSAGING_RACK.md section 8 proof elements.
+- D10: Lockup grammar (lowercase aleron, superscript bronze MD) reproduces the landing-loop footer .ft-mark in type; bronze values #D9A765 on navy and #CD9453 on cream from the landing-loop tokens; misuse row is text only, per brief.
