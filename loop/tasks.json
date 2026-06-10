@@ -37,7 +37,7 @@
         "Y-axis keeps lived-capability labels (Endurance Athlete ... Needs Help)",
         "No browser console errors"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T4",

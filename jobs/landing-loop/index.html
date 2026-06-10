@@ -242,33 +242,99 @@ section { padding-block: var(--amd-layout-section-y); }
 /* ===================== capability curve ===================== */
 .curve-fig {
   border: 1px solid var(--amd-color-border-default);
-  background: var(--amd-color-surface-card);
-  padding: clamp(16px, 3vw, 40px) clamp(8px, 2vw, 32px) clamp(16px, 2.4vw, 28px);
+  background: var(--amd-color-surface-cream);
+  padding: clamp(16px, 3vw, 36px);
 }
-.curve-fig svg { width: 100%; height: auto; display: block; }
+.curve-fig .qol-stage { display: grid; gap: var(--amd-space-4); }
+.chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: var(--amd-color-surface-card); border: 1px solid var(--amd-color-border-subtle); }
+.qol-svg { width: 100%; min-width: 680px; height: auto; display: block; }
 .curve-fig .figcap {
   margin-top: var(--amd-space-4);
   padding: 0 clamp(4px, 1vw, 12px);
   display: flex; justify-content: space-between; gap: var(--amd-space-5); flex-wrap: wrap;
   font-family: var(--amd-font-serif); font-style: italic; font-size: 15px; color: var(--amd-color-text-tertiary);
 }
+.curve-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--amd-space-3);
+}
+.ctl {
+  background: var(--amd-color-surface-card);
+  border: 1px solid var(--amd-color-border-default);
+  padding: 12px 14px 10px;
+}
+.ctl-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--amd-space-3); margin-bottom: var(--amd-space-2); }
+.ctl-name {
+  font-family: var(--amd-font-mono);
+  font-size: 10.5px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+  white-space: nowrap;
+}
+.ctl-val {
+  font-family: var(--amd-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amd-color-text-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.curve-fig input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: rgba(36,36,38,.18);
+  outline: none;
+  margin: 8px 0 5px;
+  cursor: pointer;
+}
+.curve-fig input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  background: var(--amd-color-surface-card);
+  border: 2px solid var(--amd-color-rust);
+  box-shadow: 0 1px 4px rgba(36,36,38,.16);
+  cursor: pointer;
+}
+.curve-fig input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 0;
+  background: var(--amd-color-surface-card);
+  border: 2px solid var(--amd-color-rust);
+  box-shadow: 0 1px 4px rgba(36,36,38,.16);
+  cursor: pointer;
+}
+.curve-fig input[type=range]:focus-visible { box-shadow: var(--amd-focus-ring); }
+.ctl-marks {
+  display: flex;
+  justify-content: space-between;
+  color: var(--amd-color-text-tertiary);
+  font-size: 9.5px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.curve-controls-hint {
+  font-family: var(--amd-font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--amd-color-text-tertiary);
+  margin: 0 clamp(4px, 1vw, 12px);
+}
+@media (max-width: 760px) {
+  .curve-controls { grid-template-columns: 1fr; }
+  .qol-svg { min-width: 560px; }
+}
 .curve-legend { display: flex; gap: var(--amd-space-5) var(--amd-space-6); flex-wrap: wrap; margin-top: var(--amd-space-5); }
 .curve-legend .key { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--amd-color-text-secondary); }
 .curve-legend .key i { width: 22px; height: 0; border-top: 3px solid; display: inline-block; }
-
-/* one elegant draw, once into view */
-.curve-fig .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.curve-fig .late { opacity: 0; transition: opacity 1s var(--amd-ease-standard); }
-.curve-fig.drawn .main-line { transition: stroke-dashoffset 2.4s var(--amd-ease-standard) .2s; stroke-dashoffset: 0; }
-.curve-fig.drawn .lift-line { transition: stroke-dashoffset 2.2s var(--amd-ease-standard) 2.2s; stroke-dashoffset: 0; }
-.curve-fig.drawn .ghost-line { transition-delay: 1.9s; }
-.curve-fig.drawn .mark-event { transition-delay: 1.6s; }
-.curve-fig.drawn .mark-future { transition-delay: 3.6s; }
-.curve-fig.drawn .late { opacity: 1; }
-@media (prefers-reduced-motion: reduce) {
-  .curve-fig .draw { stroke-dashoffset: 0 !important; }
-  .curve-fig .late { opacity: 1 !important; transition: none !important; }
-}
 
 .curve-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); margin-top: clamp(44px, 6vw, 72px); }
 @media (max-width: 880px) { .curve-stages { grid-template-columns: 1fr; } }
@@ -526,96 +592,29 @@ section { padding-block: var(--amd-layout-section-y); }
     </div>
 
     <figure class="curve-fig" id="curveFig">
-      <svg id="curveSvg" viewBox="-44 0 1104 600" role="img" aria-label="Capability plotted against age from 30 to 90. Functional bands run from endurance athlete at the top to needs help at the bottom. A solid line declines and drops sharply at a serious life event near age 61, falling toward dependence. A dashed ghost line shows where the curve would have gone without the event. A bronze line, lifted by early prevention, holds high capability into the late eighties and is marked stronger golden years.">
-        <defs>
-          <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0.55">
-            <stop offset="0%" stop-color="#B9562A"/>
-            <stop offset="45%" stop-color="#CD9453"/>
-            <stop offset="80%" stop-color="#6B5E72"/>
-            <stop offset="100%" stop-color="#1E2A4A"/>
-          </linearGradient>
-          <linearGradient id="zoneFade" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#CD9453" stop-opacity="0.10"/>
-            <stop offset="100%" stop-color="#CD9453" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-
-        <!-- zone tint above the dependency threshold -->
-        <rect x="150" y="80" width="850" height="280" fill="url(#zoneFade)"/>
-
-        <!-- horizontal band edges -->
-        <g stroke="rgba(36,36,38,0.06)">
-          <line x1="150" y1="150" x2="1000" y2="150"/>
-          <line x1="150" y1="220" x2="1000" y2="220"/>
-          <line x1="150" y1="290" x2="1000" y2="290"/>
-          <line x1="150" y1="430" x2="1000" y2="430"/>
-        </g>
-        <!-- dependency threshold -->
-        <line x1="150" y1="360" x2="1000" y2="360" stroke="rgba(36,36,38,0.3)" stroke-dasharray="2 7"/>
-
-        <!-- decade grid -->
-        <g stroke="rgba(36,36,38,0.07)">
-          <line x1="150" y1="80" x2="150" y2="500"/>
-          <line x1="292" y1="80" x2="292" y2="500"/>
-          <line x1="433" y1="80" x2="433" y2="500"/>
-          <line x1="575" y1="80" x2="575" y2="500"/>
-          <line x1="717" y1="80" x2="717" y2="500"/>
-          <line x1="858" y1="80" x2="858" y2="500"/>
-          <line x1="1000" y1="80" x2="1000" y2="500"/>
-          <line x1="150" y1="500" x2="1000" y2="500"/>
-        </g>
-        <g fill="#6E6E72" font-family="'JetBrains Mono',monospace" font-size="13" text-anchor="middle">
-          <text x="150" y="528">30</text>
-          <text x="292" y="528">40</text>
-          <text x="433" y="528">50</text>
-          <text x="575" y="528">60</text>
-          <text x="717" y="528">70</text>
-          <text x="858" y="528">80</text>
-          <text x="1000" y="528">90</text>
-          <text x="575" y="560" letter-spacing="3" font-size="11">AGE</text>
-        </g>
-
-        <!-- functional bands, VO2max mapped to lived capability -->
-        <g fill="#8A8A8E" font-family="'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1">
-          <text x="142" y="119" text-anchor="end">ENDURANCE ATHLETE</text>
-          <text x="142" y="189" text-anchor="end">HARD RECREATION</text>
-          <text x="142" y="259" text-anchor="end">STAIRS WITHOUT THINKING</text>
-          <text x="142" y="329" text-anchor="end">INDEPENDENT DAILY LIFE</text>
-          <text x="142" y="399" text-anchor="end">STRAINED EFFORT</text>
-          <text x="142" y="469" text-anchor="end">NEEDS HELP</text>
-        </g>
-
-        <!-- zone labels -->
-        <text class="late" x="575" y="128" text-anchor="middle" fill="#6E3D1C" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3">DO ANYTHING YOU WANT</text>
-        <text class="late" x="575" y="478" text-anchor="middle" fill="#9A9A9E" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3">DEPENDENT ON OTHERS</text>
-
-        <!-- ghost: where the curve would have gone without the event -->
-        <path class="late ghost-line" d="M 589 224 C 700 290 850 362 1000 404"
-              fill="none" stroke="rgba(36,36,38,0.38)" stroke-width="2" stroke-dasharray="6 7"/>
-
-        <!-- baseline: a serious event drops the whole curve -->
-        <path class="draw main-line" pathLength="1" d="M 150 128 C 380 134 500 162 589 224 C 600 262 604 296 610 312 C 720 372 880 432 1000 452"
-              fill="none" stroke="url(#capGrad)" stroke-width="5" stroke-linecap="round"/>
-
-        <!-- lifted: risk caught early, trained right -->
-        <path class="draw lift-line" pathLength="1" d="M 150 120 C 420 112 640 146 790 196 C 880 226 950 242 1000 252"
-              fill="none" stroke="#CD9453" stroke-width="3.5" stroke-linecap="round"/>
-
-        <!-- event marker -->
-        <g class="late mark-event">
-          <rect x="582" y="217" width="14" height="14" fill="#B9562A"/>
-          <line x1="589" y1="217" x2="589" y2="172" stroke="rgba(36,36,38,0.35)" stroke-width="1"/>
-          <text x="589" y="160" text-anchor="middle" fill="#242426" font-family="'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2">SERIOUS LIFE EVENT</text>
-        </g>
-
-        <!-- future marker -->
-        <g class="late mark-future">
-          <rect x="873" y="215" width="13" height="13" fill="#CD9453"/>
-          <line x1="880" y1="215" x2="880" y2="184" stroke="rgba(36,36,38,0.35)" stroke-width="1"/>
-          <text x="880" y="172" text-anchor="middle" fill="#6E3D1C" font-family="'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2">STRONGER GOLDEN YEARS</text>
-        </g>
-      </svg>
-
+      <div class="qol-stage" id="qolStage">
+        <div class="chart-scroll">
+          <svg id="qolChart" class="qol-svg" viewBox="0 0 1080 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Capability plotted as VO2max in mL/kg/min against age from 30 to 90. Functional bands run from Needs Help at the bottom to Endurance Athlete at the top. The curve drops at a serious life event and lifts under early prevention."></svg>
+        </div>
+        <div class="curve-controls" aria-label="Move your own curve">
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Conditioning</span><span class="ctl-val" id="condVal">Average</span></div>
+            <input type="range" id="cond" min="0" max="100" step="1" value="33" aria-label="Conditioning" />
+            <div class="ctl-marks"><span>Decond</span><span>Avg</span><span>Well</span><span>Elite</span></div>
+          </div>
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Lifestyle</span><span class="ctl-val" id="lifeVal">Maintained</span></div>
+            <input type="range" id="life" min="0" max="100" step="1" value="50" aria-label="Lifestyle" />
+            <div class="ctl-marks"><span>Neglected</span><span>Maintained</span><span>Trained</span></div>
+          </div>
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Underlying Risk</span><span class="ctl-val" id="riskVal">Average</span></div>
+            <input type="range" id="risk" min="0" max="100" step="1" value="50" aria-label="Underlying risk" />
+            <div class="ctl-marks"><span>Low</span><span>Avg</span><span>High</span></div>
+          </div>
+        </div>
+        <p class="curve-controls-hint">Three sliders. Move your own curve in real time.</p>
+      </div>
       <figcaption class="figcap">
         <span>Figure 01. Capability against age, one body, three trajectories.</span>
         <span>VO2max mapped to lived capability.</span>
@@ -1002,6 +1001,248 @@ section { padding-block: var(--amd-layout-section-y); }
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
     targets.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- capability curve: live chart engine ---------- */
+  var curveSvg = document.getElementById('qolChart');
+  var curveStage = document.getElementById('qolStage');
+  if (curveSvg && curveStage) {
+    var TEMPLATES = {
+      elite: { 30: 56, 40: 53, 50: 50, 60: 47, 65: 45, 70: 42, 75: 38, 80: 34, 85: 30, 90: 26 },
+      average: { 30: 38, 40: 35, 50: 33, 60: 31, 65: 29, 70: 26, 75: 22, 80: 19, 85: 16, 90: 13 },
+      deconditioned: { 30: 26, 40: 23, 50: 20, 60: 18, 65: 16, 70: 14, 75: 12, 80: 10, 85: 8, 90: 7 }
+    };
+    var BANDS = [
+      { lo: 55, hi: 62, name: 'Endurance Athlete' },
+      { lo: 40, hi: 55, name: 'Hard Recreation' },
+      { lo: 30, hi: 40, name: 'Stairs Without Thinking' },
+      { lo: 22, hi: 30, name: 'Independent Daily Life' },
+      { lo: 18, hi: 22, name: 'Strained Effort' },
+      { lo: 0, hi: 18, name: 'Needs Help' }
+    ];
+    var BAND_TINTS = [
+      'rgba(185,86,42,0.10)',
+      'rgba(205,148,83,0.13)',
+      'rgba(195,160,125,0.10)',
+      'rgba(150,140,135,0.10)',
+      'rgba(90,95,120,0.12)',
+      'rgba(30,42,74,0.14)'
+    ];
+    var AGE_MIN = 30;
+    var AGE_MAX = 90;
+    var VO2_MIN = 0;
+    var VO2_MAX = 62;
+    var W = 1080;
+    var H = 600;
+    var PAD = { l: 240, r: 34, t: 70, b: 58 };
+    var CW = W - PAD.l - PAD.r;
+    var CH = H - PAD.t - PAD.b;
+
+    function templateAt(tmpl, age) {
+      var ages = Object.keys(tmpl).map(Number).sort(function (a, b) { return a - b; });
+      if (age <= ages[0]) return tmpl[ages[0]];
+      if (age >= ages[ages.length - 1]) return tmpl[ages[ages.length - 1]];
+      for (var i = 0; i < ages.length - 1; i++) {
+        var a0 = ages[i];
+        var a1 = ages[i + 1];
+        if (age >= a0 && age <= a1) {
+          var t = (age - a0) / (a1 - a0);
+          return tmpl[a0] * (1 - t) + tmpl[a1] * t;
+        }
+      }
+      return tmpl[ages[ages.length - 1]];
+    }
+    function conditioningCurve(cond, age) {
+      var dec = templateAt(TEMPLATES.deconditioned, age);
+      var avg = templateAt(TEMPLATES.average, age);
+      var eli = templateAt(TEMPLATES.elite, age);
+      if (cond <= 33) {
+        var t = cond / 33;
+        return dec * (1 - t) + avg * t;
+      }
+      var t2 = (cond - 33) / 67;
+      return avg * (1 - t2) + eli * t2;
+    }
+    function baseCapacity(cond, life, age) {
+      var baseline = conditioningCurve(cond, 30);
+      var unmodified = conditioningCurve(cond, age);
+      var mult = 1.10 - (life / 100) * 0.20;
+      return baseline + mult * (unmodified - baseline);
+    }
+    function effectiveRisk(cond, life, risk) {
+      return 0.55 * (risk / 100) + 0.35 * (1 - cond / 100) + 0.10 * (1 - life / 100);
+    }
+    function lerpAnchors(R, anchors) {
+      if (R <= anchors[0][0]) return anchors[0][1];
+      if (R >= anchors[anchors.length - 1][0]) return anchors[anchors.length - 1][1];
+      for (var i = 0; i < anchors.length - 1; i++) {
+        if (R >= anchors[i][0] && R <= anchors[i + 1][0]) {
+          var t = (R - anchors[i][0]) / (anchors[i + 1][0] - anchors[i][0]);
+          return anchors[i][1] * (1 - t) + anchors[i + 1][1] * t;
+        }
+      }
+      return anchors[anchors.length - 1][1];
+    }
+    function eventParams(R) {
+      return {
+        age: lerpAnchors(R, [[0.05, 84], [0.30, 77], [0.55, 69], [0.80, 61], [0.95, 56]]),
+        drop: 0.20 + 0.18 * R,
+        tau: 2.5
+      };
+    }
+    function eventedCapacity(cond, life, age, ev) {
+      var f = 1;
+      if (age >= ev.age) {
+        var ys = age - ev.age;
+        var residual = ev.drop * 0.72;
+        f = 1 - (residual + (ev.drop - residual) * Math.exp(-ys / ev.tau));
+      }
+      return Math.max(baseCapacity(cond, life, age) * f, 3);
+    }
+    function xAge(age) {
+      return PAD.l + ((age - AGE_MIN) / (AGE_MAX - AGE_MIN)) * CW;
+    }
+    function yV(v) {
+      return PAD.t + (1 - (v - VO2_MIN) / (VO2_MAX - VO2_MIN)) * CH;
+    }
+    function pathFrom(fn, from, to) {
+      var d = '';
+      for (var age = from; age <= to + 0.001; age += 0.5) {
+        var x = xAge(age).toFixed(1);
+        var y = yV(fn(age)).toFixed(1);
+        d += (d ? ' L ' : 'M ') + x + ' ' + y;
+      }
+      return d;
+    }
+    function condLabel(c) {
+      if (c <= 8) return 'Deconditioned';
+      if (c <= 28) return 'Below average';
+      if (c <= 38) return 'Average';
+      if (c <= 60) return 'Above average';
+      if (c <= 75) return 'Well conditioned';
+      if (c <= 92) return 'Highly conditioned';
+      return 'Elite';
+    }
+    function lifeLabel(l) {
+      if (l <= 15) return 'Neglected';
+      if (l <= 40) return 'Below average';
+      if (l <= 60) return 'Maintained';
+      if (l <= 85) return 'Trained';
+      return 'Dialed in';
+    }
+    function riskLabel(r) {
+      if (r <= 15) return 'Very low';
+      if (r <= 35) return 'Low';
+      if (r < 50) return 'Below average';
+      if (r <= 65) return 'Average';
+      if (r <= 85) return 'High';
+      return 'Very high';
+    }
+    function esc(text) {
+      return String(text).replace(/[&<>"']/g, function (ch) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch];
+      });
+    }
+    function renderCurve() {
+      var condEl = document.getElementById('cond');
+      var lifeEl = document.getElementById('life');
+      var riskEl = document.getElementById('risk');
+      var cond = +condEl.value;
+      var life = +lifeEl.value;
+      var risk = +riskEl.value;
+
+      document.getElementById('condVal').textContent = condLabel(cond);
+      document.getElementById('lifeVal').textContent = lifeLabel(life);
+      document.getElementById('riskVal').textContent = riskLabel(risk);
+
+      var R = effectiveRisk(cond, life, risk);
+      var ev = eventParams(R);
+      var liftCond = Math.min(100, cond + 22);
+      var liftLife = Math.min(100, life + 28);
+      var base = function (age) { return baseCapacity(cond, life, age); };
+      var evented = function (age) { return eventedCapacity(cond, life, age, ev); };
+      var lift = function (age) { return Math.max(baseCapacity(liftCond, liftLife, age), base(age)); };
+
+      var s = '';
+      s += '<defs>';
+      s += '<linearGradient id="curveRampGrad" gradientUnits="userSpaceOnUse" x1="' + PAD.l + '" y1="0" x2="' + (W - PAD.r) + '" y2="0">';
+      s += '<stop offset="0%" stop-color="#B9562A"/><stop offset="45%" stop-color="#CD9453"/><stop offset="80%" stop-color="#7A6E7C"/><stop offset="100%" stop-color="#1E2A4A"/>';
+      s += '</linearGradient>';
+      s += '<linearGradient id="curveLiftGrad" gradientUnits="userSpaceOnUse" x1="' + PAD.l + '" y1="0" x2="' + (W - PAD.r) + '" y2="0">';
+      s += '<stop offset="0%" stop-color="#B9562A"/><stop offset="62%" stop-color="#CD9453"/><stop offset="100%" stop-color="#8A6B4E"/>';
+      s += '</linearGradient>';
+      s += '</defs>';
+
+      s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="#FFFEFB"/>';
+      s += '<g class="g-bands">';
+      for (var i = 0; i < BANDS.length; i++) {
+        var b = BANDS[i];
+        var y0 = yV(b.hi);
+        var y1 = yV(b.lo);
+        s += '<rect x="' + PAD.l + '" y="' + y0 + '" width="' + CW + '" height="' + (y1 - y0) + '" fill="' + BAND_TINTS[i] + '"/>';
+        if (i > 0) s += '<line x1="' + PAD.l + '" y1="' + y0 + '" x2="' + (PAD.l + CW) + '" y2="' + y0 + '" stroke="rgba(36,36,38,0.08)" stroke-width="0.5"/>';
+        s += '<text x="' + (PAD.l - 58) + '" y="' + ((y0 + y1) / 2 + 5) + '" text-anchor="end" style="fill:#3F3A32;font-size:14px;font-family:Inter,sans-serif;font-weight:550">' + esc(b.name) + '</text>';
+      }
+      s += '</g>';
+
+      s += '<g stroke="rgba(36,36,38,0.08)">';
+      for (var age = AGE_MIN; age <= AGE_MAX; age += 10) {
+        var gx = xAge(age);
+        s += '<line x1="' + gx + '" y1="' + PAD.t + '" x2="' + gx + '" y2="' + (PAD.t + CH) + '"/>';
+      }
+      s += '</g>';
+      s += '<line x1="' + PAD.l + '" y1="' + yV(22) + '" x2="' + (PAD.l + CW) + '" y2="' + yV(22) + '" stroke="rgba(36,36,38,0.28)" stroke-dasharray="2 7"/>';
+      s += '<g font-family="JetBrains Mono,monospace" font-size="12" fill="#6E6E72">';
+      for (var v = 0; v <= 60; v += 10) {
+        var gy = yV(v);
+        s += '<line x1="' + (PAD.l - 4) + '" y1="' + gy + '" x2="' + PAD.l + '" y2="' + gy + '" stroke="rgba(36,36,38,0.22)"/>';
+        s += '<text x="' + (PAD.l - 18) + '" y="' + (gy + 4) + '" text-anchor="end">' + v + '</text>';
+      }
+      s += '<text x="' + (PAD.l - 14) + '" y="' + (PAD.t - 34) + '" text-anchor="end" fill="#3F3A32" font-weight="600">VO2max</text>';
+      s += '<text x="' + (PAD.l - 14) + '" y="' + (PAD.t - 16) + '" text-anchor="end">mL/kg/min</text>';
+      for (var ax = AGE_MIN; ax <= AGE_MAX; ax += 10) {
+        var tx = xAge(ax);
+        s += '<line x1="' + tx + '" y1="' + (PAD.t + CH) + '" x2="' + tx + '" y2="' + (PAD.t + CH + 4) + '" stroke="rgba(36,36,38,0.22)"/>';
+        s += '<text x="' + tx + '" y="' + (PAD.t + CH + 21) + '" text-anchor="middle">' + ax + '</text>';
+      }
+      s += '<text x="' + (PAD.l + CW / 2) + '" y="' + (PAD.t + CH + 44) + '" text-anchor="middle" letter-spacing="2" font-weight="600">AGE</text>';
+      s += '</g>';
+
+      s += '<g font-family="JetBrains Mono,monospace" font-size="13" letter-spacing="2">';
+      s += '<text x="' + (PAD.l + CW / 2) + '" y="' + yV(48) + '" text-anchor="middle" fill="#6E3D1C">DO ANYTHING YOU WANT</text>';
+      s += '<text x="' + (PAD.l + CW / 2) + '" y="' + yV(9) + '" text-anchor="middle" fill="rgba(30,42,74,0.65)">DEPENDENT ON OTHERS</text>';
+      s += '</g>';
+
+      s += '<path class="curve-ghost" d="' + pathFrom(base, AGE_MIN, AGE_MAX) + '" fill="none" stroke="rgba(36,36,38,0.48)" stroke-width="2.5" stroke-dasharray="7 7"/>';
+      s += '<path class="curve-base" pathLength="1000" d="' + pathFrom(evented, AGE_MIN, AGE_MAX) + '" fill="none" stroke="url(#curveRampGrad)" stroke-width="5" stroke-linecap="round"/>';
+      s += '<path class="curve-lift" pathLength="1000" d="' + pathFrom(lift, AGE_MIN, AGE_MAX) + '" fill="none" stroke="url(#curveLiftGrad)" stroke-width="5.5" stroke-linecap="round"/>';
+
+      var exm = xAge(ev.age);
+      var eym = yV(base(ev.age));
+      var eyDrop = yV(evented(ev.age + 2.2));
+      s += '<g class="g-event">';
+      s += '<line x1="' + exm + '" y1="' + eym + '" x2="' + exm + '" y2="' + eyDrop + '" stroke="#922E20" stroke-width="1.5" stroke-dasharray="3 4"/>';
+      s += '<rect x="' + (exm - 7) + '" y="' + (eym - 7) + '" width="14" height="14" fill="#922E20"/>';
+      s += '<text x="' + Math.min(exm + 16, PAD.l + CW - 178) + '" y="' + (eyDrop + 30) + '" style="fill:#922E20;font-size:13px;font-weight:600;font-family:JetBrains Mono,monospace">Serious Life Event</text>';
+      s += '</g>';
+
+      var lx = xAge(81);
+      var ly = yV(lift(81));
+      s += '<g class="g-lift">';
+      s += '<rect x="' + (lx - 7) + '" y="' + (ly - 7) + '" width="14" height="14" fill="#D9A765"/>';
+      s += '<text x="' + Math.min(lx - 14, PAD.l + CW - 230) + '" y="' + (ly - 42) + '" text-anchor="end" style="fill:#6E3D1C;font-size:13px;font-weight:600;font-family:JetBrains Mono,monospace">Stronger Golden Years</text>';
+      s += '</g>';
+      s += '<rect x="' + PAD.l + '" y="' + PAD.t + '" width="' + CW + '" height="' + CH + '" fill="none" stroke="rgba(36,36,38,0.16)" stroke-width="1"/>';
+
+      curveSvg.innerHTML = s;
+    }
+
+    ['cond', 'life', 'risk'].forEach(function (id) {
+      var input = document.getElementById(id);
+      if (!input) return;
+      input.addEventListener('input', renderCurve);
+    });
+    renderCurve();
   }
 
   /* ---------- hero that breathes: slow layered cross-fade ---------- */
