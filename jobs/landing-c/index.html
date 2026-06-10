@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aleron MD · Physician-led preventive medicine</title>
+<meta name="description" content="Aleron MD is a premium, physician-led preventive medicine practice. Advanced labs, genetics, wearable data, and imaging, read together by one physician, turned into a plan for what matters next." />
+<link rel="icon" href="assets/icon-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   DESIGN SYSTEM TOKENS. Inlined from the deployed token source of truth,
+   /Users/jasonyim/Projects/meridian-landing/design-system/tokens.css
+   via the brand guide. Not forked, not redefined.
+   ===================================================================== */
+:root {
+  color-scheme: light;
+
+  --amd-logo-icon-fade: linear-gradient(135deg, #B9562A 0%, #80443B 42%, #1E2A4A 100%);
+  --amd-reference-warm-fade: linear-gradient(180deg, #A35520 0%, #532F4B 43%, #23315F 93%);
+
+  --amd-color-surface-page: #FFFEFB;
+  --amd-color-surface-paper: #F6F4EE;
+  --amd-color-surface-cream: #EFEAE0;
+  --amd-color-surface-bone: #ECE5D6;
+  --amd-color-surface-dark: #242426;
+  --amd-color-surface-deep: #232426;
+  --amd-color-surface-card: #FFFFFF;
+  --amd-color-text-primary: #242426;
+  --amd-color-text-secondary: #565659;
+  --amd-color-text-secondary-on-paper: #4D4D50;
+  --amd-color-text-tertiary: #6E6E72;
+  --amd-color-text-accent: #6E3D1C;
+  --amd-color-text-accent-on-dark: #D9A765;
+  --amd-color-text-inverse: #FFFEFB;
+  --amd-color-text-inverse-muted: rgba(255, 254, 251, 0.78);
+  --amd-color-border-default: rgba(36, 36, 38, 0.14);
+  --amd-color-border-subtle: rgba(36, 36, 38, 0.08);
+  --amd-color-border-inverse: rgba(255, 254, 251, 0.22);
+  --amd-color-rust: #B9562A;
+  --amd-color-gold-reference: #CD9453;
+  --amd-color-navy: #1E2A4A;
+  --amd-color-grid: #DED8CC;
+
+  --amd-action-primary-bg: var(--amd-color-surface-dark);
+  --amd-action-primary-text: var(--amd-color-text-inverse);
+  --amd-action-primary-hover-bg: #8E3F1E;
+  --amd-focus-ring: 0 0 0 3px rgba(185, 86, 42, 0.22);
+
+  --amd-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --amd-font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --amd-font-serif: "Source Serif 4", Georgia, serif;
+  --amd-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --amd-type-display-size: clamp(56px, 8vw, 108px);
+  --amd-type-display-line: 0.97;
+  --amd-type-display-track: -0.045em;
+  --amd-type-h2-size: clamp(34px, 4.7vw, 62px);
+  --amd-type-h2-line: 1.04;
+  --amd-type-h2-track: -0.032em;
+  --amd-type-h3-size: clamp(24px, 2.8vw, 36px);
+  --amd-type-h3-line: 1.12;
+  --amd-type-h3-track: -0.024em;
+  --amd-type-body-lg-size: clamp(18px, 1.4vw, 22px);
+  --amd-type-body-lg-line: 1.55;
+  --amd-type-body-size: 16px;
+  --amd-type-body-line: 1.6;
+  --amd-type-label-size: 12px;
+  --amd-type-label-track: 0.16em;
+
+  --amd-space-1: 4px;  --amd-space-2: 8px;  --amd-space-3: 12px;
+  --amd-space-4: 16px; --amd-space-5: 24px; --amd-space-6: 32px;
+  --amd-space-7: 48px; --amd-space-8: 64px; --amd-space-9: 96px; --amd-space-10: 128px;
+
+  --amd-layout-max: 1240px;
+  --amd-layout-measure: 68ch;
+  --amd-layout-gutter: clamp(20px, 4vw, 64px);
+  --amd-layout-section-y: clamp(80px, 10vw, 148px);
+
+  --amd-shadow-soft: 0 18px 48px -30px rgba(36, 36, 38, 0.28);
+
+  --amd-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --amd-duration-fast: 160ms;
+  --amd-duration-standard: 280ms;
+  --amd-duration-slow: 520ms;
+}
+
+/* ===================== base ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--amd-color-surface-page);
+  color: var(--amd-color-text-primary);
+  font-family: var(--amd-font-body);
+  font-size: var(--amd-type-body-size);
+  line-height: var(--amd-type-body-line);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p, figure { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; }
+
+.wrap { max-width: var(--amd-layout-max); margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+.measure { max-width: var(--amd-layout-measure); }
+
+.eyebrow {
+  font-family: var(--amd-font-mono);
+  font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track);
+  text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+.eyebrow .n { color: var(--amd-color-text-tertiary); margin-right: var(--amd-space-3); }
+.eyebrow.on-dark { color: var(--amd-color-text-accent-on-dark); }
+.on-dark .n, .eyebrow.on-dark .n { color: var(--amd-color-text-inverse-muted); }
+
+h1, h2, h3 { font-family: var(--amd-font-display); font-weight: 600; }
+.display { font-size: var(--amd-type-display-size); line-height: var(--amd-type-display-line); letter-spacing: var(--amd-type-display-track); }
+.h2 { font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line); letter-spacing: var(--amd-type-h2-track); }
+.h3 { font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track); }
+.lede { font-family: var(--amd-font-serif); font-size: clamp(19px, 1.6vw, 23px); line-height: 1.55; color: var(--amd-color-text-secondary); }
+.serif { font-family: var(--amd-font-serif); }
+.mono { font-family: var(--amd-font-mono); }
+.muted { color: var(--amd-color-text-secondary); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 0 28px;
+  border: 1px solid currentColor; border-radius: 0;
+  font-family: var(--amd-font-body); font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  text-decoration: none; cursor: pointer;
+  transition: background var(--amd-duration-standard) var(--amd-ease-standard),
+              border-color var(--amd-duration-standard) var(--amd-ease-standard),
+              color var(--amd-duration-standard) var(--amd-ease-standard);
+}
+.btn:focus-visible { outline: none; box-shadow: var(--amd-focus-ring); }
+.btn-primary { background: var(--amd-action-primary-bg); color: var(--amd-action-primary-text); border-color: var(--amd-action-primary-bg); }
+.btn-primary:hover { background: var(--amd-action-primary-hover-bg); border-color: var(--amd-action-primary-hover-bg); }
+.btn-ghost { background: transparent; color: var(--amd-color-text-primary); border-color: rgba(36,36,38,.34); }
+.btn-ghost:hover { border-color: var(--amd-color-text-primary); }
+.btn-ghost.on-dark { color: var(--amd-color-text-inverse); border-color: var(--amd-color-border-inverse); }
+.btn-ghost.on-dark:hover { border-color: var(--amd-color-text-inverse); }
+
+.text-link {
+  font-family: var(--amd-font-body); font-weight: 600; font-size: 15px;
+  color: var(--amd-color-text-accent); text-decoration: none;
+  border-bottom: 1px solid rgba(110, 61, 28, .4);
+  padding-bottom: 2px;
+  transition: border-color var(--amd-duration-fast) var(--amd-ease-standard);
+}
+.text-link:hover { border-color: var(--amd-color-text-accent); }
+
+section { padding-block: var(--amd-layout-section-y); }
+.sec-head { display: grid; gap: var(--amd-space-4); margin-bottom: clamp(40px, 6vw, 80px); }
+.sec-head .h2 { max-width: 22ch; }
+
+/* ===================== reveal motion ===================== */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--amd-ease-standard), transform .8s var(--amd-ease-standard); }
+.reveal.in-view { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .12s; }
+.reveal.d2 { transition-delay: .24s; }
+.reveal.d3 { transition-delay: .36s; }
+.img-reveal { overflow: hidden; }
+.img-reveal img { clip-path: inset(0 0 100% 0); transform: scale(1.05); transition: clip-path 1.1s var(--amd-ease-standard), transform 1.4s var(--amd-ease-standard); }
+.img-reveal.in-view img { clip-path: inset(0 0 0 0); transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .img-reveal img { opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important; }
+}
+
+/* ===================== header ===================== */
+.site-header {
+  position: sticky; top: 0; z-index: 80;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--amd-space-5);
+  min-height: 72px;
+  padding: var(--amd-space-3) var(--amd-layout-gutter);
+  background: rgba(255, 254, 251, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--amd-color-border-subtle);
+}
+.site-header .brand img { height: 20px; width: auto; }
+.site-header nav { display: flex; gap: var(--amd-space-6); }
+.site-header nav a {
+  text-decoration: none; color: var(--amd-color-text-secondary);
+  font-size: 13px; font-weight: 500; letter-spacing: .01em;
+  transition: color var(--amd-duration-fast) var(--amd-ease-standard);
+}
+.site-header nav a:hover { color: var(--amd-color-text-primary); }
+.site-header .actions { display: flex; gap: var(--amd-space-3); align-items: center; }
+.site-header .btn { min-height: 42px; padding: 0 20px; }
+@media (max-width: 960px) { .site-header nav { display: none; } }
+
+/* ===================== hero ===================== */
+.hero { padding-block: 0; border-bottom: 1px solid var(--amd-color-border-subtle); }
+.hero-inner {
+  display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  min-height: min(86vh, 880px);
+  max-width: 1480px; margin-inline: auto;
+}
+.hero-copy {
+  display: flex; flex-direction: column; justify-content: center;
+  gap: var(--amd-space-6);
+  padding: clamp(56px, 9vw, 140px) clamp(24px, 4.5vw, 88px);
+}
+.hero-copy h1 { max-width: 12ch; }
+.hero-copy .lede { max-width: 46ch; color: var(--amd-color-text-secondary); }
+.hero-cta { display: flex; align-items: center; gap: var(--amd-space-5); flex-wrap: wrap; }
+.hero-meta { font-family: var(--amd-font-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+
+.hero-art { position: relative; min-height: 460px; overflow: hidden; background: var(--amd-color-navy); }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 2.2s var(--amd-ease-standard); }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+.hero-slide.active { opacity: 1; }
+.hero-slide.active img { animation: breathe 16s var(--amd-ease-standard) both; }
+@keyframes breathe { from { transform: scale(1.08); } to { transform: scale(1.0); } }
+.hero-art .blk { position: absolute; z-index: 3; }
+.hero-art .blk-navy { left: -1px; bottom: 16%; width: 30%; height: 11%; background: var(--amd-color-navy); opacity: .92; }
+.hero-art .blk-rust { left: 14%; bottom: 9%; width: 38%; height: 8%; background: var(--amd-color-rust); opacity: .78; }
+.hero-art .scrim { position: absolute; inset: 0; z-index: 2; background: linear-gradient(200deg, rgba(30,42,74,0) 55%, rgba(30,42,74,.38) 100%); }
+.hero-art .slide-dots { position: absolute; z-index: 4; right: var(--amd-space-6); bottom: var(--amd-space-6); display: flex; gap: 10px; }
+.slide-dots button {
+  width: 12px; height: 12px; padding: 0; border: 1px solid rgba(255,254,251,.8);
+  background: transparent; cursor: pointer; border-radius: 0;
+}
+.slide-dots button.active { background: var(--amd-color-text-inverse); }
+.slide-dots button:focus-visible { outline: none; box-shadow: var(--amd-focus-ring); }
+@media (prefers-reduced-motion: reduce) { .hero-slide.active img { animation: none; } }
+@media (max-width: 880px) {
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; }
+  .hero-art { min-height: 64vw; order: -1; }
+}
+
+/* ===================== capability curve ===================== */
+.curve-fig {
+  border: 1px solid var(--amd-color-border-default);
+  background: var(--amd-color-surface-card);
+  padding: clamp(16px, 3vw, 40px) clamp(8px, 2vw, 32px) clamp(16px, 2.4vw, 28px);
+}
+.curve-fig svg { width: 100%; height: auto; display: block; }
+.curve-fig .figcap {
+  margin-top: var(--amd-space-4);
+  padding: 0 clamp(4px, 1vw, 12px);
+  display: flex; justify-content: space-between; gap: var(--amd-space-5); flex-wrap: wrap;
+  font-family: var(--amd-font-serif); font-style: italic; font-size: 15px; color: var(--amd-color-text-tertiary);
+}
+.curve-legend { display: flex; gap: var(--amd-space-5) var(--amd-space-6); flex-wrap: wrap; margin-top: var(--amd-space-5); }
+.curve-legend .key { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--amd-color-text-secondary); }
+.curve-legend .key i { width: 22px; height: 0; border-top: 3px solid; display: inline-block; }
+
+/* one elegant draw, once into view */
+.curve-fig .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.curve-fig .late { opacity: 0; transition: opacity 1s var(--amd-ease-standard); }
+.curve-fig.drawn .main-line { transition: stroke-dashoffset 2.4s var(--amd-ease-standard) .2s; stroke-dashoffset: 0; }
+.curve-fig.drawn .lift-line { transition: stroke-dashoffset 2.2s var(--amd-ease-standard) 2.2s; stroke-dashoffset: 0; }
+.curve-fig.drawn .ghost-line { transition-delay: 1.9s; }
+.curve-fig.drawn .mark-event { transition-delay: 1.6s; }
+.curve-fig.drawn .mark-future { transition-delay: 3.6s; }
+.curve-fig.drawn .late { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .curve-fig .draw { stroke-dashoffset: 0 !important; }
+  .curve-fig .late { opacity: 1 !important; transition: none !important; }
+}
+
+.curve-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); margin-top: clamp(44px, 6vw, 72px); }
+@media (max-width: 880px) { .curve-stages { grid-template-columns: 1fr; } }
+.stage { border-top: 2px solid var(--amd-color-rust); padding-top: var(--amd-space-4); }
+.stage .k { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.stage h3 { font-size: clamp(19px, 1.8vw, 23px); letter-spacing: -.018em; margin: var(--amd-space-3) 0; max-width: 24ch; }
+.stage p { font-size: 15px; color: var(--amd-color-text-secondary); }
+.curve-link { margin-top: clamp(36px, 5vw, 56px); }
+
+/* ===================== signals ===================== */
+.signals {
+  background:
+    repeating-linear-gradient(0deg, rgba(36,36,38,0.045) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(90deg, rgba(36,36,38,0.045) 0 1px, transparent 1px 56px),
+    var(--amd-color-surface-paper);
+}
+.signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); }
+@media (max-width: 980px) { .signal-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .signal-grid { grid-template-columns: 1fr; } }
+.signal { padding: clamp(24px, 2.6vw, 40px); border-left: 1px solid var(--amd-color-border-default); display: grid; gap: var(--amd-space-3); align-content: start; }
+.signal:first-child { border-left: 0; }
+@media (max-width: 980px) {
+  .signal { border-left: 0; border-top: 1px solid var(--amd-color-border-default); }
+  .signal:first-child { border-top: 0; }
+  .signal:nth-child(2) { border-top: 0; border-left: 1px solid var(--amd-color-border-default); }
+  .signal:nth-child(4) { border-left: 1px solid var(--amd-color-border-default); }
+}
+@media (max-width: 560px) {
+  .signal:nth-child(2) { border-top: 1px solid var(--amd-color-border-default); border-left: 0; }
+  .signal:nth-child(4) { border-left: 0; }
+}
+.signal .idx { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .16em; color: var(--amd-color-text-tertiary); }
+.signal h3 { font-size: 21px; letter-spacing: -.018em; }
+.signal p { font-size: 14.5px; color: var(--amd-color-text-secondary); }
+.signal .tick { width: 12px; height: 12px; background: var(--amd-color-rust); }
+.signal:nth-child(2) .tick { background: var(--amd-color-gold-reference); }
+.signal:nth-child(3) .tick { background: var(--amd-color-navy); }
+.signal:nth-child(4) .tick { background: #80443B; }
+
+/* ===================== experience: stepped reveal ===================== */
+.exp-steps { display: grid; gap: clamp(72px, 9vw, 128px); }
+.exp-step {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 5vw, 80px); align-items: center;
+}
+.exp-step:nth-child(even) .exp-media { order: -1; }
+@media (max-width: 880px) {
+  .exp-step { grid-template-columns: 1fr; gap: var(--amd-space-6); }
+  .exp-step:nth-child(even) .exp-media { order: 0; }
+  .exp-step .exp-media { order: -1; }
+}
+.exp-media { position: relative; }
+.exp-media img { width: 100%; height: clamp(320px, 36vw, 520px); object-fit: cover; }
+.exp-media .ftag {
+  position: absolute; left: 0; bottom: 0;
+  background: var(--amd-color-navy); color: var(--amd-color-text-inverse);
+  font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  padding: 10px 16px;
+}
+.exp-copy { display: grid; gap: var(--amd-space-4); align-content: center; }
+.exp-copy .k { font-family: var(--amd-font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.exp-copy h3 { max-width: 16ch; }
+.exp-copy .body { color: var(--amd-color-text-secondary); max-width: 52ch; }
+.exp-proof { border-top: 1px solid var(--amd-color-border-default); padding-top: var(--amd-space-4); margin-top: var(--amd-space-2); display: grid; gap: var(--amd-space-3); }
+.exp-proof .plabel { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.logo-wall { display: flex; flex-wrap: wrap; gap: var(--amd-space-2) var(--amd-space-4); }
+.logo-wall span { font-family: var(--amd-font-mono); font-size: 12.5px; letter-spacing: .06em; color: var(--amd-color-text-secondary); border: 1px solid var(--amd-color-border-default); padding: 6px 12px; }
+.stat-pair { display: flex; gap: var(--amd-space-7); flex-wrap: wrap; }
+.stat-pair .sp b { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(28px, 2.6vw, 38px); letter-spacing: -.025em; display: block; line-height: 1.05; }
+.stat-pair .sp span { font-size: 13px; color: var(--amd-color-text-tertiary); }
+.marker-groups { display: grid; gap: 6px; font-size: 13.5px; color: var(--amd-color-text-secondary); }
+.marker-groups .mg { display: grid; grid-template-columns: 168px 1fr; gap: var(--amd-space-3); padding: 7px 0; border-bottom: 1px solid var(--amd-color-border-subtle); }
+.marker-groups .mg:last-child { border-bottom: 0; }
+.marker-groups .mg b { font-family: var(--amd-font-mono); font-weight: 500; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--amd-color-text-accent); padding-top: 2px; }
+@media (max-width: 520px) { .marker-groups .mg { grid-template-columns: 1fr; gap: 2px; } }
+.split-tags { display: flex; gap: var(--amd-space-3); flex-wrap: wrap; }
+.split-tags span { font-family: var(--amd-font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 8px 14px; border: 1px solid var(--amd-color-border-default); color: var(--amd-color-text-secondary); }
+.split-tags span b { color: var(--amd-color-text-primary); font-weight: 500; }
+.exp-cta { margin-top: clamp(48px, 6vw, 72px); text-align: center; }
+
+/* ===================== continuous care ===================== */
+.care { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); }
+.care .lede { color: var(--amd-color-text-inverse-muted); }
+.care-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 80px); align-items: end; margin-bottom: clamp(44px, 6vw, 80px); }
+@media (max-width: 880px) { .care-head { grid-template-columns: 1fr; } }
+.care-head .img-reveal img { width: 100%; height: clamp(260px, 26vw, 380px); object-fit: cover; }
+.care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 3.5vw, 48px) clamp(24px, 3vw, 44px); }
+@media (max-width: 980px) { .care-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .care-grid { grid-template-columns: 1fr; } }
+.care-mod { border-top: 2px solid var(--amd-color-gold-reference); padding-top: var(--amd-space-4); }
+.care-mod h3 { font-size: 18.5px; letter-spacing: -.015em; margin-bottom: var(--amd-space-2); }
+.care-mod p { font-size: 14.5px; color: var(--amd-color-text-inverse-muted); }
+
+/* ===================== human moment / voice note ===================== */
+.voice { background: var(--amd-reference-warm-fade); color: var(--amd-color-text-inverse); padding-block: clamp(100px, 13vw, 180px); }
+.voice-inner { display: grid; gap: clamp(44px, 6vw, 72px); max-width: 980px; margin-inline: auto; }
+.voice blockquote { margin: 0; font-family: var(--amd-font-serif); font-size: clamp(26px, 3.4vw, 44px); line-height: 1.32; font-weight: 400; }
+.voice blockquote .open { color: var(--amd-color-text-accent-on-dark); }
+.voice .attr { margin-top: var(--amd-space-5); font-family: var(--amd-font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); }
+
+.note-card {
+  background: rgba(255, 254, 251, 0.97); color: var(--amd-color-text-primary);
+  border: 1px solid rgba(36,36,38,.2);
+  box-shadow: var(--amd-shadow-soft);
+  padding: clamp(20px, 3vw, 32px);
+  display: grid; grid-template-columns: auto 1fr auto; gap: clamp(16px, 2.4vw, 28px); align-items: center;
+  max-width: 720px;
+}
+@media (max-width: 560px) { .note-card { grid-template-columns: auto 1fr; } .note-card .vn-time { grid-column: 2; justify-self: end; } }
+.vn-btn {
+  width: 60px; height: 60px; border: 0; border-radius: 0; cursor: pointer;
+  background: var(--amd-color-navy); color: var(--amd-color-text-inverse);
+  display: grid; place-items: center;
+  transition: background var(--amd-duration-standard) var(--amd-ease-standard);
+}
+.vn-btn:hover { background: var(--amd-action-primary-hover-bg); }
+.vn-btn:focus-visible { outline: none; box-shadow: var(--amd-focus-ring); }
+.vn-btn .ic-play { width: 0; height: 0; border-left: 16px solid currentColor; border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+.vn-btn .ic-pause { display: none; gap: 5px; }
+.vn-btn .ic-pause i { width: 5px; height: 20px; background: currentColor; display: block; }
+.note-card.playing .ic-play { display: none; }
+.note-card.playing .ic-pause { display: flex; }
+.vn-mid { display: grid; gap: 10px; min-width: 0; }
+.vn-meta { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--amd-color-text-tertiary); display: flex; gap: var(--amd-space-3); flex-wrap: wrap; }
+.vn-meta b { color: var(--amd-color-text-accent); font-weight: 500; }
+.vn-wave { display: flex; align-items: center; gap: 3px; height: 36px; min-width: 0; overflow: hidden; }
+.vn-wave i { flex: 1 1 2px; min-width: 1.5px; max-width: 4px; background: rgba(36,36,38,.22); display: block; transition: background .2s linear; }
+.vn-wave i.played { background: var(--amd-color-rust); }
+.vn-time { font-family: var(--amd-font-mono); font-size: 13px; color: var(--amd-color-text-secondary); white-space: nowrap; }
+.vn-caption { font-family: var(--amd-font-serif); font-style: italic; font-size: 15px; color: var(--amd-color-text-inverse-muted); max-width: 52ch; }
+
+/* ===================== proof ===================== */
+.proof-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+@media (max-width: 880px) { .proof-grid { grid-template-columns: 1fr; } }
+.proof-left { position: sticky; top: 120px; display: grid; gap: var(--amd-space-5); }
+@media (max-width: 880px) { .proof-left { position: static; } }
+.proof-left .h2 { max-width: 16ch; }
+.stat-rack { display: grid; }
+.stat-row { display: grid; grid-template-columns: 200px 1fr; gap: clamp(16px, 3vw, 44px); padding: clamp(20px, 2.6vw, 32px) 0; border-top: 1px solid var(--amd-color-border-default); align-items: baseline; }
+.stat-row:last-of-type { border-bottom: 1px solid var(--amd-color-border-default); }
+@media (max-width: 560px) { .stat-row { grid-template-columns: 1fr; gap: var(--amd-space-2); } }
+.stat-row .fig {
+  font-family: var(--amd-font-display); font-weight: 600;
+  font-size: clamp(40px, 4.6vw, 64px); letter-spacing: -.035em; line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--amd-color-text-primary);
+}
+.stat-row .fig small { font-size: .52em; font-weight: 600; letter-spacing: -.01em; color: var(--amd-color-text-accent); }
+.stat-row p { font-size: 15px; color: var(--amd-color-text-secondary); max-width: 44ch; }
+.proof-fine { margin-top: var(--amd-space-5); font-size: 12.5px; line-height: 1.6; color: var(--amd-color-text-tertiary); max-width: 62ch; }
+.proof-pull { margin-top: clamp(48px, 6vw, 80px); border-left: 3px solid var(--amd-color-rust); padding-left: clamp(20px, 3vw, 36px); }
+.proof-pull p { font-family: var(--amd-font-serif); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.45; color: var(--amd-color-text-primary); max-width: 36ch; }
+
+/* ===================== dual-path close ===================== */
+.close { background: var(--amd-color-surface-paper); }
+.close-photo { margin-bottom: clamp(44px, 6vw, 80px); }
+.close-photo img { width: 100%; height: clamp(280px, 32vw, 460px); object-fit: cover; object-position: 50% 42%; }
+.close-head { display: grid; gap: var(--amd-space-4); margin-bottom: clamp(40px, 5vw, 64px); }
+.close-head .h2 { max-width: 20ch; }
+.paths { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(20px, 2.5vw, 32px); }
+@media (max-width: 820px) { .paths { grid-template-columns: 1fr; } }
+.path { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); padding: clamp(28px, 3.6vw, 56px); display: grid; gap: var(--amd-space-5); align-content: start; }
+.path.primary { background: var(--amd-color-surface-card); border-color: rgba(36,36,38,.22); }
+.path .plabel { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.path h3 { font-size: clamp(22px, 2.2vw, 30px); letter-spacing: -.02em; max-width: 18ch; }
+.path p { color: var(--amd-color-text-secondary); font-size: 15.5px; max-width: 44ch; }
+.path .price { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(22px, 2vw, 28px); letter-spacing: -.02em; }
+.path .price small { display: block; font-family: var(--amd-font-mono); font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--amd-color-text-tertiary); margin-top: 6px; }
+.path .cta-row { margin-top: var(--amd-space-2); }
+.close-fine { margin-top: var(--amd-space-6); font-size: 13px; color: var(--amd-color-text-tertiary); max-width: 70ch; }
+
+/* ===================== footer ===================== */
+.site-footer {
+  position: relative; overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,254,251,0.035) 0 1px, transparent 1px 96px),
+    linear-gradient(195deg, #1E2A4A 0%, #232C4B 38%, #2C1F29 68%, #532F4B 88%, #7A4226 112%);
+  color: var(--amd-color-text-inverse);
+  padding: clamp(80px, 10vw, 140px) var(--amd-layout-gutter) var(--amd-space-7);
+}
+.ft-wrap { max-width: var(--amd-layout-max); margin-inline: auto; }
+.ft-mark { font-family: var(--amd-font-display); font-weight: 600; letter-spacing: -.045em; font-size: clamp(72px, 12vw, 168px); line-height: .9; }
+.ft-mark sup { font-size: .3em; letter-spacing: .02em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
+.ft-tag { margin-top: var(--amd-space-5); font-family: var(--amd-font-serif); font-size: clamp(16px, 1.5vw, 20px); color: var(--amd-color-text-inverse-muted); max-width: 48ch; }
+.ft-cols { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)) auto; gap: clamp(28px, 4vw, 64px); margin-top: clamp(48px, 6vw, 80px); padding-top: clamp(32px, 4vw, 56px); border-top: 1px solid var(--amd-color-border-inverse); }
+@media (max-width: 880px) { .ft-cols { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .ft-cols { grid-template-columns: 1fr; } }
+.ft-col h4 { font-family: var(--amd-font-mono); font-weight: 500; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-accent-on-dark); margin: 0 0 var(--amd-space-4); }
+.ft-col ul { display: grid; gap: var(--amd-space-3); }
+.ft-col a { text-decoration: none; color: var(--amd-color-text-inverse-muted); font-size: 14px; transition: color var(--amd-duration-fast) var(--amd-ease-standard); }
+.ft-col a:hover { color: var(--amd-color-text-inverse); }
+.ft-col li { color: var(--amd-color-text-inverse-muted); font-size: 14px; }
+.ft-actions { display: grid; gap: var(--amd-space-3); align-content: start; justify-items: start; }
+.ft-actions .btn-primary { background: var(--amd-color-text-inverse); color: var(--amd-color-text-primary); border-color: var(--amd-color-text-inverse); }
+.ft-actions .btn-primary:hover { background: var(--amd-color-gold-reference); border-color: var(--amd-color-gold-reference); color: var(--amd-color-surface-dark); }
+.ft-actions a.login { font-size: 13px; color: var(--amd-color-text-inverse-muted); text-decoration: none; }
+.ft-actions a.login:hover { color: var(--amd-color-text-inverse); }
+.ft-legal { display: flex; justify-content: space-between; gap: var(--amd-space-4); flex-wrap: wrap; margin-top: clamp(48px, 6vw, 72px); padding-top: var(--amd-space-5); border-top: 1px solid var(--amd-color-border-inverse); font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .08em; color: var(--amd-color-text-inverse-muted); }
+.ft-legal a { color: inherit; text-decoration: none; }
+.ft-legal a:hover { color: var(--amd-color-text-inverse); }
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="aleron MD home"><img src="assets/wordmark-ink.png" alt="aleron MD" /></a>
+  <nav aria-label="Primary">
+    <a href="#curve">The curve</a>
+    <a href="#signals">The signals</a>
+    <a href="#experience">The experience</a>
+    <a href="#proof">Proof</a>
+    <a href="#apply">For employers</a>
+  </nav>
+  <div class="actions">
+    <a class="btn btn-ghost" href="#">Log In</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================ S1 HERO ============================ -->
+<section class="hero" aria-label="Aleron MD">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1 class="display reveal">Your best days are still ahead.</h1>
+      <p class="lede reveal d1">Physician-led preventive medicine, powered by AI and your own genetic, lab, and wearable data. One physician who sees the whole picture, and a plan for what matters next.</p>
+      <div class="hero-cta reveal d2">
+        <a class="btn btn-primary" href="#apply">Apply for Membership</a>
+        <a class="text-link" href="#curve">Start with the curve</a>
+      </div>
+      <p class="hero-meta reveal d3">California · Texas · Membership opens in waves</p>
+    </div>
+    <div class="hero-art" aria-label="Members in motion: a trail runner at the coast, a surfer on a wave">
+      <div class="hero-slide active"><img src="assets/hero-runner.jpg" alt="A mid-life man trail running above a coastline at first light" /></div>
+      <div class="hero-slide"><img src="assets/surfer.jpg" alt="A silver-haired man carving a wave on a surfboard" /></div>
+      <span class="scrim" aria-hidden="true"></span>
+      <span class="blk blk-navy" aria-hidden="true"></span>
+      <span class="blk blk-rust" aria-hidden="true"></span>
+      <div class="slide-dots" role="tablist" aria-label="Hero photos">
+        <button type="button" class="active" data-slide="0" aria-label="Photo 1, runner"></button>
+        <button type="button" data-slide="1" aria-label="Photo 2, surfer"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S2 CAPABILITY CURVE ============================ -->
+<section id="curve">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="n">01</span>The capability curve</div>
+      <h2 class="h2 reveal d1">The story of your future is written on top of this curve.</h2>
+      <p class="lede measure reveal d2">One line, from age 30 to 90. Watch what it does.</p>
+    </div>
+
+    <figure class="curve-fig" id="curveFig">
+      <svg id="curveSvg" viewBox="-44 0 1104 600" role="img" aria-label="Capability plotted against age from 30 to 90. Functional bands run from endurance athlete at the top to needs help at the bottom. A solid line declines and drops sharply at a serious life event near age 61, falling toward dependence. A dashed ghost line shows where the curve would have gone without the event. A bronze line, lifted by early prevention, holds high capability into the late eighties and is marked stronger golden years.">
+        <defs>
+          <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0.55">
+            <stop offset="0%" stop-color="#B9562A"/>
+            <stop offset="45%" stop-color="#CD9453"/>
+            <stop offset="80%" stop-color="#6B5E72"/>
+            <stop offset="100%" stop-color="#1E2A4A"/>
+          </linearGradient>
+          <linearGradient id="zoneFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#CD9453" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#CD9453" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- zone tint above the dependency threshold -->
+        <rect x="150" y="80" width="850" height="280" fill="url(#zoneFade)"/>
+
+        <!-- horizontal band edges -->
+        <g stroke="rgba(36,36,38,0.06)">
+          <line x1="150" y1="150" x2="1000" y2="150"/>
+          <line x1="150" y1="220" x2="1000" y2="220"/>
+          <line x1="150" y1="290" x2="1000" y2="290"/>
+          <line x1="150" y1="430" x2="1000" y2="430"/>
+        </g>
+        <!-- dependency threshold -->
+        <line x1="150" y1="360" x2="1000" y2="360" stroke="rgba(36,36,38,0.3)" stroke-dasharray="2 7"/>
+
+        <!-- decade grid -->
+        <g stroke="rgba(36,36,38,0.07)">
+          <line x1="150" y1="80" x2="150" y2="500"/>
+          <line x1="292" y1="80" x2="292" y2="500"/>
+          <line x1="433" y1="80" x2="433" y2="500"/>
+          <line x1="575" y1="80" x2="575" y2="500"/>
+          <line x1="717" y1="80" x2="717" y2="500"/>
+          <line x1="858" y1="80" x2="858" y2="500"/>
+          <line x1="1000" y1="80" x2="1000" y2="500"/>
+          <line x1="150" y1="500" x2="1000" y2="500"/>
+        </g>
+        <g fill="#6E6E72" font-family="'JetBrains Mono',monospace" font-size="13" text-anchor="middle">
+          <text x="150" y="528">30</text>
+          <text x="292" y="528">40</text>
+          <text x="433" y="528">50</text>
+          <text x="575" y="528">60</text>
+          <text x="717" y="528">70</text>
+          <text x="858" y="528">80</text>
+          <text x="1000" y="528">90</text>
+          <text x="575" y="560" letter-spacing="3" font-size="11">AGE</text>
+        </g>
+
+        <!-- functional bands, VO2max mapped to lived capability -->
+        <g fill="#8A8A8E" font-family="'JetBrains Mono',monospace" font-size="10.5" letter-spacing="1">
+          <text x="142" y="119" text-anchor="end">ENDURANCE ATHLETE</text>
+          <text x="142" y="189" text-anchor="end">HARD RECREATION</text>
+          <text x="142" y="259" text-anchor="end">STAIRS WITHOUT THINKING</text>
+          <text x="142" y="329" text-anchor="end">INDEPENDENT DAILY LIFE</text>
+          <text x="142" y="399" text-anchor="end">STRAINED EFFORT</text>
+          <text x="142" y="469" text-anchor="end">NEEDS HELP</text>
+        </g>
+
+        <!-- zone labels -->
+        <text class="late" x="575" y="128" text-anchor="middle" fill="#6E3D1C" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3">DO ANYTHING YOU WANT</text>
+        <text class="late" x="575" y="478" text-anchor="middle" fill="#9A9A9E" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="3">DEPENDENT ON OTHERS</text>
+
+        <!-- ghost: where the curve would have gone without the event -->
+        <path class="late ghost-line" d="M 589 224 C 700 290 850 362 1000 404"
+              fill="none" stroke="rgba(36,36,38,0.38)" stroke-width="2" stroke-dasharray="6 7"/>
+
+        <!-- baseline: a serious event drops the whole curve -->
+        <path class="draw main-line" pathLength="1" d="M 150 128 C 380 134 500 162 589 224 C 600 262 604 296 610 312 C 720 372 880 432 1000 452"
+              fill="none" stroke="url(#capGrad)" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- lifted: risk caught early, trained right -->
+        <path class="draw lift-line" pathLength="1" d="M 150 120 C 420 112 640 146 790 196 C 880 226 950 242 1000 252"
+              fill="none" stroke="#CD9453" stroke-width="3.5" stroke-linecap="round"/>
+
+        <!-- event marker -->
+        <g class="late mark-event">
+          <rect x="582" y="217" width="14" height="14" fill="#B9562A"/>
+          <line x1="589" y1="217" x2="589" y2="172" stroke="rgba(36,36,38,0.35)" stroke-width="1"/>
+          <text x="589" y="160" text-anchor="middle" fill="#242426" font-family="'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2">SERIOUS LIFE EVENT</text>
+        </g>
+
+        <!-- future marker -->
+        <g class="late mark-future">
+          <rect x="873" y="215" width="13" height="13" fill="#CD9453"/>
+          <line x1="880" y1="215" x2="880" y2="184" stroke="rgba(36,36,38,0.35)" stroke-width="1"/>
+          <text x="880" y="172" text-anchor="middle" fill="#6E3D1C" font-family="'JetBrains Mono',monospace" font-size="11.5" letter-spacing="2">STRONGER GOLDEN YEARS</text>
+        </g>
+      </svg>
+
+      <figcaption class="figcap">
+        <span>Figure 01. Capability against age, one body, three trajectories.</span>
+        <span>VO2max mapped to lived capability.</span>
+      </figcaption>
+    </figure>
+
+    <div class="curve-legend reveal">
+      <span class="key"><i style="border-color:#B9562A"></i>A serious event, unprevented</span>
+      <span class="key"><i style="border-top-style:dashed;border-color:rgba(36,36,38,.45)"></i>Where the curve would have gone</span>
+      <span class="key"><i style="border-color:#CD9453"></i>Risk caught early, trained right</span>
+    </div>
+
+    <div class="curve-stages">
+      <div class="stage reveal">
+        <div class="k">Capability</div>
+        <h3>It's your body's ability to do what you want in life.</h3>
+        <p>High on the curve, you do anything you want. Lower down, you start depending on other people. The same line decides whether your seventies look like hard hikes or hard stairs.</p>
+      </div>
+      <div class="stage reveal d1">
+        <div class="k">Hazards</div>
+        <h3>The slope is being written right now, quietly, by what you do and don't prevent.</h3>
+        <p>A serious event does not just cost you a bad year. It drops the whole curve and it rarely comes all the way back. Most of these are visible years before they happen, in markers a standard physical never runs.</p>
+      </div>
+      <div class="stage reveal d2">
+        <div class="k">Future</div>
+        <h3>The curve is not destiny. Aleron can help you plot a new trajectory.</h3>
+        <p>Catch the risk early, train the right things, and the line lifts and stretches. The work is not adding empty years. It is keeping you in the part of the curve where life is still yours to run.</p>
+      </div>
+    </div>
+
+    <p class="curve-link reveal"><a class="text-link" href="#experience">See how Aleron reads your curve</a></p>
+  </div>
+</section>
+
+<!-- ============================ S3 THE SIGNALS ============================ -->
+<section id="signals" class="signals">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="n">02</span>The signals</div>
+      <h2 class="h2 reveal d1">We read advanced labs, genetics, wearable data, and imaging to help you shape the curve.</h2>
+      <p class="lede measure reveal d2">Four streams, one picture. The signals most physicals never collect, read together instead of one number at a time.</p>
+    </div>
+
+    <div class="signal-grid reveal">
+      <div class="signal">
+        <span class="tick" aria-hidden="true"></span>
+        <span class="idx">STREAM 01</span>
+        <h3>Advanced labs</h3>
+        <p>The Elite panel through Quest. ApoB, Lp(a), hsCRP, fasting insulin, and 80+ markers across metabolic, cardiovascular, inflammatory, renal, hepatic, and micronutrient domains.</p>
+      </div>
+      <div class="signal">
+        <span class="tick" aria-hidden="true"></span>
+        <span class="idx">STREAM 02</span>
+        <h3>Genetics</h3>
+        <p>The 163-gene Invitae panel. Moderate-penetrance cancer risks, cardiovascular variants, and the pharmacogenomic markers that change which drugs work for you.</p>
+      </div>
+      <div class="signal">
+        <span class="tick" aria-hidden="true"></span>
+        <span class="idx">STREAM 03</span>
+        <h3>Wearables</h3>
+        <p>Sleep, HRV, resting heart rate, and activity, streaming from the watch you already wear. Trends over time, not a snapshot in a waiting room.</p>
+      </div>
+      <div class="signal">
+        <span class="tick" aria-hidden="true"></span>
+        <span class="idx">STREAM 04</span>
+        <h3>Imaging</h3>
+        <p>Coronary calcium scoring and targeted imaging when your risk picture calls for it, read alongside everything else instead of in isolation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S4 THE EXPERIENCE ============================ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="n">03</span>The Aleron experience</div>
+      <h2 class="h2 reveal d1">Getting your Aleron MD plan is straightforward.</h2>
+      <p class="lede measure reveal d2">No forty-page intake. No waiting room. Four steps from sign-up to a plan a physician stands behind.</p>
+    </div>
+
+    <ol class="exp-steps">
+      <!-- Step 01 -->
+      <li class="exp-step">
+        <div class="exp-copy reveal">
+          <span class="k">Step 01 · Onboarding</span>
+          <h3 class="h3">Onboarding takes fifteen minutes.</h3>
+          <p class="body">Demographics, family history, lifestyle, and screening history, collected the way every other app on your phone does it. Then your wearable connects in two taps and starts streaming the signals your physician will actually use.</p>
+          <div class="exp-proof">
+            <span class="plabel">Connects with</span>
+            <div class="logo-wall">
+              <span>Apple Watch</span><span>Polar</span><span>Whoop</span><span>Garmin</span><span>Fitbit</span><span>Eight Sleep</span><span>Dexcom</span><span>Withings</span>
+            </div>
+          </div>
+        </div>
+        <div class="exp-media img-reveal">
+          <img src="assets/exp-01-onboarding.jpg" alt="A man sits on a sunlit wood floor at home, finishing onboarding on his phone, watch on his wrist" loading="lazy" />
+          <span class="ftag">Fifteen minutes, from your couch</span>
+        </div>
+      </li>
+
+      <!-- Step 02 -->
+      <li class="exp-step">
+        <div class="exp-copy reveal">
+          <span class="k">Step 02 · Genetics</span>
+          <h3 class="h3">A small kit arrives at your door.</h3>
+          <p class="body">Spit in the tube, drop it in the prepaid mailer. The 163-gene Invitae panel screens for the variants that actually change a care plan: moderate-penetrance cancer risks, cardiovascular variants, and pharmacogenomic markers that change which drugs work for you.</p>
+          <div class="exp-proof">
+            <span class="plabel">Genetic testing by Invitae</span>
+            <div class="stat-pair">
+              <div class="sp"><b>163 genes</b><span>Invitae panel</span></div>
+              <div class="sp"><b>~3 weeks</b><span>results return</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="exp-media img-reveal">
+          <img src="assets/exp-02-genetics.jpg" alt="A saliva collection kit and tube on a kitchen table in morning light, coffee steaming beside it" loading="lazy" />
+          <span class="ftag">The kit, your kitchen table</span>
+        </div>
+      </li>
+
+      <!-- Step 03 -->
+      <li class="exp-step">
+        <div class="exp-copy reveal">
+          <span class="k">Step 03 · Bloodwork</span>
+          <h3 class="h3">Bloodwork on your terms.</h3>
+          <p class="body">Draw the same Elite panel two ways. Walk into your nearest Quest patient service center, or skip the trip with an at-home capillary kit that ships to your door. Either way you get a full metabolic, cardiovascular, and inflammatory workup, including the ApoB and Lp(a) markers most physicals never order.</p>
+          <div class="exp-proof">
+            <span class="plabel">Labs through Quest · The Elite panel includes</span>
+            <div class="marker-groups">
+              <div class="mg"><b>Core panel</b><span>CBC with differential, CMP, liver markers, kidney markers</span></div>
+              <div class="mg"><b>Cardiometabolic</b><span>lipid panel, ApoB, Lp(a), HbA1c, fasting insulin, uric acid</span></div>
+              <div class="mg"><b>Inflammation</b><span>hsCRP, homocysteine, ferritin, iron/TIBC</span></div>
+              <div class="mg"><b>Thyroid + nutrients</b><span>TSH, free T4, vitamin D, B12, folate</span></div>
+              <div class="mg"><b>Depth</b><span>UACR and 80+ additional markers across metabolic, cardiovascular, inflammatory, renal, hepatic, and micronutrient domains</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="exp-media img-reveal">
+          <img src="assets/exp-03-bloodwork.jpg" alt="A man rolls up his sleeve over a small bandage as he leaves a patient service center in the sun" loading="lazy" />
+          <span class="ftag">In person or at home</span>
+        </div>
+      </li>
+
+      <!-- Step 04 -->
+      <li class="exp-step">
+        <div class="exp-copy reveal">
+          <span class="k">Step 04 · Your plan</span>
+          <h3 class="h3">A physician in your corner, on your schedule.</h3>
+          <p class="body">Aleron combines labs, genetics, wearable trends, records, and physician judgment into a risk picture, domain by domain. Talk it through live on a video visit, or handle it asynchronously and message your care team whenever it suits you. The output is not a report. It is a plan for what matters next.</p>
+          <div class="exp-proof">
+            <span class="plabel">How it lands</span>
+            <div class="stat-pair">
+              <div class="sp"><b>5 domains</b><span>risk models run</span></div>
+              <div class="sp"><b>1</b><span>physician-led game plan</span></div>
+            </div>
+            <div class="split-tags"><span><b>Live visit</b></span><span><b>Async</b></span></div>
+          </div>
+        </div>
+        <div class="exp-media img-reveal">
+          <img src="assets/exp-04-consult.jpg" alt="A woman at her home desk on a video visit with her physician, notebook open beside her" loading="lazy" />
+          <span class="ftag">Live, or whenever it suits you</span>
+        </div>
+      </li>
+    </ol>
+
+    <div class="exp-cta reveal">
+      <a class="text-link" href="#apply">Apply for Membership</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S5 CONTINUOUS CARE ============================ -->
+<section id="care" class="care">
+  <div class="wrap">
+    <div class="care-head">
+      <div>
+        <div class="eyebrow on-dark reveal"><span class="n">04</span>Membership, ongoing</div>
+        <h2 class="h2 reveal d1" style="margin-top:var(--amd-space-4)">This is just the start.</h2>
+        <p class="lede reveal d2" style="margin-top:var(--amd-space-4);max-width:46ch">Aleron doesn't hand you a report and disappear. It works for you between visits, every day.</p>
+      </div>
+      <div class="img-reveal">
+        <img src="assets/exp-05-loop.jpg" alt="A man at home at dusk reading a message from his care team on his phone" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="care-grid">
+      <div class="care-mod reveal">
+        <h3>Aleron AI, grounded in your data.</h3>
+        <p>It stays on between visits, grounded in your labs, genetics, wearables, imaging, and care plan. It watches for changes and keeps your physician current.</p>
+      </div>
+      <div class="care-mod reveal d1">
+        <h3>Continuous biometric monitoring.</h3>
+        <p>Sleep, HRV, resting heart rate, and activity, tracked and analyzed over time. We catch the signal before you feel the symptom.</p>
+      </div>
+      <div class="care-mod reveal d2">
+        <h3>Twice-yearly plan review.</h3>
+        <p>Aleron reviews labs, wearable trends, records, symptoms, goals, and new research, then updates your priorities around what actually changed in your risk.</p>
+      </div>
+      <div class="care-mod reveal">
+        <h3>Nutrition coaching, built into your plan.</h3>
+        <p>Guidance shaped by your labs, goals, preferences, and metabolic risk, not a generic meal plan.</p>
+      </div>
+      <div class="care-mod reveal d1">
+        <h3>Behavioral therapist support.</h3>
+        <p>Help turning priorities into routines and follow-through that fit a real life.</p>
+      </div>
+      <div class="care-mod reveal d2">
+        <h3>Unlimited physician access.</h3>
+        <p>24/7 telemedicine with a physician who already has your full picture: your data, your genetics, your history. No repeating yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S6 THE HUMAN MOMENT ============================ -->
+<section id="voice" class="voice">
+  <div class="wrap">
+    <div class="voice-inner">
+      <blockquote class="reveal">
+        <span class="open">"</span>The best part isn't the labs or the engine. It's getting a voice message from my doctor on a Tuesday afternoon explaining what to do next, like a friend who happens to be brilliant.<span class="open">"</span>
+        <div class="attr">J.L. · Member since 2025</div>
+      </blockquote>
+
+      <div class="reveal d1">
+        <div class="note-card" id="noteCard">
+          <button type="button" class="vn-btn" id="vnBtn" aria-label="Play voice message simulation">
+            <span class="ic-play" aria-hidden="true"></span>
+            <span class="ic-pause" aria-hidden="true"><i></i><i></i></span>
+          </button>
+          <div class="vn-mid">
+            <div class="vn-meta"><b>Voice message</b><span>Your Aleron physician</span><span>Tuesday · 2:14 PM</span></div>
+            <div class="vn-wave" id="vnWave" aria-hidden="true"></div>
+          </div>
+          <div class="vn-time"><span id="vnElapsed">0:00</span> / 0:47</div>
+        </div>
+        <p class="vn-caption" style="margin-top:var(--amd-space-4)">A Tuesday, somewhere in week nine of membership. Not a portal notification. A doctor who knows you, talking to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S7 PROOF ============================ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-left">
+        <div class="eyebrow reveal"><span class="n">05</span>What the engine finds</div>
+        <h2 class="h2 reveal d1">Most members leave their first review with a care plan their PCP wouldn't have given them.</h2>
+        <p class="lede reveal d2">Same labs. Same body. Different level of care.</p>
+      </div>
+
+      <div>
+        <div class="stat-rack">
+          <div class="stat-row reveal">
+            <div class="fig"><span class="count" data-target="63">0</span><small>%</small></div>
+            <p>of new members get a plan that materially differs from what their PCP would do.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="fig"><span class="count" data-target="12">0</span><small>%</small></div>
+            <p>receive an actionable genetic finding: a pathogenic variant that changes screening or medication for life, almost never tested in standard care.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="fig"><span class="count" data-target="4">0</span><small> in 10</small></div>
+            <p>receive a pharmacogenomic flag: a drug picked or dosed differently, from statin metabolism to SSRI response to clopidogrel non-response.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="fig"><span class="count" data-target="35">0</span><small>%</small></div>
+            <p>show a CAC reclassification: coronary calcium changes the statin decision in roughly one in three intermediate-risk patients.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="fig"><span class="count" data-target="1">0</span><small> in 5</small></div>
+            <p>find Lp(a) elevated: a lifetime cardiovascular-risk reclassification plus family screening, from a marker rarely measured in standard panels.</p>
+          </div>
+        </div>
+        <p class="proof-fine reveal">Drivers overlap; the headline figure is the union, not the sum. Drawn from PREVENT (AHA 2023), CAC reclassification studies (MESA, CAC Consortium), and pharmacogenomics plus clinical-grade genetic-panel actionable yield in adult preventive populations.</p>
+
+        <div class="proof-pull reveal">
+          <p>Of the people we built this for, 96% believe the right medical team could bend their curve. Only 9% believe they can find that team. The money was never the barrier. Clarity and time were.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ S8 DUAL-PATH CLOSE ============================ -->
+<section id="apply" class="close">
+  <div class="wrap">
+    <div class="close-photo img-reveal">
+      <img src="assets/hero-rain.jpg" alt="A father and daughter laughing in heavy rain on a forest trail" loading="lazy" />
+    </div>
+
+    <div class="close-head">
+      <div class="eyebrow reveal"><span class="n">06</span>Membership</div>
+      <h2 class="h2 reveal d1">Your curve is already being written. Decide who holds the pen.</h2>
+      <p class="lede measure reveal d2">Membership opens in waves, in California and Texas today.</p>
+    </div>
+
+    <div class="paths">
+      <div class="path primary reveal">
+        <span class="plabel">For individuals</span>
+        <h3>One physician, your full data picture, and a plan that keeps working between visits.</h3>
+        <div class="price">$3,500 to $4,200 a year<small>All in. No add-on billing.</small></div>
+        <div class="cta-row"><a class="btn btn-primary" href="mailto:apply@aleronmd.com?subject=Membership%20application">Apply for Membership</a></div>
+      </div>
+      <div class="path reveal d1">
+        <span class="plabel">For employers and brokers</span>
+        <h3>Bring physician-led preventive care to the people you cover.</h3>
+        <p>We'll show you how Aleron fits alongside your existing benefits.</p>
+        <div class="cta-row"><a class="btn btn-ghost" href="mailto:apply@aleronmd.com?subject=Employer%20and%20broker%20partnerships">For Employers</a></div>
+      </div>
+    </div>
+
+    <p class="close-fine reveal">For context against the executive-health field: Human Longevity runs $8,000 to $19,500 a year, Fountain Life $10,500 and up, Wild Health $25,000 and up.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ S9 FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="ft-wrap">
+    <div class="ft-mark" aria-label="aleron MD">aleron<sup>MD</sup></div>
+    <p class="ft-tag">Physician-led preventive medicine for capacity, risk, and vitality over time.</p>
+
+    <div class="ft-cols">
+      <div class="ft-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#curve">Quality of Life model</a></li>
+          <li><a href="#experience">The Aleron experience</a></li>
+          <li><a href="#care">MD + AI</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#apply">Membership</a></li>
+          <li><a href="mailto:apply@aleronmd.com?subject=Partnerships">Partnerships</a></li>
+          <li><a href="mailto:apply@aleronmd.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Availability</h4>
+        <ul>
+          <li>California</li>
+          <li>Texas</li>
+          <li>Membership opens in waves.</li>
+        </ul>
+      </div>
+      <div class="ft-actions">
+        <a class="btn btn-primary" href="mailto:apply@aleronmd.com?subject=Membership%20application">Apply for Membership</a>
+        <a class="login" href="#">Log In</a>
+      </div>
+    </div>
+
+    <div class="ft-legal">
+      <span>© 2026 Aleron MD. A LAGO Health company.</span>
+      <span><a href="mailto:apply@aleronmd.com">apply@aleronmd.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- reveal once, then rest ---------- */
+  var targets = [].slice.call(document.querySelectorAll('.reveal, .img-reveal'));
+  var curveFig = document.getElementById('curveFig');
+  if (curveFig) targets.push(curveFig);
+
+  function markIn(el) {
+    el.classList.add('in-view');
+    if (el === curveFig) el.classList.add('drawn');
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(markIn);
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { markIn(e.target); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- hero that breathes: slow layered cross-fade ---------- */
+  var slides = [].slice.call(document.querySelectorAll('.hero-slide'));
+  var dots = [].slice.call(document.querySelectorAll('.slide-dots button'));
+  var current = 0, heroTimer = null;
+
+  function showSlide(i) {
+    current = i;
+    slides.forEach(function (s, j) { s.classList.toggle('active', j === i); });
+    dots.forEach(function (d, j) { d.classList.toggle('active', j === i); });
+  }
+  function startHero() {
+    if (reduce || slides.length < 2) return;
+    heroTimer = setInterval(function () { showSlide((current + 1) % slides.length); }, 9000);
+  }
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () {
+      if (heroTimer) clearInterval(heroTimer);
+      showSlide(parseInt(d.getAttribute('data-slide'), 10));
+      startHero();
+    });
+  });
+  startHero();
+
+  /* ---------- proof: count up once ---------- */
+  var counts = [].slice.call(document.querySelectorAll('.count'));
+  function runCount(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    if (reduce) { el.textContent = target; return; }
+    var dur = 1300, t0 = null;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    counts.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
+  } else {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counts.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* ---------- the Tuesday voice message: visual simulation, no audio ---------- */
+  var DUR = 47;
+  var heights = [10,16,24,30,22,14,20,28,34,26,18,12,18,26,32,24,16,22,30,36,28,20,14,20,28,33,25,17,13,19,27,31,23,15,21,29,35,27,19,12,17,25,30,22,16,11,14,9];
+  var wave = document.getElementById('vnWave');
+  var bars = [];
+  if (wave) {
+    heights.forEach(function (h) {
+      var b = document.createElement('i');
+      b.style.height = h + 'px';
+      wave.appendChild(b);
+      bars.push(b);
+    });
+  }
+  var card = document.getElementById('noteCard');
+  var btn = document.getElementById('vnBtn');
+  var elapsedEl = document.getElementById('vnElapsed');
+  var elapsed = 0, playTimer = null;
+
+  function fmt(s) { return Math.floor(s / 60) + ':' + ('0' + Math.floor(s % 60)).slice(-2); }
+  function paint() {
+    elapsedEl.textContent = fmt(elapsed);
+    var lit = Math.round((elapsed / DUR) * bars.length);
+    bars.forEach(function (b, i) { b.classList.toggle('played', i < lit); });
+  }
+  function stopPlayback() {
+    if (playTimer) { clearInterval(playTimer); playTimer = null; }
+    card.classList.remove('playing');
+    btn.setAttribute('aria-label', elapsed >= DUR ? 'Replay voice message simulation' : 'Play voice message simulation');
+  }
+  if (btn) {
+    btn.addEventListener('click', function () {
+      if (playTimer) { stopPlayback(); return; }
+      if (elapsed >= DUR) { elapsed = 0; paint(); }
+      card.classList.add('playing');
+      btn.setAttribute('aria-label', 'Pause voice message simulation');
+      playTimer = setInterval(function () {
+        elapsed += 0.25;
+        if (elapsed >= DUR) { elapsed = DUR; paint(); stopPlayback(); return; }
+        paint();
+      }, 250);
+    });
+  }
+})();
+</script>
+</body>
+</html>

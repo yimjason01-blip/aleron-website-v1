@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>aleron MD · Brand Guideline</title>
+<meta name="description" content="Aleron MD brand guideline. Premium physician-led preventive medicine. The lowercase-a lane: navy, bronze, rust, cream." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   DESIGN SYSTEM TOKENS. Inlined verbatim from
+   /Users/jasonyim/Projects/meridian-landing/design-system/tokens.css
+   This guide consumes the deployed token source of truth. It does not
+   redefine or fork it.
+   ===================================================================== */
+:root {
+  color-scheme: light;
+
+  --amd-logo-icon-fade: linear-gradient(135deg, #B9562A 0%, #80443B 42%, #1E2A4A 100%);
+  --amd-login-fade: linear-gradient(135deg, #232426 0%, #3B4662 100%);
+  --amd-reference-main-fade: linear-gradient(135deg, #232426 0%, #3B4662 100%);
+  --amd-reference-warm-fade: linear-gradient(180deg, #A35520 0%, #532F4B 43%, #23315F 93%);
+
+  --amd-color-surface-page: #FFFEFB;
+  --amd-color-surface-paper: #F6F4EE;
+  --amd-color-surface-cream: #EFEAE0;
+  --amd-color-surface-bone: #ECE5D6;
+  --amd-color-surface-dark: #242426;
+  --amd-color-surface-burgundy: #2C1F29;
+  --amd-color-surface-deep: #232426;
+  --amd-color-surface-card: #FFFFFF;
+  --amd-color-text-primary: #242426;
+  --amd-color-text-secondary: #565659;
+  --amd-color-text-secondary-on-paper: #4D4D50;
+  --amd-color-text-tertiary: #6E6E72;
+  --amd-color-text-accent: #6E3D1C;
+  --amd-color-text-accent-on-dark: #D9A765;
+  --amd-color-text-inverse: #FFFEFB;
+  --amd-color-text-inverse-muted: rgba(255, 254, 251, 0.78);
+  --amd-color-border-default: rgba(36, 36, 38, 0.14);
+  --amd-color-border-subtle: rgba(36, 36, 38, 0.08);
+  --amd-color-border-inverse: rgba(255, 254, 251, 0.22);
+  --amd-color-rust: #B9562A;
+  --amd-color-rust-figma: #A2653B;
+  --amd-color-rust-reference: #A35520;
+  --amd-color-gold-reference: #CD9453;
+  --amd-color-navy: #1E2A4A;
+  --amd-color-navy-figma: #2C3240;
+  --amd-color-reference-blue: #3C4662;
+  --amd-color-hero-blue: #414C6A;
+  --amd-color-grid: #DED8CC;
+  --amd-color-success: #3E7C54;
+  --amd-color-warning: #B8792E;
+  --amd-color-danger: #922E20;
+  --amd-color-info: #3C5068;
+
+  --amd-domain-cardiac: #A44938;
+  --amd-domain-cancer: #9B4A58;
+  --amd-domain-metabolic: #557F7A;
+  --amd-domain-neuro: #75649A;
+  --amd-domain-independence: #B8854D;
+
+  --amd-action-primary-bg: var(--amd-color-surface-dark);
+  --amd-action-primary-text: var(--amd-color-text-inverse);
+  --amd-action-primary-hover-bg: #8E3F1E;
+  --amd-focus-ring: 0 0 0 3px rgba(185, 86, 42, 0.22);
+
+  --amd-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --amd-font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --amd-font-serif: "Source Serif 4", Georgia, serif;
+  --amd-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --amd-type-display-size: clamp(64px, 9vw, 120px);
+  --amd-type-display-line: 0.95;
+  --amd-type-display-track: -0.045em;
+  --amd-type-h1-size: clamp(48px, 7vw, 88px);
+  --amd-type-h1-line: 1.0;
+  --amd-type-h1-track: -0.038em;
+  --amd-type-h2-size: clamp(34px, 4.7vw, 62px);
+  --amd-type-h2-line: 1.04;
+  --amd-type-h2-track: -0.032em;
+  --amd-type-h3-size: clamp(24px, 2.8vw, 36px);
+  --amd-type-h3-line: 1.12;
+  --amd-type-h3-track: -0.024em;
+  --amd-type-body-lg-size: clamp(18px, 1.4vw, 22px);
+  --amd-type-body-lg-line: 1.55;
+  --amd-type-body-size: 16px;
+  --amd-type-body-line: 1.6;
+  --amd-type-caption-size: 13px;
+  --amd-type-caption-line: 1.45;
+  --amd-type-label-size: 12px;
+  --amd-type-label-track: 0.16em;
+
+  --amd-space-1: 4px;  --amd-space-2: 8px;  --amd-space-3: 12px;
+  --amd-space-4: 16px; --amd-space-5: 24px; --amd-space-6: 32px;
+  --amd-space-7: 48px; --amd-space-8: 64px; --amd-space-9: 96px; --amd-space-10: 128px;
+
+  --amd-layout-max: 1240px;
+  --amd-layout-measure: 68ch;
+  --amd-layout-gutter: clamp(20px, 4vw, 64px);
+  --amd-layout-section-y: clamp(72px, 9vw, 132px);
+  --amd-break-mobile: 720px;
+
+  --amd-radius-none: 0;
+  --amd-border-width: 1px;
+  --amd-shadow-soft: 0 18px 48px -30px rgba(36, 36, 38, 0.28);
+  --amd-shadow-dark: 0 24px 70px -38px rgba(0, 0, 0, 0.55);
+
+  --amd-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --amd-ease-exit: cubic-bezier(.4, 0, .2, 1);
+  --amd-duration-fast: 160ms;
+  --amd-duration-standard: 280ms;
+  --amd-duration-slow: 520ms;
+}
+
+/* =====================================================================
+   GUIDE LAYOUT. Practices the system it documents.
+   Square edges. Editorial measure. Navy / bronze / rust / cream.
+   ===================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--amd-color-surface-page);
+  color: var(--amd-color-text-primary);
+  font-family: var(--amd-font-body);
+  font-size: var(--amd-type-body-size);
+  line-height: var(--amd-type-body-line);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+
+.wrap { max-width: var(--amd-layout-max); margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+.measure { max-width: var(--amd-layout-measure); }
+
+.eyebrow {
+  font-family: var(--amd-font-mono);
+  font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track);
+  text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+.eyebrow.on-dark { color: var(--amd-color-text-accent-on-dark); }
+.eyebrow .n { color: var(--amd-color-text-tertiary); margin-right: var(--amd-space-3); }
+.on-dark .eyebrow .n { color: var(--amd-color-text-inverse-muted); }
+
+h1, h2, h3 { font-family: var(--amd-font-display); font-weight: 600; }
+.display { font-size: var(--amd-type-display-size); line-height: var(--amd-type-display-line); letter-spacing: var(--amd-type-display-track); font-weight: 600; }
+.h1 { font-size: var(--amd-type-h1-size); line-height: var(--amd-type-h1-line); letter-spacing: var(--amd-type-h1-track); }
+.h2 { font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line); letter-spacing: var(--amd-type-h2-track); }
+.h3 { font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track); }
+.lede { font-size: var(--amd-type-body-lg-size); line-height: var(--amd-type-body-lg-line); color: var(--amd-color-text-secondary); }
+.serif { font-family: var(--amd-font-serif); }
+.mono { font-family: var(--amd-font-mono); }
+.muted { color: var(--amd-color-text-secondary); }
+
+/* ---- Header ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--amd-space-5);
+  min-height: 68px;
+  padding: var(--amd-space-3) var(--amd-layout-gutter);
+  background: var(--amd-color-surface-deep);
+  color: var(--amd-color-text-inverse);
+  border-bottom: 1px solid var(--amd-color-border-inverse);
+}
+.site-header .brand { display: flex; align-items: center; gap: var(--amd-space-3); }
+.site-header .brand img { height: 19px; width: auto; }
+.site-header nav { display: flex; gap: var(--amd-space-5); flex-wrap: wrap; }
+.site-header nav a {
+  text-decoration: none; color: var(--amd-color-text-inverse-muted);
+  font-size: 13px; font-weight: 500; letter-spacing: .01em;
+  transition: color var(--amd-duration-fast) var(--amd-ease-standard);
+}
+.site-header nav a:hover { color: var(--amd-color-text-inverse); }
+@media (max-width: 900px) { .site-header nav { display: none; } }
+
+/* ---- Section scaffolding ---- */
+section { padding-block: var(--amd-layout-section-y); border-top: 1px solid var(--amd-color-border-default); scroll-margin-top: 72px; }
+section.dark { background: var(--amd-color-surface-deep); color: var(--amd-color-text-inverse); border-top-color: var(--amd-color-border-inverse); }
+section.paper { background: var(--amd-color-surface-paper); }
+section.cream { background: var(--amd-color-surface-cream); }
+.dark .lede, .dark .muted { color: var(--amd-color-text-inverse-muted); }
+
+.sec-head { display: grid; gap: var(--amd-space-4); margin-bottom: var(--amd-space-8); }
+.sec-head .h2 { max-width: 18ch; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--amd-space-7); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--amd-space-5); }
+@media (max-width: 860px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+/* ---- Cover ---- */
+.cover { position: relative; border-top: 0; padding-block: 0; overflow: hidden; background: var(--amd-color-surface-page); }
+.cover-inner { display: grid; grid-template-columns: 1.15fr .85fr; min-height: 78vh; }
+@media (max-width: 980px) { .cover-inner { grid-template-columns: 1fr; min-height: auto; } }
+.cover-copy { padding: clamp(40px, 8vw, 120px) var(--amd-layout-gutter); display: flex; flex-direction: column; justify-content: center; gap: var(--amd-space-6); }
+.cover-copy .display { max-width: 14ch; }
+.cover-meta { display: flex; flex-wrap: wrap; gap: var(--amd-space-2) var(--amd-space-6); font-family: var(--amd-font-mono); font-size: 12px; letter-spacing: .04em; color: var(--amd-color-text-tertiary); }
+.cover-meta b { color: var(--amd-color-text-primary); font-weight: 500; }
+/* Layered cover panel echoing the figma hero grammar (offset square blocks) */
+.cover-art { position: relative; background: var(--amd-color-navy); overflow: hidden; min-height: 320px; }
+.cover-art .blk { position: absolute; }
+.cover-art .b1 { inset: 0; background: var(--amd-reference-warm-fade); opacity: .96; }
+.cover-art .b2 { left: -6%;  top: 16%; width: 42%; height: 13%; background: var(--amd-color-navy); mix-blend-mode: normal; opacity: .82; }
+.cover-art .b3 { left: 8%;   top: 40%; width: 56%; height: 11%; background: var(--amd-color-rust); opacity: .55; }
+.cover-art .b4 { left: -4%;  top: 62%; width: 34%; height: 12%; background: var(--amd-color-surface-deep); opacity: .7; }
+.cover-art .b5 { right: -3%; top: 30%; width: 18%; height: 40%; background: var(--amd-color-gold-reference); opacity: .28; }
+.cover-art .cap { position: absolute; left: var(--amd-space-6); bottom: var(--amd-space-6); right: var(--amd-space-6); color: var(--amd-color-text-inverse); font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+
+/* ---- Essence two-column "is / is not" ---- */
+.split { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--amd-color-border-default); }
+@media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+.split > div { padding: var(--amd-space-7); }
+.split .is { background: var(--amd-color-surface-card); }
+.split .isnot { background: var(--amd-color-surface-paper); border-left: 1px solid var(--amd-color-border-default); }
+@media (max-width: 760px) { .split .isnot { border-left: 0; border-top: 1px solid var(--amd-color-border-default); } }
+.split h3 { margin-bottom: var(--amd-space-5); }
+.split ul { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--amd-space-4); }
+.split li { padding-left: var(--amd-space-5); position: relative; line-height: 1.5; }
+.split .is li::before { content: ""; position: absolute; left: 0; top: .55em; width: 10px; height: 10px; background: var(--amd-color-rust); }
+.split .isnot li { color: var(--amd-color-text-secondary-on-paper); }
+.split .isnot li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 1px; background: var(--amd-color-text-tertiary); }
+
+/* ---- Capability curve ---- */
+.curve-stage { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); padding: clamp(16px, 3vw, 32px); }
+.curve-stage svg { width: 100%; height: auto; display: block; }
+.curve-zones { display: flex; gap: var(--amd-space-5); margin-top: var(--amd-space-5); flex-wrap: wrap; }
+.zone-key { display: flex; align-items: center; gap: var(--amd-space-2); font-size: 13px; color: var(--amd-color-text-secondary); }
+.zone-key i { width: 14px; height: 14px; display: inline-block; }
+.curve-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--amd-space-5); margin-top: var(--amd-space-7); }
+@media (max-width: 820px) { .curve-steps { grid-template-columns: 1fr 1fr; } }
+.step { border-top: 2px solid var(--amd-color-rust); padding-top: var(--amd-space-3); }
+.step .k { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.dark .step { border-top-color: var(--amd-color-gold-reference); }
+.dark .step .k { color: var(--amd-color-text-accent-on-dark); }
+.step h4 { font-family: var(--amd-font-display); font-size: 19px; font-weight: 600; margin: var(--amd-space-2) 0; letter-spacing: -.01em; }
+.step p { font-size: 14px; color: var(--amd-color-text-secondary); margin: 0; }
+.dark .step p { color: var(--amd-color-text-inverse-muted); }
+
+/* curve draw-on */
+.curve-path { stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1.6s var(--amd-ease-standard); }
+.in-view .curve-path { stroke-dashoffset: 0; }
+.curve-lift { stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1.8s var(--amd-ease-standard) .3s; }
+.in-view .curve-lift { stroke-dashoffset: 0; }
+@media (prefers-reduced-motion: reduce) { .curve-path, .curve-lift { stroke-dashoffset: 0 !important; } }
+
+/* ---- Voice pairs ---- */
+.voice-row { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--amd-color-border-default); border-bottom: 0; }
+.voice-table { border-bottom: 1px solid var(--amd-color-border-default); }
+@media (max-width: 760px) { .voice-row { grid-template-columns: 1fr; } }
+.voice-cell { padding: var(--amd-space-6); }
+.say { background: var(--amd-color-surface-card); }
+.saynot { background: var(--amd-color-surface-paper); border-left: 1px solid var(--amd-color-border-default); }
+@media (max-width: 760px) { .saynot { border-left: 0; border-top: 1px solid var(--amd-color-border-subtle); } }
+.voice-tag { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: inline-flex; align-items: center; gap: var(--amd-space-2); margin-bottom: var(--amd-space-3); }
+.voice-tag.good { color: var(--amd-color-success); }
+.voice-tag.bad { color: var(--amd-color-danger); }
+.voice-tag::before { content: ""; width: 10px; height: 10px; }
+.voice-tag.good::before { background: var(--amd-color-success); }
+.voice-tag.bad::before { background: var(--amd-color-danger); }
+.voice-cell p { font-size: 17px; line-height: 1.5; }
+.saynot p { color: var(--amd-color-text-secondary-on-paper); }
+.voice-why { margin-top: var(--amd-space-3); font-size: 13px; color: var(--amd-color-text-tertiary); }
+
+/* ---- Color palette ---- */
+.swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--amd-color-border-default); }
+@media (max-width: 860px) { .swatch-grid { grid-template-columns: repeat(2, 1fr); } }
+.swatch { position: relative; }
+.swatch .chip { height: 132px; }
+.swatch .meta { padding: var(--amd-space-4); border-top: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); }
+.swatch .nm { font-weight: 600; font-size: 14px; }
+.swatch .hex { font-family: var(--amd-font-mono); font-size: 12px; color: var(--amd-color-text-secondary); margin-top: 2px; }
+.swatch .tok { font-family: var(--amd-font-mono); font-size: 11px; color: var(--amd-color-text-accent); margin-top: var(--amd-space-2); word-break: break-all; }
+.swatch-grid .swatch + .swatch .meta { border-left: 1px solid var(--amd-color-border-default); }
+.support-grid { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--amd-color-border-default); margin-top: var(--amd-space-5); }
+@media (max-width: 860px) { .support-grid { grid-template-columns: repeat(3, 1fr); } }
+.support { border-left: 1px solid var(--amd-color-border-default); }
+.support:first-child { border-left: 0; }
+.support .chip { height: 64px; }
+.support .meta { padding: var(--amd-space-3); }
+.support .nm { font-size: 12px; font-weight: 600; }
+.support .hex { font-family: var(--amd-font-mono); font-size: 11px; color: var(--amd-color-text-secondary); }
+
+/* ---- Logo / identity panels ---- */
+.id-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--amd-space-5); }
+@media (max-width: 760px) { .id-grid { grid-template-columns: 1fr; } }
+.id-card { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); }
+.id-card .stage { padding: var(--amd-space-8) var(--amd-space-6); display: grid; place-items: center; min-height: 180px; }
+.id-card .stage.dark { background: var(--amd-color-surface-deep); }
+.id-card .stage.fade { background: var(--amd-reference-warm-fade); }
+.id-card .stage img.wm { width: 200px; height: auto; }
+.id-card .stage img.ic { width: 92px; height: 92px; }
+.id-card .cap { padding: var(--amd-space-4) var(--amd-space-5); border-top: 1px solid var(--amd-color-border-default); font-size: 13px; color: var(--amd-color-text-secondary); }
+.id-card .cap b { color: var(--amd-color-text-primary); font-weight: 600; }
+
+/* photography / texture tiles */
+.fig { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); }
+.fig img { width: 100%; height: 220px; object-fit: cover; }
+.fig.tall img { height: 300px; }
+.fig figcaption { padding: var(--amd-space-4) var(--amd-space-5); font-size: 13px; color: var(--amd-color-text-secondary); border-top: 1px solid var(--amd-color-border-default); }
+.fig figcaption b { color: var(--amd-color-text-primary); font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* ---- Typography specimens ---- */
+.type-row { display: grid; grid-template-columns: 160px 1fr; gap: var(--amd-space-6); align-items: baseline; padding: var(--amd-space-5) 0; border-top: 1px solid var(--amd-color-border-subtle); }
+@media (max-width: 720px) { .type-row { grid-template-columns: 1fr; gap: var(--amd-space-2); } }
+.type-row .spec { font-family: var(--amd-font-mono); font-size: 12px; color: var(--amd-color-text-tertiary); line-height: 1.5; }
+.type-row .spec b { color: var(--amd-color-text-primary); display: block; font-weight: 600; }
+.type-sample { color: var(--amd-color-text-primary); overflow: hidden; }
+
+/* ---- Motion allow/ban ---- */
+.rails { display: grid; grid-template-columns: 1fr 1fr; gap: var(--amd-space-5); }
+@media (max-width: 760px) { .rails { grid-template-columns: 1fr; } }
+.rail { border: 1px solid var(--amd-color-border-inverse); padding: var(--amd-space-6); }
+.rail h3 { font-size: 20px; margin-bottom: var(--amd-space-4); display: flex; align-items: center; gap: var(--amd-space-3); }
+.rail .mk { width: 14px; height: 14px; display: inline-block; }
+.rail.allow .mk { background: var(--amd-color-gold-reference); }
+.rail.ban .mk { background: var(--amd-color-danger); }
+.rail ul { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--amd-space-3); }
+.rail li { padding-left: var(--amd-space-5); position: relative; color: var(--amd-color-text-inverse-muted); font-size: 15px; line-height: 1.5; }
+.rail li::before { content: ""; position: absolute; left: 0; top: .6em; width: 8px; height: 8px; }
+.rail.allow li::before { background: var(--amd-color-gold-reference); }
+.rail.ban li::before { background: var(--amd-color-danger); }
+
+/* ---- Audience grammar ---- */
+.aud { display: grid; grid-template-columns: 1fr 1fr; gap: var(--amd-space-5); }
+@media (max-width: 760px) { .aud { grid-template-columns: 1fr; } }
+.aud-card { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); padding: var(--amd-space-6); display: grid; gap: var(--amd-space-4); }
+.aud-card .who { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.aud-card .quote { font-family: var(--amd-font-serif); font-size: 21px; line-height: 1.4; }
+.aud-card .cta-row { display: flex; gap: var(--amd-space-3); flex-wrap: wrap; margin-top: var(--amd-space-2); }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border: 1px solid currentColor; font-size: 13px; font-weight: 600; letter-spacing: .01em; text-decoration: none; border-radius: 0; }
+.btn-primary { background: var(--amd-action-primary-bg); color: var(--amd-action-primary-text); border-color: var(--amd-action-primary-bg); }
+.btn-ghost { background: transparent; color: var(--amd-color-text-primary); border-color: var(--amd-action-secondary-border, rgba(36,36,38,.34)); }
+.aud-note { margin-top: var(--amd-space-6); padding: var(--amd-space-5); border-left: 3px solid var(--amd-color-rust); background: var(--amd-color-surface-paper); font-size: 15px; }
+
+/* ---- Do / Don't gallery ---- */
+.dd { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); display: grid; grid-template-rows: auto 1fr; }
+.dd .head { display: flex; align-items: center; justify-content: space-between; padding: var(--amd-space-4) var(--amd-space-5); border-bottom: 1px solid var(--amd-color-border-default); }
+.dd .rule { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.dd .verdict { font-family: var(--amd-font-mono); font-size: 11px; font-weight: 500; letter-spacing: .1em; padding: 3px 8px; }
+.dd.do .verdict { color: var(--amd-color-success); border: 1px solid var(--amd-color-success); }
+.dd.dont .verdict { color: var(--amd-color-danger); border: 1px solid var(--amd-color-danger); }
+.dd .body { padding: var(--amd-space-5); display: grid; gap: var(--amd-space-3); }
+.dd .ex { font-size: 16px; line-height: 1.5; }
+.dd.dont .ex { color: var(--amd-color-text-secondary); text-decoration: line-through; text-decoration-color: rgba(146,46,32,.5); }
+.dd .why { font-size: 13px; color: var(--amd-color-text-tertiary); }
+.dd-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--amd-space-5); }
+@media (max-width: 820px) { .dd-grid { grid-template-columns: 1fr; } }
+
+/* ---- Footer ---- */
+.site-footer { background: var(--amd-color-surface-dark); color: var(--amd-color-text-inverse); padding: var(--amd-space-9) var(--amd-layout-gutter) var(--amd-space-7); }
+.site-footer .ft-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--amd-space-6); flex-wrap: wrap; padding-bottom: var(--amd-space-7); border-bottom: 1px solid var(--amd-color-border-inverse); }
+.site-footer img.wm { width: 150px; height: auto; }
+.site-footer .ft-note { max-width: 42ch; color: var(--amd-color-text-inverse-muted); font-size: 14px; }
+.site-footer .ft-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--amd-space-4); margin-top: var(--amd-space-5); font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--amd-ease-standard), transform .7s var(--amd-ease-standard); }
+.reveal.in-view { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; } }
+
+.token-inline { font-family: var(--amd-font-mono); font-size: .85em; color: var(--amd-color-text-accent); }
+.dark .token-inline { color: var(--amd-color-text-accent-on-dark); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <span class="brand"><img src="assets/wordmark-light.png" alt="aleron MD" /></span>
+  <nav aria-label="Sections">
+    <a href="#essence">Essence</a>
+    <a href="#curve">The curve</a>
+    <a href="#voice">Voice</a>
+    <a href="#identity">Visual</a>
+    <a href="#type">Type</a>
+    <a href="#motion">Motion</a>
+    <a href="#audience">Audience</a>
+    <a href="#gallery">Do / Don't</a>
+  </nav>
+</header>
+
+<!-- ============================ COVER ============================ -->
+<section class="cover" aria-label="Cover">
+  <div class="cover-inner">
+    <div class="cover-copy">
+      <div class="eyebrow"><span class="n">aleron MD</span>Brand guideline · v1</div>
+      <h1 class="display">Your future is written on top of this curve.</h1>
+      <p class="lede measure">This is the identity document for aleron MD. One brand, one lane, one central idea. It crystallizes how the practice looks, sounds, and behaves across every marketing surface. It does not replace the design system. It tells you what the design system is for.</p>
+      <div class="cover-meta">
+        <span><b>Category</b> premium physician-led preventive medicine</span>
+        <span><b>Lane</b> lowercase-a · navy bronze rust cream</span>
+        <span><b>Edges</b> square</span>
+      </div>
+    </div>
+    <div class="cover-art" aria-hidden="true">
+      <span class="blk b1"></span>
+      <span class="blk b2"></span>
+      <span class="blk b3"></span>
+      <span class="blk b4"></span>
+      <span class="blk b5"></span>
+      <span class="cap">layered hero grammar · offset square blocks · warm fade</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 01 ESSENCE ============================ -->
+<section id="essence">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">01</span>Brand essence</div>
+      <h2 class="h2">What aleron MD is, in one paragraph.</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="reveal">
+        <p class="lede" style="color:var(--amd-color-text-primary)">aleron MD is a premium, physician-led preventive medicine practice. It combines deep diagnostics, genetics, wearable data, and physician judgment into a domain-by-domain risk picture, then turns that picture into a plan for what matters next. The category comes before the product. We do not sell a tool or a dashboard. We sell the years a person gets to spend doing the things they want to do, and the medical team that helps protect them.</p>
+        <p style="margin-top:var(--amd-space-5)" class="muted">The capability curve is the brand's central idea. Everything else, the palette, the voice, the photography, the motion, exists to make that idea legible and felt.</p>
+      </div>
+      <div class="reveal">
+        <div class="split">
+          <div class="is">
+            <h3 class="h3" style="font-size:22px">It is</h3>
+            <ul>
+              <li>A category definition first. Preventive medicine as a relationship, not a report.</li>
+              <li>Physician-led and data-grounded. Specific clinical markers, named panels, real follow-through.</li>
+              <li>Warm, quiet, editorial. Premium without shouting.</li>
+              <li>Honest about what changes a care plan and what does not.</li>
+            </ul>
+          </div>
+          <div class="isnot">
+            <h3 class="h3" style="font-size:22px">It is not</h3>
+            <ul>
+              <li>A longevity gadget, a supplement funnel, or a biohacking brand.</li>
+              <li>A generic concierge clinic with filler that fits anyone.</li>
+              <li>The uppercase-A black and tan lane. Never that lane.</li>
+              <li>A dashboard product. The output is a plan, not a screen full of metrics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 02 CENTRAL IDEA ============================ -->
+<section id="curve" class="dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow on-dark"><span class="n">02</span>The central idea</div>
+      <h2 class="h2">Your future is written on top of this curve.</h2>
+      <p class="lede measure">Capability is your body's ability to do what you want in life. It holds a long plateau, then bends down with age and with what goes unprevented. The slope is being written right now, quietly, by what you do and what you catch early. The curve is not destiny. aleron exists to help a member plot a higher trajectory. Every marketing surface is a different view of this one drawing.</p>
+    </div>
+
+    <div class="curve-stage reveal" id="curveStage" style="background:#1b2336;border-color:var(--amd-color-border-inverse)">
+      <svg viewBox="0 0 1000 460" role="img" aria-label="Capability curve plotted against age, from 40 to 90. A high plateau declines through midlife. A second line shows a higher trajectory under aleron care.">
+        <defs>
+          <linearGradient id="curveGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"  stop-color="#B9562A"/>
+            <stop offset="42%" stop-color="#CD9453"/>
+            <stop offset="78%" stop-color="#7A6E7C"/>
+            <stop offset="100%" stop-color="#1E2A4A"/>
+          </linearGradient>
+          <linearGradient id="zoneTop" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#CD9453" stop-opacity="0.10"/>
+            <stop offset="100%" stop-color="#CD9453" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- zone bands -->
+        <rect x="80" y="60" width="840" height="170" fill="url(#zoneTop)"/>
+        <line x1="80" y1="230" x2="920" y2="230" stroke="rgba(255,254,251,0.16)" stroke-dasharray="2 6"/>
+        <text x="500" y="120" text-anchor="middle" fill="#D9A765" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.5">DO ANYTHING YOU WANT</text>
+        <text x="500" y="345" text-anchor="middle" fill="rgba(255,254,251,0.55)" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.5">DEPENDENT ON OTHERS</text>
+
+        <!-- grid -->
+        <g stroke="rgba(255,254,251,0.08)">
+          <line x1="80" y1="60" x2="80" y2="400"/>
+          <line x1="248" y1="60" x2="248" y2="400"/>
+          <line x1="416" y1="60" x2="416" y2="400"/>
+          <line x1="584" y1="60" x2="584" y2="400"/>
+          <line x1="752" y1="60" x2="752" y2="400"/>
+          <line x1="920" y1="60" x2="920" y2="400"/>
+          <line x1="80" y1="400" x2="920" y2="400"/>
+        </g>
+        <g fill="rgba(255,254,251,0.5)" font-family="'JetBrains Mono',monospace" font-size="13" text-anchor="middle">
+          <text x="80" y="424">40</text>
+          <text x="248" y="424">50</text>
+          <text x="416" y="424">60</text>
+          <text x="584" y="424">70</text>
+          <text x="752" y="424">80</text>
+          <text x="920" y="424">90</text>
+        </g>
+
+        <!-- lifted "with aleron" trajectory (dashed, higher) -->
+        <path class="curve-lift" d="M 80 150 C 280 150 360 165 500 205 C 640 245 740 268 920 278"
+              fill="none" stroke="#D9A765" stroke-width="2.5" stroke-dasharray="7 7" opacity="0.85"/>
+        <!-- baseline capability curve -->
+        <path class="curve-path" d="M 80 150 C 280 152 360 180 500 250 C 640 320 740 350 920 358"
+              fill="none" stroke="url(#curveGrad)" stroke-width="5" stroke-linecap="round"/>
+        <!-- endpoint markers (square, per brand grammar) -->
+        <rect x="73" y="143" width="14" height="14" fill="#B9562A"/>
+        <rect x="913" y="351" width="14" height="14" fill="#1E2A4A"/>
+        <rect x="913" y="271" width="13" height="13" fill="#D9A765"/>
+      </svg>
+
+      <div class="curve-zones">
+        <span class="zone-key"><i style="background:linear-gradient(135deg,#B9562A,#CD9453)"></i> Baseline capability over time</span>
+        <span class="zone-key"><i style="background:#D9A765"></i> Higher trajectory under aleron care</span>
+      </div>
+    </div>
+
+    <div class="curve-steps">
+      <div class="step reveal"><div class="k">Intro</div><h4>The premise</h4><p>Your best days are still ahead. Capability, not age, is the thing we protect.</p></div>
+      <div class="step reveal"><div class="k">Capability</div><h4>The plateau</h4><p>It is your body's ability to do what you want in life. It holds longer than people expect.</p></div>
+      <div class="step reveal"><div class="k">Hazards</div><h4>The slope</h4><p>A serious event bends the line down fast. Most of the bend is quiet and preventable.</p></div>
+      <div class="step reveal"><div class="k">Future</div><h4>The lift</h4><p>The curve is not destiny. We help plot a new trajectory and stronger golden years.</p></div>
+    </div>
+
+    <p class="muted" style="margin-top:var(--amd-space-7);max-width:62ch">How surfaces relate back to it. A hero is the plateau. A diagnostics module is the slope made visible. A testimonial is one bent line. A pricing page is the cost of the lift. If a surface cannot be traced to the curve, it is decoration, and decoration gets cut.</p>
+  </div>
+</section>
+
+<!-- ============================ 03 VOICE ============================ -->
+<section id="voice" class="paper">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">03</span>Voice &amp; tone</div>
+      <h2 class="h2">Honest, specific, physician-led, casual-premium.</h2>
+      <p class="lede measure">Vanilla copy is a content problem, not a tone problem. Say the specific true thing. Sell what the product enables, not that a tool exists. Name the marker, the panel, the next step. The rules below are binding. Each pair shows the move we make and the move we never make.</p>
+    </div>
+
+    <div class="voice-table reveal">
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>The output is not a report. It is a plan for what matters next.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Get a comprehensive wellness report and unlock your health potential.</p><div class="voice-why">Sell the plan and the follow-through, not the existence of a document.</div></div>
+      </div>
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>The Elite panel includes the ApoB and Lp(a) 72 nmol/L markers most physicals miss.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Advanced biomarkers for total-body optimization and peak longevity.</p><div class="voice-why">Name real markers, carry units every time. Generic longevity language says nothing.</div></div>
+      </div>
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>Spit in a tube. Drop it in the prepaid mailer. Onboarding takes fifteen minutes.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Our seamless, frictionless onboarding journey is designed around you.</p><div class="voice-why">Show the steps. Concrete actions beat adjectives about the experience.</div></div>
+      </div>
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>We catch the signal before you feel the symptom.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Revolutionary AI-powered insights to transform your healthspan.</p><div class="voice-why">A plain claim a physician would stand behind, not a hype sentence that fits any app.</div></div>
+      </div>
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>A physician who has your full picture. No repeating yourself.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Concierge care with white-glove, members-only access to elite doctors.</p><div class="voice-why">Describe the relationship in human terms. Drop concierge filler that fits any clinic.</div></div>
+      </div>
+      <div class="voice-row">
+        <div class="voice-cell say"><div class="voice-tag good">We say</div><p>The curve is not destiny. We help you plot a new trajectory.</p></div>
+        <div class="voice-cell saynot"><div class="voice-tag bad">We never say</div><p>Live longer, feel younger, and beat aging with science.</p><div class="voice-why">Tie every benefit to the central idea. No generic anti-aging promises.</div></div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:var(--amd-space-7)">
+      <div class="reveal"><h3 class="h3" style="font-size:20px">Punctuation</h3><p class="muted" style="margin-top:var(--amd-space-2)">No em dashes anywhere in prose. Use periods, commas, or restructure. Short declarative sentences carry the physician-led tone.</p></div>
+      <div class="reveal"><h3 class="h3" style="font-size:20px">Naming actions</h3><p class="muted" style="margin-top:var(--amd-space-2)">Acquisition is <b style="color:var(--amd-color-text-primary)">Apply for Membership</b> or <b style="color:var(--amd-color-text-primary)">Apply</b>. Account entry is <b style="color:var(--amd-color-text-primary)">Log In</b>. Never <b style="color:var(--amd-color-danger)">Join</b>. Never <b style="color:var(--amd-color-danger)">Demo</b> as a primary CTA.</p></div>
+      <div class="reveal"><h3 class="h3" style="font-size:20px">Clinical values</h3><p class="muted" style="margin-top:var(--amd-space-2)">Always carry units. <span class="mono">Lp(a) 72 nmol/L</span>, never <span class="mono">Lp(a) 72</span>. Precision is the brand's proof of physician authorship.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 04 VISUAL IDENTITY ============================ -->
+<section id="identity">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">04</span>Visual identity</div>
+      <h2 class="h2">The lowercase-a lane.</h2>
+      <p class="lede measure">Warm, quiet, premium, editorial. Navy, bronze, rust, and cream. Square edges everywhere. The uppercase-A black and tan lane is a different brand. Never mix the two.</p>
+    </div>
+
+    <!-- Wordmark + icon -->
+    <h3 class="h3 reveal" style="font-size:24px;margin-bottom:var(--amd-space-5)">Wordmark and icon</h3>
+    <div class="id-grid">
+      <figure class="id-card reveal" style="margin:0">
+        <div class="stage"><img class="wm" src="assets/wordmark-ink.png" alt="aleron MD wordmark in ink" /></div>
+        <figcaption class="cap"><b>Primary wordmark on light.</b> Lowercase <span class="mono">aleron</span> with superscript <span class="mono">MD</span>. Renders in <span class="token-inline">--amd-color-text-primary</span> on page, paper, cream, and card surfaces.</figcaption>
+      </figure>
+      <figure class="id-card reveal" style="margin:0">
+        <div class="stage dark"><img class="wm" src="assets/wordmark-light.png" alt="aleron MD wordmark, light on dark" /></div>
+        <figcaption class="cap"><b>Wordmark on dark.</b> White <span class="mono">aleron</span> with gold <span class="mono">MD</span> for navy and deep surfaces. Used in the header and footer of this very document.</figcaption>
+      </figure>
+      <figure class="id-card reveal" style="margin:0">
+        <div class="stage fade"><img class="ic" src="assets/icon-logo.png" alt="aleron icon logo, lowercase a" /></div>
+        <figcaption class="cap"><b>Icon logo.</b> Lowercase <span class="mono">a</span> on the identity fade <span class="token-inline">--amd-logo-icon-fade</span>, a 135 degree rust to navy diagonal. Square tile, never rounded.</figcaption>
+      </figure>
+      <figure class="id-card reveal" style="margin:0">
+        <div class="stage" style="background:var(--amd-color-surface-cream)">
+          <div style="display:flex;gap:14px;align-items:center;opacity:.92">
+            <span style="width:56px;height:56px;background:var(--amd-logo-icon-fade);display:grid;place-items:center;color:#fff;font-weight:600;font-size:30px;font-family:var(--amd-font-display)">a</span>
+            <span style="font-family:var(--amd-font-display);font-weight:600;font-size:30px;letter-spacing:-.03em">aleron<sup style="font-size:.5em;letter-spacing:.05em;margin-left:.1em">MD</sup></span>
+          </div>
+        </div>
+        <figcaption class="cap"><b>Lockup.</b> Icon paired with wordmark, optically aligned. Keep clear space of one <span class="mono">a</span>-height on all sides. Do not recolor, outline, or add radius.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Palette -->
+    <h3 class="h3 reveal" style="font-size:24px;margin:var(--amd-space-8) 0 var(--amd-space-3)">The core four</h3>
+    <p class="muted reveal" style="margin-bottom:var(--amd-space-5);max-width:60ch">Hex values and token names are pulled from <span class="mono">tokens.css</span>. Cite the token, not the raw hex, in production code.</p>
+    <div class="swatch-grid reveal">
+      <div class="swatch"><div class="chip" style="background:#1E2A4A"></div><div class="meta"><div class="nm">Navy</div><div class="hex">#1E2A4A</div><div class="tok">--amd-color-navy</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#CD9453"></div><div class="meta"><div class="nm">Bronze</div><div class="hex">#CD9453</div><div class="tok">--amd-color-gold-reference</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#B9562A"></div><div class="meta"><div class="nm">Rust</div><div class="hex">#B9562A</div><div class="tok">--amd-color-rust</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#EFEAE0"></div><div class="meta"><div class="nm">Cream</div><div class="hex">#EFEAE0</div><div class="tok">--amd-color-surface-cream</div></div></div>
+    </div>
+
+    <h3 class="h3 reveal" style="font-size:20px;margin:var(--amd-space-7) 0 var(--amd-space-2)">Supporting surfaces and accents</h3>
+    <div class="support-grid reveal">
+      <div class="support"><div class="chip" style="background:#FFFEFB"></div><div class="meta"><div class="nm">Page</div><div class="hex">#FFFEFB</div></div></div>
+      <div class="support"><div class="chip" style="background:#F6F4EE"></div><div class="meta"><div class="nm">Paper</div><div class="hex">#F6F4EE</div></div></div>
+      <div class="support"><div class="chip" style="background:#ECE5D6"></div><div class="meta"><div class="nm">Bone</div><div class="hex">#ECE5D6</div></div></div>
+      <div class="support"><div class="chip" style="background:#242426"></div><div class="meta"><div class="nm">Ink</div><div class="hex">#242426</div></div></div>
+      <div class="support"><div class="chip" style="background:#2C1F29"></div><div class="meta"><div class="nm">Burgundy</div><div class="hex">#2C1F29</div></div></div>
+      <div class="support"><div class="chip" style="background:#A35520"></div><div class="meta"><div class="nm">Rust ref</div><div class="hex">#A35520</div></div></div>
+    </div>
+    <p class="muted reveal" style="margin-top:var(--amd-space-4);font-size:13px">Domain data-viz colors (cardiac, cancer, metabolic, neuro, independence) exist in the tokens for the member app only. They never become UI chrome, borders, or body text on marketing surfaces.</p>
+
+    <!-- Square-edge grammar + fade -->
+    <div class="grid-2" style="margin-top:var(--amd-space-8)">
+      <div class="reveal">
+        <h3 class="h3" style="font-size:24px;margin-bottom:var(--amd-space-4)">Square-edge grammar</h3>
+        <p class="muted">Border radius is <span class="mono">--amd-radius-none</span>, zero, unless a source asset demands otherwise. Buttons, cards, swatches, image frames, and the icon tile are all square. Layered heroes are built from offset rectangular blocks, the venetian grammar seen on the cover and in the figma hero exports. The squareness is the brand's spine. It reads as clinical, exact, and unfussy.</p>
+        <div style="display:flex;gap:12px;margin-top:var(--amd-space-5);flex-wrap:wrap">
+          <span class="btn btn-primary">Apply for Membership</span>
+          <span class="btn btn-ghost">Log In</span>
+        </div>
+      </div>
+      <figure class="fig tall reveal" style="margin:0">
+        <img src="assets/texture-warmfade.png" alt="Warm fade study, rust to burgundy to navy, with a flat outlined registration-corner icon" />
+        <figcaption><b>Warm fade <span class="token-inline">--amd-reference-warm-fade</span></b>Rust to burgundy to navy, vertical. Reserved for full-bleed moment screens. Flat outlined registration-corner icons sit on top.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Photography direction -->
+    <h3 class="h3 reveal" style="font-size:24px;margin:var(--amd-space-8) 0 var(--amd-space-3)">Photography direction</h3>
+    <p class="muted reveal" style="margin-bottom:var(--amd-space-5);max-width:62ch">Human, editorial, diverse. Real people in real light, mid-life and older, doing the things the curve protects. Large, tight crops. Product-accurate, never stock-medical. Faces and hands carry the emotion. Color-grade toward the warm lane so the navy and rust overlays sit naturally.</p>
+    <div class="grid-2">
+      <figure class="fig tall reveal" style="margin:0">
+        <img src="assets/hero-editorial.jpg" alt="Editorial hero photograph, a person running at the coast at sunset, with navy and rust layered blocks" />
+        <figcaption><b>Editorial hero with layered blocks</b>Tight human crop, warm grade, offset navy and rust rectangles forming the parallax hero. Headline sits in cream over the darkest corner.</figcaption>
+      </figure>
+      <figure class="fig tall reveal" style="margin:0">
+        <img src="assets/landing-full.png" alt="Full landing composition showing hero, capability curve, carousel, testimonial, stats, and footer" />
+        <figcaption><b>Full surface, end to end</b>How the pieces compose. Hero, curve, results carousel, testimonial, stats, then the navy footer. One quiet warm system from top to bottom.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Texture + illustration -->
+    <h3 class="h3 reveal" style="font-size:24px;margin:var(--amd-space-8) 0 var(--amd-space-3)">Texture and illustration</h3>
+    <p class="muted reveal" style="margin-bottom:var(--amd-space-5);max-width:62ch">Texture is quiet, never decorative noise. Three approved studies, plus two illustration modes for moment screens. Reference the texture studies in the figma snapshot before inventing a new background.</p>
+    <div class="grid-3">
+      <figure class="fig reveal" style="margin:0">
+        <img src="assets/texture-brick.png" alt="Tonal block texture in cream tones" />
+        <figcaption><b>Tonal block study</b>Staggered cream blocks, low contrast. A near-invisible warmth for large empty fields.</figcaption>
+      </figure>
+      <figure class="fig reveal" style="margin:0">
+        <img src="assets/object-iso.png" alt="Isometric warm-brown delivery truck object illustration" />
+        <figcaption><b>Isometric warm-brown objects</b>For tangible moments like a kit shipping. Solid warm-brown, black outline, no gradients.</figcaption>
+      </figure>
+      <figure class="fig reveal" style="margin:0">
+        <img src="assets/texture-registration.png" alt="Flat outlined registration-corner lab order icon on cream" />
+        <figcaption><b>Registration-corner icons</b>Flat outlined line icons with corner ticks. For status and system moments, like a lab order ready.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 05 TYPOGRAPHY ============================ -->
+<section id="type" class="cream">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">05</span>Typography</div>
+      <h2 class="h2">Inter Tight sets the tone. Source Serif carries the human voice.</h2>
+      <p class="lede measure">Four families, each with a job, all from the design system. Display and headings in Inter Tight, tight tracking, low line height. Body in Inter at a comfortable measure. Source Serif 4 for testimonials and editorial pull quotes. JetBrains Mono for labels, clinical values, and tokens.</p>
+    </div>
+
+    <div class="reveal" style="border-bottom:1px solid var(--amd-color-border-default)">
+      <div class="type-row">
+        <div class="spec"><b>Display</b>Inter Tight 600<br/>clamp 64 to 120px<br/>track -0.045em</div>
+        <div class="type-sample display" style="font-size:clamp(40px,7vw,76px)">Your best days are still ahead.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>H1</b>Inter Tight 600<br/>clamp 48 to 88px<br/>track -0.038em</div>
+        <div class="type-sample h1" style="font-size:clamp(34px,5vw,60px)">The curve is not destiny.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>H2</b>Inter Tight 600<br/>clamp 34 to 62px<br/>track -0.032em</div>
+        <div class="type-sample h2" style="font-size:clamp(28px,4vw,46px)">It is your body's ability to do what you want.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>H3</b>Inter Tight 600<br/>clamp 24 to 36px<br/>track -0.024em</div>
+        <div class="type-sample h3">We catch the signal before you feel the symptom.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>Body large</b>Inter 400<br/>clamp 18 to 22px<br/>line 1.55</div>
+        <div class="type-sample lede" style="color:var(--amd-color-text-primary)">Aleron combines labs, genetics, wearable trends, records, and physician judgment into a domain-by-domain risk picture.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>Body</b>Inter 400<br/>16px<br/>line 1.6, measure 68ch</div>
+        <div class="type-sample measure">Draw the Elite panel two ways. Walk into your nearest Quest patient service center, or skip the trip with an at-home capillary kit. Either way you get a comprehensive metabolic, cardiovascular, and inflammatory workup.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>Serif quote</b>Source Serif 4<br/>editorial, testimonial</div>
+        <div class="type-sample serif" style="font-size:clamp(20px,2.6vw,30px);line-height:1.4">Best part isn't the labs or the engine. It's getting a voice message from my doctor explaining what to do next.</div>
+      </div>
+      <div class="type-row">
+        <div class="spec"><b>Label / value</b>JetBrains Mono 500<br/>12px, track 0.16em<br/>uppercase</div>
+        <div class="type-sample mono" style="letter-spacing:.16em;text-transform:uppercase;font-size:13px">ApoB 88 mg/dL · Lp(a) 72 nmol/L · hsCRP 0.8 mg/L</div>
+      </div>
+    </div>
+
+    <div class="grid-3" style="margin-top:var(--amd-space-7)">
+      <div class="reveal"><h3 class="h3" style="font-size:19px">Scale</h3><p class="muted" style="margin-top:var(--amd-space-2)">One headline per surface earns display size. Step down hard between levels. The jump from display to body is the hierarchy. Do not crowd the scale with near-equal sizes.</p></div>
+      <div class="reveal"><h3 class="h3" style="font-size:19px">Measure</h3><p class="muted" style="margin-top:var(--amd-space-2)">Body text holds to <span class="mono">68ch</span>. Long lines break the editorial calm. Headlines run shorter, often capped near 14 to 18 characters per line for punch.</p></div>
+      <div class="reveal"><h3 class="h3" style="font-size:19px">Hierarchy</h3><p class="muted" style="margin-top:var(--amd-space-2)">No rounded-pill eyebrows above headlines. Use a mono label with a numeric index instead, the pattern at the top of every section here.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 MOTION ============================ -->
+<section id="motion" class="dark">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow on-dark"><span class="n">06</span>Motion &amp; interaction</div>
+      <h2 class="h2">The deck became a website.</h2>
+      <p class="lede measure">Scroll-driven storytelling, layered and parallax heroes, modules that feel live. Motion is meaningful and restrained, it earns its place by clarifying the curve. The reference bar is the pitch deck. Mechanisms, not just words and pictures. The curve above draws itself once, on first view. That is the ceiling for decoration, and it still serves the idea.</p>
+    </div>
+
+    <div class="rails">
+      <div class="rail allow reveal">
+        <h3><span class="mk"></span>Allowed</h3>
+        <ul>
+          <li>Scroll-driven storytelling. The capability curve drawing as the reader descends.</li>
+          <li>Layered, parallax heroes built from offset square blocks moving at different rates.</li>
+          <li>Subtle color, opacity, and border transitions on hover and focus.</li>
+          <li>One purposeful reveal per element on first view, then it rests.</li>
+          <li>Standard easing <span class="mono" style="color:var(--amd-color-text-accent-on-dark)">cubic-bezier(.2,.7,.2,1)</span> at 160 to 520ms.</li>
+          <li>Full respect for <span class="mono" style="color:var(--amd-color-text-accent-on-dark)">prefers-reduced-motion</span>. Everything degrades to static.</li>
+        </ul>
+      </div>
+      <div class="rail ban reveal">
+        <h3><span class="mk"></span>Banned</h3>
+        <ul>
+          <li>Bounce, spring overshoot, and elastic easing.</li>
+          <li>Neon glows, decorative particles, and looping ambient animation.</li>
+          <li>Generic SaaS gradient sweeps and dashboard-style data churn for show.</li>
+          <li>Auto-playing carousels that move without the reader.</li>
+          <li>Motion that repeats on every scroll, fighting the reader for attention.</li>
+          <li>Rounded, springy modals or toasts. Square and quiet, always.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 07 AUDIENCE ============================ -->
+<section id="audience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">07</span>Audience grammar</div>
+      <h2 class="h2">One brand. Two readers.</h2>
+      <p class="lede measure">Prospective members come first, employers and brokers second. The voice, palette, and curve do not change between them. What changes is the unit of value and the call to action. Individuals hear about their own years. Employers hear about a population and a path to contact.</p>
+    </div>
+
+    <div class="aud">
+      <div class="aud-card reveal">
+        <div class="who">Prospective member</div>
+        <p class="quote serif">Your best days are still ahead. Let's protect the years you actually want to spend.</p>
+        <p class="muted">Second person, singular. The benefit is personal capability. Specificity earns trust: named panels, real markers, a fifteen minute start. The page ends on the individual path.</p>
+        <div class="cta-row"><span class="btn btn-primary">Apply for Membership</span></div>
+      </div>
+      <div class="aud-card reveal">
+        <div class="who">Employer / broker</div>
+        <p class="quote serif">Catch risk early across your people, and keep your highest performers in the game longer.</p>
+        <p class="muted">Plural unit of value, still grounded and honest. No HR jargon, no generic wellness ROI claims. The path is a conversation, not a checkout. Same lane, same curve, wider lens.</p>
+        <div class="cta-row"><span class="btn btn-ghost">For Employers</span></div>
+      </div>
+    </div>
+
+    <div class="aud-note reveal">
+      <b>The shared close.</b> Every full marketing surface ends serving both readers. <b style="color:var(--amd-color-text-primary)">Apply for Membership</b> as the primary individual action, and a quieter <b style="color:var(--amd-color-text-primary)">For Employers</b> contact path beside it. Two doors, one curve, never a <span style="color:var(--amd-color-danger)">Join</span> button.
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 08 DO / DON'T ============================ -->
+<section id="gallery" class="paper">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow"><span class="n">08</span>Do / Don't gallery</div>
+      <h2 class="h2">Concrete calls, every one grounded in a rule.</h2>
+      <p class="lede measure">When a judgment is close, this is the tiebreaker. Each pair names the rule it enforces.</p>
+    </div>
+
+    <div class="dd-grid">
+      <div class="dd do reveal"><div class="head"><span class="rule">CTA naming</span><span class="verdict">Do</span></div><div class="body"><div class="ex">Acquisition button reads <b>Apply for Membership</b>. Header reads <b>Log In</b>.</div><div class="why">Membership is applied for, not joined. Account entry is logging in.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">CTA naming</span><span class="verdict">Don't</span></div><div class="body"><div class="ex">Join now. Sign up free. Get started.</div><div class="why">Never <b style="color:var(--amd-color-danger)">Join</b>. It frames a club, not a care relationship.</div></div></div>
+
+      <div class="dd do reveal"><div class="head"><span class="rule">Eyebrows</span><span class="verdict">Do</span></div><div class="body"><div class="ex"><span class="mono" style="letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--amd-color-text-accent)">02 · The central idea</span> set above the headline.</div><div class="why">A mono label with a numeric index. Flat, square, editorial.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">Eyebrows</span><span class="verdict">Don't</span></div><div class="body"><div class="ex"><span style="display:inline-block;border-radius:999px;background:#e9dfce;padding:4px 12px;font-size:12px">✦ Preventive Care</span> as a rounded pill above the headline.</div><div class="why">No rounded-pill eyebrow tags. Pills belong to the other lane.</div></div></div>
+
+      <div class="dd do reveal"><div class="head"><span class="rule">Punctuation</span><span class="verdict">Do</span></div><div class="body"><div class="ex">The output is not a report. It is a plan for what matters next.</div><div class="why">Two short sentences. No em dash. Periods carry the rhythm.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">Punctuation</span><span class="verdict">Don't</span></div><div class="body"><div class="ex">The output is not a report &#8212; it is a plan for what matters next.</div><div class="why">No em dashes in prose, ever. Restructure into clean sentences.</div></div></div>
+
+      <div class="dd do reveal"><div class="head"><span class="rule">Clinical values</span><span class="verdict">Do</span></div><div class="body"><div class="ex"><span class="mono">Lp(a) 72 nmol/L</span>. <span class="mono">ApoB 88 mg/dL</span>.</div><div class="why">Units every time. Precision proves a physician wrote it.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">Clinical values</span><span class="verdict">Don't</span></div><div class="body"><div class="ex"><span class="mono">Lp(a) 72</span>. Your biomarkers, optimized.</div><div class="why">A value without units is not a clinical claim. It is decoration.</div></div></div>
+
+      <div class="dd do reveal"><div class="head"><span class="rule">Lane discipline</span><span class="verdict">Do</span></div><div class="body"><div class="ex">Navy, bronze, rust, cream. Square edges. Warm grade. Lowercase <span class="mono">aleron</span>.</div><div class="why">One lane, held consistently across every surface.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">Lane discipline</span><span class="verdict">Don't</span></div><div class="body"><div class="ex">Black and tan, rounded cards, uppercase ALERON, a Demo CTA borrowed from a reference screenshot.</div><div class="why">Never mix lanes. Do not inherit Demo CTAs or rust login tiles from old hero exports.</div></div></div>
+
+      <div class="dd do reveal"><div class="head"><span class="rule">Substance</span><span class="verdict">Do</span></div><div class="body"><div class="ex">A 163-gene panel that screens for variants which actually change a care plan.</div><div class="why">Sell what the product enables. Name the real thing.</div></div></div>
+      <div class="dd dont reveal"><div class="head"><span class="rule">Substance</span><span class="verdict">Don't</span></div><div class="body"><div class="ex">Unlock total-body optimization and your longevity potential today.</div><div class="why">No generic longevity claims, no filler that fits any clinic.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="wrap" style="padding:0">
+    <div class="ft-top">
+      <img class="wm" src="assets/wordmark-light.png" alt="aleron MD" />
+      <p class="ft-note">Premium, physician-led preventive medicine. This guideline is an identity document. For tokens, components, and patterns, see the design system kit. Do not duplicate or contradict it.</p>
+    </div>
+    <div class="ft-meta">
+      <span>Brand guideline · v1 · 2026</span>
+      <span>Lane: lowercase-a · navy bronze rust cream</span>
+      <span>Source of truth: tokens.css</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Restrained, meaningful motion only. Reveal each element once, then rest.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = [].slice.call(document.querySelectorAll('.reveal, #curveStage'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

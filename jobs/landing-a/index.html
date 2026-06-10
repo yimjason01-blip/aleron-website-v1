@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aleron MD · Your best days are still ahead.</title>
+<meta name="description" content="Physician-led preventive medicine, powered by AI and your own genetic, lab, and wearable data. One physician who sees the whole picture, and a plan for what matters next." />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   DESIGN SYSTEM TOKENS, inlined from
+   /Users/jasonyim/Projects/meridian-landing/design-system/tokens.css
+   ===================================================================== */
+:root {
+  color-scheme: light;
+
+  --amd-logo-icon-fade: linear-gradient(135deg, #B9562A 0%, #80443B 42%, #1E2A4A 100%);
+  --amd-reference-warm-fade: linear-gradient(180deg, #A35520 0%, #532F4B 43%, #23315F 93%);
+
+  --amd-color-surface-page: #FFFEFB;
+  --amd-color-surface-paper: #F6F4EE;
+  --amd-color-surface-cream: #EFEAE0;
+  --amd-color-surface-bone: #ECE5D6;
+  --amd-color-surface-dark: #242426;
+  --amd-color-surface-deep: #232426;
+  --amd-color-surface-card: #FFFFFF;
+  --amd-color-text-primary: #242426;
+  --amd-color-text-secondary: #565659;
+  --amd-color-text-secondary-on-paper: #4D4D50;
+  --amd-color-text-tertiary: #6E6E72;
+  --amd-color-text-accent: #6E3D1C;
+  --amd-color-text-accent-on-dark: #D9A765;
+  --amd-color-text-inverse: #FFFEFB;
+  --amd-color-text-inverse-muted: rgba(255, 254, 251, 0.78);
+  --amd-color-border-default: rgba(36, 36, 38, 0.14);
+  --amd-color-border-subtle: rgba(36, 36, 38, 0.08);
+  --amd-color-border-inverse: rgba(255, 254, 251, 0.22);
+  --amd-color-rust: #B9562A;
+  --amd-color-rust-reference: #A35520;
+  --amd-color-gold-reference: #CD9453;
+  --amd-color-navy: #1E2A4A;
+  --amd-color-hero-blue: #414C6A;
+  --amd-color-danger: #922E20;
+
+  --amd-action-primary-bg: var(--amd-color-surface-dark);
+  --amd-action-primary-text: var(--amd-color-text-inverse);
+  --amd-focus-ring: 0 0 0 3px rgba(185, 86, 42, 0.22);
+
+  --amd-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --amd-font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --amd-font-serif: "Source Serif 4", Georgia, serif;
+  --amd-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --amd-type-h1-size: clamp(48px, 7vw, 88px);
+  --amd-type-h2-size: clamp(34px, 4.7vw, 62px);
+  --amd-type-h3-size: clamp(24px, 2.8vw, 36px);
+  --amd-type-body-lg-size: clamp(18px, 1.4vw, 22px);
+  --amd-type-label-size: 12px;
+  --amd-type-label-track: 0.16em;
+
+  --amd-space-2: 8px;  --amd-space-3: 12px; --amd-space-4: 16px;
+  --amd-space-5: 24px; --amd-space-6: 32px; --amd-space-7: 48px;
+  --amd-space-8: 64px; --amd-space-9: 96px;
+
+  --amd-layout-max: 1240px;
+  --amd-layout-gutter: clamp(20px, 4vw, 64px);
+  --amd-layout-section-y: clamp(72px, 9vw, 132px);
+
+  --amd-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --amd-ease-premium: cubic-bezier(.22, .72, .18, 1);
+  --amd-duration-fast: 160ms;
+  --amd-duration-standard: 280ms;
+  --amd-duration-slow: 520ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--amd-color-surface-page);
+  color: var(--amd-color-text-primary);
+  font-family: var(--amd-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p, figure { margin: 0; }
+button { font: inherit; }
+
+.wrap { max-width: var(--amd-layout-max); margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+.measure { max-width: 62ch; }
+
+.eyebrow {
+  font-family: var(--amd-font-mono);
+  font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track);
+  text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+.eyebrow.on-dark { color: var(--amd-color-text-accent-on-dark); }
+.eyebrow .n { color: var(--amd-color-text-tertiary); margin-right: var(--amd-space-3); }
+.on-dark .n, .eyebrow.on-dark .n { color: var(--amd-color-text-inverse-muted); }
+
+h1, h2, h3 { font-family: var(--amd-font-display); font-weight: 600; }
+.h2 { font-size: var(--amd-type-h2-size); line-height: 1.04; letter-spacing: -0.032em; }
+.h3 { font-size: var(--amd-type-h3-size); line-height: 1.12; letter-spacing: -0.024em; }
+.lede { font-size: var(--amd-type-body-lg-size); line-height: 1.55; color: var(--amd-color-text-secondary); }
+.mono { font-family: var(--amd-font-mono); }
+.muted { color: var(--amd-color-text-secondary); }
+
+section { padding-block: var(--amd-layout-section-y); }
+.sec-head { display: grid; gap: var(--amd-space-4); margin-bottom: var(--amd-space-8); }
+.sec-head .h2 { max-width: 22ch; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 0 26px;
+  border: 1px solid currentColor;
+  font-size: 14px; font-weight: 600; letter-spacing: .01em;
+  text-decoration: none; cursor: pointer;
+  transition: background var(--amd-duration-standard) var(--amd-ease-standard),
+              color var(--amd-duration-standard) var(--amd-ease-standard),
+              border-color var(--amd-duration-standard) var(--amd-ease-standard),
+              transform var(--amd-duration-standard) var(--amd-ease-premium),
+              box-shadow var(--amd-duration-standard) ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(16, 20, 32, 0.18); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+.btn:focus-visible { outline: 2px solid var(--amd-color-rust); outline-offset: 4px; }
+.btn-primary { background: var(--amd-action-primary-bg); color: var(--amd-action-primary-text); border-color: var(--amd-action-primary-bg); }
+.btn-primary:hover { background: #8E3F1E; border-color: #8E3F1E; }
+.btn-ghost { background: transparent; color: var(--amd-color-text-primary); border-color: rgba(36,36,38,.34); }
+.btn-ghost:hover { border-color: var(--amd-color-text-primary); }
+.btn-cream { background: var(--amd-color-surface-cream); color: var(--amd-color-text-primary); border-color: var(--amd-color-surface-cream); }
+.btn-cream:hover { background: #FFFFFF; border-color: #FFFFFF; }
+.btn-outline-light { background: rgba(239,234,224,0.08); color: var(--amd-color-surface-cream); border-color: rgba(239,234,224,0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.btn-outline-light:hover { background: rgba(239,234,224,0.18); }
+
+/* reveal on first view, then rest */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--amd-ease-standard), transform .7s var(--amd-ease-standard); }
+.reveal.in-view { opacity: 1; transform: none; }
+
+/* =====================================================================
+   HEADER. Fixed wordmark + Log In; translucent bar appears on scroll.
+   ===================================================================== */
+body::before {
+  content: "";
+  position: fixed; left: 0; top: 0; z-index: 40;
+  width: 100%; height: 76px;
+  pointer-events: none;
+  background: rgba(20, 24, 32, 0.74);
+  border-bottom: 1px solid rgba(239, 234, 224, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  opacity: 0; transform: translateY(-12px);
+  transition: opacity var(--amd-duration-standard) ease, transform var(--amd-duration-standard) var(--amd-ease-premium);
+}
+body.is-scrolled::before { opacity: 1; transform: translateY(0); }
+
+.site-brand {
+  position: fixed; z-index: 41;
+  left: clamp(20px, 4.1vw, 72px); top: 22px;
+  height: 26px;
+}
+.site-brand img { height: 22px; width: auto; filter: drop-shadow(0 1px 10px rgba(10, 13, 20, 0.45)); }
+.header-actions {
+  position: fixed; z-index: 41;
+  right: clamp(20px, 4.1vw, 72px); top: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.header-login {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 20px;
+  background: rgba(239,234,224,0.10); color: #FFFEFB;
+  border: 1px solid rgba(255,255,255,0.58);
+  font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: .01em;
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  transition: background var(--amd-duration-fast) ease, border-color var(--amd-duration-fast) ease, transform var(--amd-duration-fast) var(--amd-ease-premium);
+}
+.header-login:hover { transform: translateY(-1px); background: rgba(239,234,224,0.2); border-color: rgba(255,255,255,0.9); }
+.header-login:focus-visible { outline: 2px solid #FFFEFB; outline-offset: 4px; }
+
+/* =====================================================================
+   SECTION 1 · HERO. Layered photographic carousel with plane parallax.
+   Planes: background photo, floating geometric blocks, subject,
+   anchored color block. Two slides: runner, surfer.
+   ===================================================================== */
+.hero-frame {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 1728 / 968;
+  height: min(calc(100vw * 968 / 1728), 100svh);
+  overflow: hidden;
+  background: var(--amd-color-hero-blue);
+  isolation: isolate;
+  --hero-block-shift: 0px;
+}
+.hero-slide {
+  position: absolute; inset: 0; z-index: 1;
+  visibility: hidden; pointer-events: none;
+  --slide-image-shift: 112vw;
+  --slide-float-shift: 230vw;
+}
+.hero-slide.is-active { z-index: 3; visibility: visible; --slide-image-shift: 0px; --slide-float-shift: 0px; }
+.hero-slide.is-exiting { z-index: 2; visibility: visible; --slide-image-shift: -58vw; --slide-float-shift: -170vw; }
+.hero-plane {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  display: block; object-fit: fill;
+  pointer-events: none; user-select: none; will-change: transform;
+}
+.hero-plane.bg      { z-index: 1; transform: translate3d(var(--slide-image-shift), 0, 0); transition: transform 780ms var(--amd-ease-premium); }
+.hero-plane.mid     { z-index: 2; transform: translate3d(calc(var(--slide-float-shift) + var(--hero-block-shift)), 0, 0); transition: transform 980ms var(--amd-ease-standard); }
+.hero-plane.subject { z-index: 3; transform: translate3d(var(--slide-image-shift), 0, 0); transition: transform 780ms var(--amd-ease-premium); }
+.hero-plane.anchor  { z-index: 4; transform: none; }
+
+.hero-chrome {
+  position: absolute; inset: 4.95% 4.17%; z-index: 5;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  pointer-events: none;
+}
+.hero-copy { width: min(40%, 560px); color: #FFFEFB; margin-bottom: 2.6%; }
+.hero-copy h1 {
+  font-family: var(--amd-font-display);
+  font-weight: 500;
+  font-size: clamp(34px, 3.9vw, 66px);
+  line-height: 1.02; letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.hero-copy p {
+  width: 96%;
+  margin: 18px 0 0;
+  color: rgba(255, 254, 251, 0.84);
+  font-size: clamp(14px, 1.1vw, 18px);
+  line-height: 1.5; letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.hero-cta-row { margin-top: 26px; pointer-events: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-bottom {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 32px;
+}
+.hero-meta { display: flex; align-items: center; gap: 18px; pointer-events: auto; }
+.hero-count {
+  margin: 0; color: rgba(255,254,251,0.85);
+  font-family: var(--amd-font-mono);
+  font-size: 13px; letter-spacing: .08em;
+}
+.hero-dots { display: flex; align-items: center; gap: 10px; }
+.hero-dot {
+  width: 11px; height: 11px; padding: 0;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.16);
+  cursor: pointer;
+  transition: width var(--amd-duration-fast) var(--amd-ease-standard), background var(--amd-duration-fast) ease, border-color var(--amd-duration-fast) ease;
+}
+.hero-dot.is-active { width: 28px; background: #FFFEFB; border-color: #FFFEFB; }
+.hero-dot:focus-visible { outline: 2px solid #FFFEFB; outline-offset: 4px; }
+
+.hero-fade-up { animation: heroFadeUp 760ms var(--amd-ease-premium) both; }
+.hero-copy h1 { animation-delay: 200ms; }
+.hero-copy p { animation-delay: 320ms; }
+.hero-cta-row { animation: heroFadeUp 760ms var(--amd-ease-premium) both 440ms; }
+.hero-bottom { animation: heroFadeUp 760ms var(--amd-ease-premium) both 560ms; }
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 820px) {
+  .hero-frame { aspect-ratio: auto; height: min(82svh, 700px); }
+  .hero-plane { object-fit: cover; object-position: 58% center; }
+  .hero-frame::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 4;
+    background: linear-gradient(to top, rgba(18, 22, 34, 0.72) 0%, rgba(18, 22, 34, 0.32) 38%, transparent 62%);
+    pointer-events: none;
+  }
+  .hero-chrome { inset: 24px 20px; }
+  .hero-copy { width: min(92%, 480px); margin-bottom: 14px; }
+  .hero-copy h1 { font-size: clamp(34px, 9.6vw, 44px); animation: heroFadeUp 760ms var(--amd-ease-premium) both 200ms; }
+  .hero-copy p { font-size: 15px; animation: heroFadeUp 760ms var(--amd-ease-premium) both 320ms; }
+  .hero-bottom { flex-direction: column; align-items: flex-start; gap: 18px; }
+}
+
+/* =====================================================================
+   SECTION 2 · CAPABILITY CURVE. Sticky chart + sliders on the left,
+   four scroll-driven stages on the right, stage rail at the far right.
+   ===================================================================== */
+.curve-section {
+  background: var(--amd-color-surface-paper);
+  padding: 0;
+  border-top: 1px solid var(--amd-color-border-subtle);
+}
+.curve-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr) 92px;
+  gap: clamp(28px, 3.4vw, 64px);
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 var(--amd-layout-gutter);
+  align-items: start;
+}
+.curve-sticky {
+  position: sticky; top: 0;
+  min-width: 0;
+  height: 100svh;
+  display: flex; flex-direction: column;
+  align-items: stretch; justify-content: center;
+  gap: 14px;
+  padding: 24px 0;
+}
+.qol-stage { min-width: 0; max-width: 100%; }
+.chart-card {
+  background: #FBF8F1;
+  max-width: 100%;
+  border: 1px solid rgba(10,10,11,0.10);
+  box-shadow: 0 18px 46px -30px rgba(10,10,11,0.16);
+  padding: clamp(8px, 1vw, 16px);
+}
+.chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.qol-svg { display: block; width: 100%; height: auto; min-width: 0; }
+
+/* slider controls */
+.curve-controls { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.ctl {
+  background: var(--amd-color-surface-cream);
+  border: 1px solid var(--amd-color-border-subtle);
+  padding: 12px 16px 10px;
+}
+.ctl-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; gap: 8px; }
+.ctl-name {
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+  font-weight: 500; color: var(--amd-color-text-accent);
+  white-space: nowrap;
+}
+.ctl-val {
+  font-family: var(--amd-font-display);
+  font-size: 14px; font-weight: 600; letter-spacing: -0.01em;
+  color: var(--amd-color-text-primary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+input[type=range] {
+  width: 100%; -webkit-appearance: none; appearance: none;
+  height: 3px; background: rgba(36,36,38,0.16); outline: none;
+  margin: 6px 0 4px; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  background: #FFFEFB; cursor: pointer;
+  border: 2.5px solid var(--amd-color-rust);
+  box-shadow: 0 1px 4px rgba(10,10,11,0.16);
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 0;
+  background: #FFFEFB; cursor: pointer;
+  border: 2.5px solid var(--amd-color-rust);
+  box-shadow: 0 1px 4px rgba(10,10,11,0.16);
+}
+input[type=range]:focus-visible { box-shadow: var(--amd-focus-ring); }
+.ctl-marks {
+  display: flex; justify-content: space-between;
+  color: var(--amd-color-text-tertiary);
+  font-size: 10px; letter-spacing: .05em; text-transform: uppercase;
+  margin-top: 5px;
+}
+.curve-controls-hint {
+  font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--amd-color-text-tertiary);
+  margin: 2px 2px 0;
+}
+
+/* scroll steps */
+.curve-steps { display: flex; flex-direction: column; }
+.curve-step {
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 90px 0;
+  opacity: 0.34;
+  transition: opacity .5s var(--amd-ease-standard);
+}
+.curve-step.is-active { opacity: 1; }
+.curve-step .eyebrow { margin-bottom: 20px; }
+.curve-step h2 {
+  font-size: clamp(30px, 2.9vw, 44px);
+  line-height: 1.06; letter-spacing: -0.03em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  max-width: 17ch;
+}
+.curve-step p { font-size: clamp(16px, 1.2vw, 18px); line-height: 1.65; color: var(--amd-color-text-secondary-on-paper); max-width: 44ch; }
+.curve-step .quiet-link {
+  display: inline-block; margin-top: 26px;
+  font-size: 14px; font-weight: 600;
+  color: var(--amd-color-text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(110,61,28,0.4);
+  padding-bottom: 2px;
+  transition: border-color var(--amd-duration-fast) ease;
+}
+.curve-step .quiet-link:hover { border-color: var(--amd-color-text-accent); }
+.curve-step .quiet-link::after { content: " →"; }
+
+/* stage rail */
+.stage-rail-col { position: relative; align-self: stretch; }
+.stage-rail {
+  position: sticky; top: 50svh;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 22px;
+  padding-left: 14px;
+  border-left: 1px solid var(--amd-color-border-default);
+}
+.stage-rail::before {
+  content: "";
+  position: absolute; left: -1px; top: 0;
+  width: 1px; height: var(--rail-progress, 0%);
+  background: var(--amd-color-rust);
+  transition: height .5s var(--amd-ease-standard);
+}
+.rail-item {
+  appearance: none; border: 0; background: transparent; padding: 0;
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amd-color-text-tertiary);
+  cursor: pointer; text-align: left;
+  transition: color var(--amd-duration-fast) ease;
+}
+.rail-item::before {
+  content: "";
+  width: 8px; height: 8px; flex: none;
+  background: rgba(36,36,38,0.18);
+  transition: background var(--amd-duration-fast) ease;
+}
+.rail-item.is-active { color: var(--amd-color-text-accent); }
+.rail-item.is-active::before { background: var(--amd-color-rust); }
+.rail-item:hover { color: var(--amd-color-text-primary); }
+
+/* SVG stage state machine: opacity gated by data-stage on .qol-stage */
+.qol-stage .g-bands, .qol-stage .g-zones { opacity: 0; transition: opacity .7s var(--amd-ease-standard); }
+.qol-stage .curve-base {
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.7s var(--amd-ease-standard), opacity .6s var(--amd-ease-standard);
+}
+.qol-stage.curve-drawn .curve-base { stroke-dashoffset: 0; }
+.qol-stage .curve-ghost { opacity: 0; transition: opacity .6s var(--amd-ease-standard); }
+.qol-stage .curve-evented { opacity: 0; transition: opacity .6s var(--amd-ease-standard) .15s; }
+.qol-stage .g-event { opacity: 0; transition: opacity .6s var(--amd-ease-standard) .35s; }
+.qol-stage .curve-lift {
+  stroke-dasharray: 1000; stroke-dashoffset: 1000; opacity: 0;
+  transition: stroke-dashoffset 1.8s var(--amd-ease-standard) .2s, opacity .5s var(--amd-ease-standard);
+}
+.qol-stage .g-lift { opacity: 0; transition: opacity .6s var(--amd-ease-standard) 1.2s; }
+
+.qol-stage[data-stage="2"] .g-bands,
+.qol-stage[data-stage="3"] .g-bands,
+.qol-stage[data-stage="4"] .g-bands,
+.qol-stage[data-stage="2"] .g-zones,
+.qol-stage[data-stage="3"] .g-zones,
+.qol-stage[data-stage="4"] .g-zones { opacity: 1; }
+
+.qol-stage[data-stage="3"] .curve-base { opacity: 0; }
+.qol-stage[data-stage="3"] .curve-ghost { opacity: .55; }
+.qol-stage[data-stage="3"] .curve-evented { opacity: 1; stroke-dasharray: none; }
+.qol-stage[data-stage="3"] .g-event { opacity: 1; }
+
+.qol-stage[data-stage="4"] .curve-base { opacity: 0; }
+.qol-stage[data-stage="4"] .curve-ghost { opacity: .5; }
+.qol-stage[data-stage="4"] .curve-lift { opacity: 1; stroke-dashoffset: 0; }
+.qol-stage[data-stage="4"] .g-lift { opacity: 1; }
+
+/* once the visitor grabs a slider, updates are instant, no redraw theater */
+.qol-stage.is-live .curve-base,
+.qol-stage.is-live .curve-lift { transition: opacity .4s ease; stroke-dashoffset: 0 !important; }
+
+@media (max-width: 1060px) {
+  .curve-wrap { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .stage-rail-col { display: none; }
+  .curve-sticky {
+    height: auto;
+    position: sticky; top: 0; z-index: 5;
+    background: var(--amd-color-surface-paper);
+    border-bottom: 1px solid var(--amd-color-border-subtle);
+    padding: 12px var(--amd-layout-gutter) 12px;
+    gap: 10px;
+  }
+  .qol-svg { min-width: 520px; }
+  .curve-controls { gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ctl { padding: 8px 10px 7px; }
+  .ctl-head { flex-wrap: wrap; margin-bottom: 4px; }
+  .ctl-marks { display: none; }
+  .ctl-name { font-size: 9px; letter-spacing: .1em; }
+  .ctl-val { font-size: 11px; }
+  .curve-controls-hint { display: none; }
+  .curve-steps { padding: 0 var(--amd-layout-gutter); }
+  .curve-step { min-height: 64svh; padding: 56px 0; opacity: 1; }
+}
+
+/* =====================================================================
+   SECTION 3 · SIGNALS. Warm-paper tableau, four isometric objects.
+   ===================================================================== */
+.signals-section {
+  position: relative;
+  background: var(--amd-color-surface-cream);
+  overflow: hidden;
+}
+.signals-section::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(36,36,38,0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(36,36,38,0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: .62;
+  pointer-events: none;
+}
+.signals-section::after {
+  content: "";
+  position: absolute;
+  width: 44vw; height: 44vw; right: -18vw; top: -20vw;
+  background: radial-gradient(circle, rgba(205,148,83,0.18), transparent 68%);
+  pointer-events: none;
+}
+.signals-inner { position: relative; z-index: 1; }
+.signals-head { text-align: center; display: grid; gap: var(--amd-space-4); justify-items: center; margin-bottom: var(--amd-space-7); }
+.signals-head .h2 { max-width: 26ch; }
+.signals-head .h2 em { font-style: normal; color: var(--amd-color-text-accent); }
+.signal-stage { position: relative; height: min(44vh, 360px); min-height: 300px; width: 100%; }
+.signal-object {
+  position: absolute;
+  width: var(--w);
+  left: var(--x); top: var(--y);
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  z-index: var(--z, 2);
+  display: grid; justify-items: center; gap: 6px;
+}
+.signal-object img { width: 100%; height: auto; filter: drop-shadow(0 18px 20px rgba(36,36,38,0.12)); }
+.signal-object figcaption {
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+.signal-object.labs      { --x: 17%; --y: 56%; --w: clamp(150px, 18vw, 232px); --r: -2deg;   --z: 2; }
+.signal-object.genetics  { --x: 39%; --y: 38%; --w: clamp(200px, 24vw, 314px); --r: 1.5deg;  --z: 4; }
+.signal-object.wearables { --x: 62%; --y: 58%; --w: clamp(190px, 23vw, 298px); --r: -1deg;   --z: 5; }
+.signal-object.imaging   { --x: 84%; --y: 38%; --w: clamp(195px, 23vw, 302px); --r: 1deg;    --z: 3; }
+.signal-object.reveal { transition-delay: calc(var(--d, 0) * 120ms); transform: translate(-50%, calc(-50% + 26px)) rotate(var(--r, 0deg)); }
+.signal-object.reveal.in-view { transform: translate(-50%, -50%) rotate(var(--r, 0deg)); }
+@media (max-width: 860px) {
+  .signal-stage { height: auto; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 12px; padding: 8px 0 12px; }
+  .signal-object { position: static; transform: none !important; width: 100%; max-width: 230px; margin: 0 auto; }
+}
+
+/* =====================================================================
+   SECTION 4 · THE ENGINE. Tabbed carousel: copy left, frames right.
+   ===================================================================== */
+.engine-section { background: var(--amd-color-surface-page); }
+.exp-stage {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: stretch;
+  min-height: 560px;
+}
+.exp-copy { position: relative; min-height: 520px; }
+.exp-pane {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s ease;
+  pointer-events: none;
+}
+.exp-pane.is-active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.exp-pane-step {
+  font-family: var(--amd-font-mono); font-weight: 500;
+  font-size: 11px; color: var(--amd-color-text-accent);
+  letter-spacing: .15em; text-transform: uppercase;
+  margin-bottom: 20px; display: block;
+}
+.exp-pane h3 {
+  font-size: clamp(26px, 2.6vw, 40px);
+  line-height: 1.05; letter-spacing: -0.035em;
+  margin-bottom: 18px;
+}
+.exp-pane > p { font-size: 16px; line-height: 1.62; color: var(--amd-color-text-secondary); margin-bottom: 24px; max-width: 50ch; }
+.exp-integ-label {
+  font-family: var(--amd-font-mono);
+  font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--amd-color-text-accent); font-weight: 500; margin-bottom: 12px;
+}
+.exp-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; max-width: 420px; }
+.exp-logo-cell {
+  background: var(--amd-color-surface-paper);
+  border: 1px solid rgba(65,76,106,0.12);
+  aspect-ratio: 1 / 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.exp-logo-cell:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(65,76,106,0.18); }
+.exp-logo-cell img {
+  max-width: 74%; max-height: 50%; object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(13%) saturate(1094%) hue-rotate(186deg) brightness(93%) contrast(87%);
+}
+.exp-logo-cell img.icon-square { max-width: 46%; max-height: 46%; }
+.exp-provider-logo {
+  width: min(220px, 100%); min-height: 72px;
+  background: var(--amd-color-surface-paper);
+  border: 1px solid rgba(65,76,106,0.12);
+  display: flex; align-items: center; justify-content: center;
+  padding: 14px 20px; margin-bottom: 20px;
+}
+.exp-provider-logo img { max-width: 100%; max-height: 40px; object-fit: contain; }
+.exp-stat-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 440px; }
+.exp-stat { border-top: 2px solid var(--amd-color-rust); padding-top: 14px; }
+.exp-stat-num { font-family: var(--amd-font-display); font-weight: 600; font-size: 32px; color: var(--amd-color-navy); line-height: 1; }
+.exp-stat-num small { font-size: 15px; opacity: .62; font-weight: 500; }
+.exp-stat-lbl { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--amd-color-text-tertiary); font-weight: 500; margin-top: 8px; }
+.exp-marker-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.exp-marker-list .marker-group { border: 1px solid rgba(65,76,106,0.14); background: var(--amd-color-surface-paper); padding: 8px 10px; }
+.exp-marker-list .marker-group b { display: block; margin-bottom: 3px; color: var(--amd-color-navy); font-size: 10.5px; letter-spacing: .11em; text-transform: uppercase; }
+.exp-marker-list .marker-group span { display: block; color: var(--amd-color-text-secondary); font-size: 12px; line-height: 1.35; }
+.exp-marker-list .more { grid-column: 1 / -1; }
+
+.exp-visual { position: relative; min-height: 460px; }
+.exp-frame {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .5s ease;
+  pointer-events: none;
+}
+.exp-frame.is-active { opacity: 1; pointer-events: auto; }
+.exp-frame img { width: 100%; height: 100%; object-fit: cover; }
+.exp-frame-split { display: flex; flex-direction: column; }
+.exp-split-half { position: relative; flex: 1 1 50%; min-height: 0; overflow: hidden; }
+.exp-split-half + .exp-split-half { border-top: 2px solid rgba(255,254,251,0.92); }
+.exp-split-tag {
+  position: absolute; left: 14px; top: 14px;
+  font-family: var(--amd-font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: #fff;
+  background: rgba(26,26,26,0.62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  padding: 7px 11px;
+}
+
+.exp-rail { display: flex; align-items: flex-end; gap: clamp(12px, 2vw, 28px); margin-top: clamp(28px, 4vh, 48px); flex-wrap: wrap; }
+.exp-tab {
+  appearance: none; border: 0; background: transparent;
+  border-bottom: 2px solid rgba(65,76,106,0.16);
+  color: rgba(65,76,106,0.62);
+  padding: 0 2px 12px;
+  font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  cursor: pointer;
+  display: flex; align-items: baseline; gap: 8px;
+  transition: color .25s ease, border-color .25s ease;
+}
+.exp-tab .num { font-family: var(--amd-font-mono); font-size: 11px; color: var(--amd-color-gold-reference); }
+.exp-tab:hover { color: var(--amd-color-navy); }
+.exp-tab.is-active { color: var(--amd-color-navy); border-color: var(--amd-color-gold-reference); }
+.exp-tab.is-active .num { color: var(--amd-color-text-accent); }
+.exp-progress { flex: 1 1 140px; height: 2px; background: rgba(65,76,106,0.12); align-self: center; min-width: 80px; }
+.exp-progress-fill { height: 100%; width: 25%; background: var(--amd-color-gold-reference); transition: width .35s ease; }
+.exp-cta-row { margin-top: var(--amd-space-7); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+@media (max-width: 920px) {
+  .exp-stage { grid-template-columns: 1fr; min-height: 0; }
+  .exp-copy { min-height: 0; }
+  .exp-pane { position: relative; inset: auto; display: none; opacity: 1; transform: none; }
+  .exp-pane.is-active { display: block; }
+  .exp-visual { min-height: 0; height: 300px; order: -1; }
+  .exp-rail { gap: 10px; }
+  .exp-tab { font-size: 12px; padding-bottom: 9px; }
+  .exp-marker-list { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   SECTION 5 · CONTINUOUS CARE. Six-card grid on navy.
+   ===================================================================== */
+.care-section { background: #222A3B; color: var(--amd-color-text-inverse); }
+.care-section .sec-head { text-align: center; justify-items: center; }
+.care-section .lede { color: var(--amd-color-text-inverse-muted); }
+.care-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.care-card {
+  background: #2A3347;
+  border: 1px solid rgba(239,234,224,0.14);
+  padding: 24px;
+}
+.care-card img { width: 84px; height: 84px; object-fit: contain; margin: -4px 0 10px -8px; }
+.care-card h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; color: #FFFEFB; }
+.care-card p { font-size: 13.5px; color: rgba(239,234,224,0.66); line-height: 1.6; }
+.care-card.reveal { transition-delay: calc(var(--d, 0) * 90ms); }
+@media (max-width: 920px) { .care-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .care-grid { grid-template-columns: 1fr; } }
+
+/* =====================================================================
+   SECTION 6 · THE HUMAN MOMENT. Full-bleed gradient testimonial.
+   ===================================================================== */
+.quote-section {
+  background: linear-gradient(160deg, #1E2A4A 0%, #46324F 56%, #8F4A20 124%);
+  color: var(--amd-color-text-inverse);
+  min-height: 86svh;
+  display: flex; align-items: center;
+}
+.quote-inner { max-width: 1080px; margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+.quote-mark { font-family: var(--amd-font-serif); font-size: 80px; line-height: .6; color: var(--amd-color-gold-reference); display: block; margin-bottom: 26px; }
+.quote-text {
+  font-family: var(--amd-font-serif);
+  font-size: clamp(26px, 3.4vw, 46px);
+  line-height: 1.32; font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 26ch;
+}
+.quote-attr {
+  margin-top: 34px;
+  font-family: var(--amd-font-mono);
+  font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amd-color-text-accent-on-dark);
+}
+
+/* =====================================================================
+   SECTION 7 · PROOF. Left headline, right stat rack counting up.
+   ===================================================================== */
+.proof-section { background: var(--amd-color-surface-page); border-top: 1px solid var(--amd-color-border-subtle); }
+.proof-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(40px, 6vw, 110px); align-items: start; }
+.proof-left { position: sticky; top: 96px; display: grid; gap: var(--amd-space-5); }
+.proof-left .h2 { max-width: 17ch; }
+.proof-aside {
+  border-left: 3px solid var(--amd-color-rust);
+  background: var(--amd-color-surface-paper);
+  padding: var(--amd-space-5);
+  font-size: 14.5px; line-height: 1.6;
+  color: var(--amd-color-text-secondary-on-paper);
+  max-width: 46ch;
+}
+.stat-rack { display: grid; }
+.stat-row {
+  display: grid; grid-template-columns: 168px 1fr; gap: 26px;
+  padding: 26px 0; align-items: baseline;
+  border-top: 1px solid var(--amd-color-border-default);
+}
+.stat-row:last-of-type { border-bottom: 1px solid var(--amd-color-border-default); }
+.stat-fig {
+  font-family: var(--amd-font-display);
+  font-size: clamp(38px, 3.4vw, 52px);
+  font-weight: 600; letter-spacing: -0.03em;
+  color: var(--amd-color-navy);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.stat-fig .unit { font-size: .55em; color: var(--amd-color-text-accent); font-weight: 600; }
+.stat-desc { font-size: 15px; line-height: 1.6; color: var(--amd-color-text-secondary); }
+.stat-source { margin-top: 18px; font-size: 12px; line-height: 1.6; color: var(--amd-color-text-tertiary); max-width: 70ch; }
+@media (max-width: 920px) {
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-left { position: static; }
+  .stat-row { grid-template-columns: 110px 1fr; gap: 18px; }
+}
+
+/* =====================================================================
+   SECTION 8 · DUAL-PATH CLOSE. Two square panels on warm paper.
+   ===================================================================== */
+.close-section { background: var(--amd-color-surface-paper); border-top: 1px solid var(--amd-color-border-subtle); }
+.close-panels { display: grid; grid-template-columns: 1.12fr .88fr; gap: 20px; }
+.close-panel { border: 1px solid var(--amd-color-border-default); padding: clamp(28px, 3.4vw, 52px); display: flex; flex-direction: column; gap: 16px; }
+.close-panel .who {
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+.close-panel h3 { font-size: clamp(21px, 2vw, 28px); letter-spacing: -0.02em; line-height: 1.16; }
+.close-panel p { font-size: 15.5px; line-height: 1.6; color: var(--amd-color-text-secondary-on-paper); max-width: 46ch; }
+.close-panel .price { font-family: var(--amd-font-display); font-weight: 600; color: var(--amd-color-text-primary); }
+.close-panel .cta-row { margin-top: auto; padding-top: 18px; }
+.close-panel.individual { background: var(--amd-color-surface-card); box-shadow: 0 18px 48px -30px rgba(36,36,38,0.28); }
+.close-panel.employer { background: transparent; }
+.close-fineprint { margin-top: 22px; font-size: 12px; color: var(--amd-color-text-tertiary); max-width: 78ch; line-height: 1.6; }
+@media (max-width: 860px) { .close-panels { grid-template-columns: 1fr; } }
+
+/* =====================================================================
+   SECTION 9 · FOOTER. Navy-to-rust gradient field, oversized wordmark.
+   ===================================================================== */
+.site-footer {
+  position: relative;
+  background: linear-gradient(165deg, #1B2335 0%, #1E2A4A 38%, #4A3148 76%, #7E4520 130%);
+  color: var(--amd-color-text-inverse);
+  padding: var(--amd-space-9) 0 var(--amd-space-6);
+  overflow: hidden;
+}
+.site-footer::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(255,254,251,0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,254,251,0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+.footer-inner { position: relative; z-index: 1; }
+.footer-wordmark {
+  font-family: var(--amd-font-display);
+  font-weight: 600;
+  font-size: clamp(64px, 10vw, 148px);
+  letter-spacing: -0.045em;
+  line-height: .9;
+  color: #FFFEFB;
+}
+.footer-wordmark sup { font-size: .32em; letter-spacing: .04em; color: var(--amd-color-text-accent-on-dark); margin-left: .08em; }
+.footer-tagline { margin-top: 22px; max-width: 46ch; color: var(--amd-color-text-inverse-muted); font-size: 15.5px; line-height: 1.6; }
+.footer-cta-row { margin-top: 30px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.footer-login-link { color: var(--amd-color-text-inverse-muted); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,254,251,0.3); padding-bottom: 2px; }
+.footer-login-link:hover { color: #FFFEFB; border-color: #FFFEFB; }
+.footer-cols {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--amd-space-6);
+  margin-top: var(--amd-space-8);
+  padding-top: var(--amd-space-7);
+  border-top: 1px solid var(--amd-color-border-inverse);
+}
+.footer-col h4 {
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  font-weight: 500; color: var(--amd-color-text-accent-on-dark);
+  margin: 0 0 16px;
+}
+.footer-col ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.footer-col a { color: var(--amd-color-text-inverse-muted); text-decoration: none; font-size: 14.5px; transition: color var(--amd-duration-fast) ease; }
+.footer-col a:hover { color: #FFFEFB; }
+.footer-col li { color: var(--amd-color-text-inverse-muted); font-size: 14.5px; }
+.footer-legal {
+  display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  margin-top: var(--amd-space-8);
+  padding-top: var(--amd-space-5);
+  border-top: 1px solid var(--amd-color-border-inverse);
+  font-family: var(--amd-font-mono);
+  font-size: 11px; letter-spacing: .08em;
+  color: rgba(255,254,251,0.6);
+}
+.footer-legal a { color: inherit; text-decoration: none; }
+.footer-legal a:hover { color: #FFFEFB; }
+@media (max-width: 760px) { .footer-cols { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .qol-stage .curve-base, .qol-stage .curve-lift { stroke-dashoffset: 0 !important; }
+}
+</style>
+</head>
+<body>
+
+<a class="site-brand" href="#top" aria-label="Aleron MD home">
+  <img src="assets/brand/aleron-logo-white.png" alt="aleron MD" />
+</a>
+<nav class="header-actions" aria-label="Account">
+  <a class="header-login" href="https://yimjason01-blip.github.io/meridian-landing-staging/login.html">Log In</a>
+</nav>
+
+<!-- ===================== SECTION 1 · HERO ===================== -->
+<main id="top">
+<section class="hero-frame" id="hero" tabindex="0" aria-label="Aleron MD layered hero carousel" style="padding:0">
+  <div class="hero-slide is-active" data-slide="0" aria-hidden="false">
+    <img class="hero-plane bg" src="assets/hero-runner/hero03-bg-plane.png" alt="A runner on the beach at dawn" />
+    <img class="hero-plane mid" src="assets/hero-runner/hero03-mid-blocks-plane.png" alt="" aria-hidden="true" />
+    <img class="hero-plane subject" src="assets/hero-runner/hero03-subject-plane.png" alt="" aria-hidden="true" />
+    <img class="hero-plane anchor" src="assets/hero-runner/hero03-anchor-block-plane.png" alt="" aria-hidden="true" />
+  </div>
+  <div class="hero-slide" data-slide="1" aria-hidden="true">
+    <img class="hero-plane bg" src="assets/hero-surfer/hero02-bg-plane.png" alt="A surfer in golden water at sunset" />
+    <img class="hero-plane mid" src="assets/hero-surfer/hero02-mid-blocks-plane.png" alt="" aria-hidden="true" />
+    <img class="hero-plane subject" src="assets/hero-surfer/hero02-subject-plane.png" alt="" aria-hidden="true" />
+    <img class="hero-plane anchor" src="assets/hero-surfer/hero02-anchor-block-plane.png" alt="" aria-hidden="true" />
+  </div>
+
+  <div class="hero-chrome">
+    <div class="hero-copy">
+      <h1 class="hero-fade-up">Your best days are still ahead.</h1>
+      <p class="hero-fade-up">Physician-led preventive medicine, powered by AI and your own genetic, lab, and wearable data. One physician who sees the whole picture, and a plan for what matters next.</p>
+      <div class="hero-cta-row">
+        <a class="btn btn-cream" href="#close">Apply for Membership</a>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <p class="hero-count"><span id="heroCount">001</span> / 002</p>
+      <div class="hero-meta">
+        <div class="hero-dots" role="tablist" aria-label="Hero image carousel">
+          <button class="hero-dot is-active" type="button" role="tab" aria-selected="true" aria-label="Show runner hero" data-hero-target="0"></button>
+          <button class="hero-dot" type="button" role="tab" aria-selected="false" aria-label="Show surfer hero" data-hero-target="1"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 2 · CAPABILITY CURVE ===================== -->
+<section class="curve-section" id="curve" aria-label="The capability curve">
+  <div class="curve-wrap">
+
+    <div class="curve-sticky">
+      <div class="qol-stage" id="qolStage" data-stage="1">
+        <div class="chart-card">
+          <div class="chart-scroll">
+            <svg id="qolChart" class="qol-svg" viewBox="0 0 1080 600" preserveAspectRatio="xMidYMid meet" role="img"
+                 aria-label="Capability plotted as VO2max in mL/kg/min against age from 30 to 90. Functional bands run from Needs help at the bottom to Endurance athlete at the top. The curve drops at a serious life event and lifts under early prevention."></svg>
+          </div>
+        </div>
+        <div class="curve-controls" aria-label="Move your own curve">
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Conditioning</span><span class="ctl-val" id="condVal">Average</span></div>
+            <input type="range" id="cond" min="0" max="100" step="1" value="33" aria-label="Conditioning" />
+            <div class="ctl-marks"><span>Decond</span><span>Avg</span><span>Well</span><span>Elite</span></div>
+          </div>
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Lifestyle</span><span class="ctl-val" id="lifeVal">Maintained</span></div>
+            <input type="range" id="life" min="0" max="100" step="1" value="50" aria-label="Lifestyle" />
+            <div class="ctl-marks"><span>Neglected</span><span>Maintained</span><span>Optimized</span></div>
+          </div>
+          <div class="ctl">
+            <div class="ctl-head"><span class="ctl-name">Underlying Risk</span><span class="ctl-val" id="riskVal">Average</span></div>
+            <input type="range" id="risk" min="0" max="100" step="1" value="50" aria-label="Underlying risk" />
+            <div class="ctl-marks"><span>Low</span><span>Avg</span><span>High</span></div>
+          </div>
+        </div>
+        <p class="curve-controls-hint">Three sliders · move your own curve in real time</p>
+      </div>
+    </div>
+
+    <div class="curve-steps">
+      <div class="curve-step" data-step="1">
+        <div class="eyebrow"><span class="n">01</span>Intro</div>
+        <h2>The story of your future is written on top of this curve.</h2>
+        <p>One line, from age 30 to 90. Watch what it does.</p>
+      </div>
+      <div class="curve-step" data-step="2">
+        <div class="eyebrow"><span class="n">02</span>Capability</div>
+        <h2>It's your body's ability to do what you want in life.</h2>
+        <p>High on the curve, you do anything you want. Lower down, you start depending on other people. The same line decides whether your seventies look like hard hikes or hard stairs.</p>
+      </div>
+      <div class="curve-step" data-step="3">
+        <div class="eyebrow"><span class="n">03</span>Hazards</div>
+        <h2>The slope is being written right now, quietly, by what you do and don't prevent.</h2>
+        <p>A serious event does not just cost you a bad year. It drops the whole curve and it rarely comes all the way back. Most of these are visible years before they happen, in markers a standard physical never runs.</p>
+      </div>
+      <div class="curve-step" data-step="4">
+        <div class="eyebrow"><span class="n">04</span>Future</div>
+        <h2>The curve is not destiny. Aleron can help you plot a new trajectory.</h2>
+        <p>Catch the risk early, train the right things, and the line lifts and stretches. The work is not adding empty years. It is keeping you in the part of the curve where life is still yours to run.</p>
+        <p style="margin-top:14px">The chart is live. Move Conditioning, Lifestyle, and Underlying Risk and watch the bands you keep or lose.</p>
+        <a class="quiet-link" href="#engine">See how Aleron reads your curve</a>
+      </div>
+    </div>
+
+    <div class="stage-rail-col" aria-hidden="false">
+      <nav class="stage-rail" id="stageRail" aria-label="Curve stages">
+        <button class="rail-item is-active" data-go="1" type="button">Intro</button>
+        <button class="rail-item" data-go="2" type="button">Capability</button>
+        <button class="rail-item" data-go="3" type="button">Hazards</button>
+        <button class="rail-item" data-go="4" type="button">Future</button>
+      </nav>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== SECTION 3 · THE SIGNALS ===================== -->
+<section class="signals-section" id="signals" aria-label="The signals that shape the curve">
+  <div class="wrap signals-inner">
+    <div class="signals-head">
+      <div class="eyebrow reveal"><span class="n">02</span>The signals</div>
+      <h2 class="h2 reveal">We read advanced labs, genetics, wearable data, and imaging to help you <em>shape the curve.</em></h2>
+      <p class="lede measure reveal">Four streams, one picture. The signals most physicals never collect, read together instead of one number at a time.</p>
+    </div>
+    <div class="signal-stage" id="signalStage">
+      <figure class="signal-object labs reveal" style="--d:0"><img src="assets/signals/advanced-labs-cutout.png" alt="Isometric illustration of lab vials and a requisition" /><figcaption>Advanced labs</figcaption></figure>
+      <figure class="signal-object genetics reveal" style="--d:1"><img src="assets/signals/genetics-cutout.png" alt="Isometric illustration of a genetics collection kit" /><figcaption>Genetics</figcaption></figure>
+      <figure class="signal-object wearables reveal" style="--d:2"><img src="assets/signals/wearables-cutout.png" alt="Isometric illustration of a smartwatch and sensors" /><figcaption>Wearables</figcaption></figure>
+      <figure class="signal-object imaging reveal" style="--d:3"><img src="assets/signals/imaging-cutout.png" alt="Isometric illustration of an imaging scanner" /><figcaption>Imaging</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 4 · THE ENGINE ===================== -->
+<section class="engine-section" id="engine" aria-label="What Aleron MD actually does">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="n">03</span>The experience</div>
+      <h2 class="h2 reveal">Getting your Aleron MD plan is straightforward.</h2>
+      <p class="lede measure reveal">No forty-page intake. No waiting room. Four steps from sign-up to a plan a physician stands behind.</p>
+    </div>
+
+    <div class="exp-stage reveal" id="expStage">
+      <div class="exp-copy">
+
+        <div class="exp-pane is-active" data-i="0">
+          <span class="exp-pane-step">Step 01 / Onboarding</span>
+          <h3>Onboarding takes fifteen minutes.</h3>
+          <p>Demographics, family history, lifestyle, and screening history, collected the way every other app on your phone does it. Then your wearable connects in two taps and starts streaming the signals your physician will actually use.</p>
+          <div class="exp-integ-label">Connects with</div>
+          <div class="exp-logos">
+            <div class="exp-logo-cell"><img class="icon-square" src="assets/logos/apple.svg" alt="Apple Watch" /></div>
+            <div class="exp-logo-cell"><img src="assets/logos/polar.svg" alt="Polar" /></div>
+            <div class="exp-logo-cell"><img src="assets/logos/whoop.svg" alt="Whoop" /></div>
+            <div class="exp-logo-cell"><img src="assets/logos/garmin.svg" alt="Garmin" /></div>
+            <div class="exp-logo-cell"><img class="icon-square" src="assets/logos/fitbit.svg" alt="Fitbit" /></div>
+            <div class="exp-logo-cell"><img class="icon-square" src="assets/logos/eightsleep.svg" alt="Eight Sleep" /></div>
+            <div class="exp-logo-cell"><img src="assets/logos/dexcom.svg" alt="Dexcom" /></div>
+            <div class="exp-logo-cell"><img src="assets/logos/withings.svg" alt="Withings" /></div>
+          </div>
+        </div>
+
+        <div class="exp-pane" data-i="1">
+          <span class="exp-pane-step">Step 02 / Genetics</span>
+          <h3>A small kit arrives at your door.</h3>
+          <p>Spit in the tube, drop it in the prepaid mailer. The 163-gene Invitae panel screens for the variants that actually change a care plan: moderate-penetrance cancer risks, cardiovascular variants, and pharmacogenomic markers that change which drugs work for you.</p>
+          <div class="exp-integ-label">Genetic testing by</div>
+          <div class="exp-provider-logo"><img src="assets/logos/invitae.svg" alt="Invitae" /></div>
+          <div class="exp-stat-row">
+            <div class="exp-stat"><div class="exp-stat-num">163<small> genes</small></div><div class="exp-stat-lbl">Invitae panel</div></div>
+            <div class="exp-stat"><div class="exp-stat-num">~3<small> weeks</small></div><div class="exp-stat-lbl">Results return</div></div>
+          </div>
+        </div>
+
+        <div class="exp-pane" data-i="2">
+          <span class="exp-pane-step">Step 03 / Bloodwork</span>
+          <h3>Bloodwork on your terms.</h3>
+          <p>Draw the same Elite panel two ways. Walk into your nearest Quest patient service center, or skip the trip with an at-home capillary kit that ships to your door. Either way you get a full metabolic, cardiovascular, and inflammatory workup, including the ApoB and Lp(a) markers most physicals never order.</p>
+          <div class="exp-integ-label">Labs through</div>
+          <div class="exp-provider-logo"><img src="assets/logos/quest.svg" alt="Quest" /></div>
+          <div class="exp-integ-label">The Elite panel includes</div>
+          <div class="exp-marker-list" aria-label="Elite panel markers">
+            <div class="marker-group"><b>Core panel</b><span>CBC with differential, CMP, liver markers, kidney markers</span></div>
+            <div class="marker-group"><b>Cardiometabolic</b><span>Lipid panel, ApoB, Lp(a), HbA1c, fasting insulin, uric acid</span></div>
+            <div class="marker-group"><b>Inflammation</b><span>hsCRP, homocysteine, ferritin, iron/TIBC</span></div>
+            <div class="marker-group"><b>Thyroid + nutrients</b><span>TSH, free T4, vitamin D, B12, folate</span></div>
+            <div class="marker-group more"><b>Depth</b><span>UACR and 80+ additional markers across metabolic, cardiovascular, inflammatory, renal, hepatic, and micronutrient domains</span></div>
+          </div>
+        </div>
+
+        <div class="exp-pane" data-i="3">
+          <span class="exp-pane-step">Step 04 / Your plan</span>
+          <h3>A physician in your corner, on your schedule.</h3>
+          <p>Aleron combines labs, genetics, wearable trends, records, and physician judgment into a risk picture, domain by domain. Talk it through live on a video visit, or handle it asynchronously and message your care team whenever it suits you. The output is not a report. It is a plan for what matters next.</p>
+          <div class="exp-stat-row">
+            <div class="exp-stat"><div class="exp-stat-num">5<small> domains</small></div><div class="exp-stat-lbl">Risk models run</div></div>
+            <div class="exp-stat"><div class="exp-stat-num">1</div><div class="exp-stat-lbl">Physician-led game plan</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="exp-visual" aria-hidden="true">
+        <div class="exp-frame is-active" data-i="0"><img src="assets/photos/exp-01-onboarding.jpg" alt="Onboarding on a phone next to an Apple Watch" /></div>
+        <div class="exp-frame" data-i="1"><img src="assets/photos/exp-02-genetics.jpg" alt="A genetics kit on a kitchen counter" /></div>
+        <div class="exp-frame exp-frame-split" data-i="2">
+          <div class="exp-split-half"><img src="assets/photos/exp-03-bloodwork-location.jpg" alt="A member leaving a Quest patient service center" /><span class="exp-split-tag">In person</span></div>
+          <div class="exp-split-half"><img src="assets/photos/exp-03-bloodwork-athome.jpg" alt="A member using an at-home capillary kit at the kitchen table" /><span class="exp-split-tag">At home</span></div>
+        </div>
+        <div class="exp-frame exp-frame-split" data-i="3">
+          <div class="exp-split-half"><img src="assets/photos/exp-04-sync.jpg" alt="A member on a live video visit with an Aleron physician" /><span class="exp-split-tag">Live visit</span></div>
+          <div class="exp-split-half"><img src="assets/photos/exp-04-async.jpg" alt="A member reviewing their plan and messaging their care team" /><span class="exp-split-tag">Async</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-rail" id="expRail" role="tablist" aria-label="Experience steps">
+      <button class="exp-tab is-active" data-i="0" type="button" role="tab" aria-selected="true"><span class="num">01</span> Onboarding</button>
+      <button class="exp-tab" data-i="1" type="button" role="tab" aria-selected="false"><span class="num">02</span> Genetics</button>
+      <button class="exp-tab" data-i="2" type="button" role="tab" aria-selected="false"><span class="num">03</span> Bloodwork</button>
+      <button class="exp-tab" data-i="3" type="button" role="tab" aria-selected="false"><span class="num">04</span> Your plan</button>
+      <div class="exp-progress" aria-hidden="true"><div class="exp-progress-fill" id="expProgFill"></div></div>
+    </div>
+
+    <div class="exp-cta-row reveal">
+      <a class="btn btn-ghost" href="#close">Apply for Membership</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 5 · CONTINUOUS CARE ===================== -->
+<section class="care-section" id="care" aria-label="Continuous care">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow on-dark reveal"><span class="n">04</span>Between visits</div>
+      <h2 class="h2 reveal">This is just the start.</h2>
+      <p class="lede reveal" style="max-width:46ch;margin-inline:auto">Aleron doesn't hand you a report and disappear. It works for you between visits, every day.</p>
+    </div>
+    <div class="care-grid">
+      <div class="care-card reveal" style="--d:0">
+        <img src="assets/feature-icons/01-aleron-ai.png" alt="" aria-hidden="true" />
+        <h3>Aleron AI, grounded in your data.</h3>
+        <p>It stays on between visits, grounded in your labs, genetics, wearables, imaging, and care plan. It watches for changes and keeps your physician current.</p>
+      </div>
+      <div class="care-card reveal" style="--d:1">
+        <img src="assets/feature-icons/02-biometrics.png" alt="" aria-hidden="true" />
+        <h3>Continuous biometric monitoring.</h3>
+        <p>Sleep, HRV, resting heart rate, and activity, tracked and analyzed over time. We catch the signal before you feel the symptom.</p>
+      </div>
+      <div class="care-card reveal" style="--d:2">
+        <img src="assets/feature-icons/03-plan-review.png" alt="" aria-hidden="true" />
+        <h3>Twice-yearly plan review.</h3>
+        <p>Aleron reviews labs, wearable trends, records, symptoms, goals, and new research, then updates your priorities around what actually changed in your risk.</p>
+      </div>
+      <div class="care-card reveal" style="--d:3">
+        <img src="assets/feature-icons/04-nutrition.png" alt="" aria-hidden="true" />
+        <h3>Nutrition coaching, built into your plan.</h3>
+        <p>Guidance shaped by your labs, goals, preferences, and metabolic risk, not a generic meal plan.</p>
+      </div>
+      <div class="care-card reveal" style="--d:4">
+        <img src="assets/feature-icons/05-behavioral.png" alt="" aria-hidden="true" />
+        <h3>Behavioral therapist support.</h3>
+        <p>Help turning priorities into routines and follow-through that fit a real life.</p>
+      </div>
+      <div class="care-card reveal" style="--d:5">
+        <img src="assets/feature-icons/06-physician.png" alt="" aria-hidden="true" />
+        <h3>Unlimited physician access.</h3>
+        <p>24/7 telemedicine with a physician who already has your full picture: your data, your genetics, your history. No repeating yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 6 · THE HUMAN MOMENT ===================== -->
+<section class="quote-section" aria-label="Member testimonial">
+  <div class="quote-inner">
+    <blockquote style="margin:0" class="reveal">
+      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+      <p class="quote-text">The best part isn't the labs or the engine. It's getting a voice message from my doctor on a Tuesday afternoon explaining what to do next, like a friend who happens to be brilliant.</p>
+      <footer class="quote-attr">J.L. · Member since 2025</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===================== SECTION 7 · PROOF ===================== -->
+<section class="proof-section" id="proof" aria-label="What the engine actually finds">
+  <div class="wrap">
+    <div class="proof-grid">
+      <div class="proof-left">
+        <div class="eyebrow reveal"><span class="n">05</span>Proof</div>
+        <h2 class="h2 reveal">Most members leave their first review with a care plan their PCP wouldn't have given them.</h2>
+        <p class="lede reveal">Same labs. Same body. Different level of care.</p>
+        <div class="proof-aside reveal">Of the people we built this for, 96% believe the right medical team could bend their curve. Only 9% believe they can find that team. The money was never the barrier. Clarity and time were.</div>
+      </div>
+      <div>
+        <div class="stat-rack">
+          <div class="stat-row reveal">
+            <div class="stat-fig"><span class="count" data-count="63">0</span><span class="unit">%</span></div>
+            <p class="stat-desc">of new members get a plan that materially differs from what their PCP would do.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="stat-fig"><span class="count" data-count="12">0</span><span class="unit">%</span></div>
+            <p class="stat-desc">receive an actionable genetic finding: a pathogenic variant that changes screening or medication for life, almost never tested in standard care.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="stat-fig"><span class="count" data-count="4">0</span><span class="unit"> in 10</span></div>
+            <p class="stat-desc">receive a pharmacogenomic flag: a drug picked or dosed differently, from statin metabolism to SSRI response to clopidogrel non-response.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="stat-fig"><span class="count" data-count="35">0</span><span class="unit">%</span></div>
+            <p class="stat-desc">show a CAC reclassification: coronary calcium changes the statin decision in roughly one in three intermediate-risk patients.</p>
+          </div>
+          <div class="stat-row reveal">
+            <div class="stat-fig"><span class="count" data-count="1">0</span><span class="unit"> in 5</span></div>
+            <p class="stat-desc">find Lp(a) elevated: a lifetime cardiovascular-risk reclassification plus family screening, from a marker rarely measured in standard panels.</p>
+          </div>
+        </div>
+        <p class="stat-source reveal">Drivers overlap; the headline figure is the union, not the sum. Drawn from PREVENT (AHA 2023), CAC reclassification studies (MESA, CAC Consortium), and pharmacogenomics plus clinical-grade genetic-panel actionable yield in adult preventive populations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 8 · DUAL-PATH CLOSE ===================== -->
+<section class="close-section" id="close" aria-label="Apply or partner">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow reveal"><span class="n">06</span>Membership</div>
+      <h2 class="h2 reveal">Your curve is already being written. Decide who holds the pen.</h2>
+      <p class="lede reveal">Membership opens in waves, in California and Texas today.</p>
+    </div>
+    <div class="close-panels">
+      <div class="close-panel individual reveal">
+        <span class="who">For individuals</span>
+        <h3>One physician, your full data picture, and a plan that keeps working between visits.</h3>
+        <p><span class="price">$3,500 to $4,200 a year, all in.</span> Advanced labs, the 163-gene panel, continuous monitoring, and unlimited physician access. No surprise invoices.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="mailto:apply@aleronmd.com?subject=Membership%20application">Apply for Membership</a></div>
+      </div>
+      <div class="close-panel employer reveal">
+        <span class="who">For employers and brokers</span>
+        <h3>Bring physician-led preventive care to the people you cover.</h3>
+        <p>We'll show you how Aleron fits alongside your existing benefits.</p>
+        <div class="cta-row"><a class="btn btn-ghost" href="mailto:apply@aleronmd.com?subject=Employer%20and%20broker%20partnerships">For Employers</a></div>
+      </div>
+    </div>
+    <p class="close-fineprint reveal">For reference, executive-health programs run far above this: Human Longevity $8,000 to $19,500 a year, Fountain Life $10,500 and up, Wild Health $25,000 and up.</p>
+  </div>
+</section>
+</main>
+
+<!-- ===================== SECTION 9 · FOOTER ===================== -->
+<footer class="site-footer" aria-label="Footer">
+  <div class="wrap footer-inner">
+    <div class="footer-wordmark">aleron<sup>MD</sup></div>
+    <p class="footer-tagline">Physician-led preventive medicine for capacity, risk, and vitality over time.</p>
+    <div class="footer-cta-row">
+      <a class="btn btn-cream" href="mailto:apply@aleronmd.com?subject=Membership%20application">Apply for Membership</a>
+      <a class="footer-login-link" href="https://yimjason01-blip.github.io/meridian-landing-staging/login.html">Log In</a>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#curve">Quality of Life model</a></li>
+          <li><a href="#engine">The Aleron experience</a></li>
+          <li><a href="#care">MD + AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:apply@aleronmd.com?subject=Membership">Membership</a></li>
+          <li><a href="mailto:apply@aleronmd.com?subject=Partnerships">Partnerships</a></li>
+          <li><a href="mailto:apply@aleronmd.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Availability</h4>
+        <ul>
+          <li>California</li>
+          <li>Texas</li>
+          <li>Membership opens in waves.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>&copy; 2026 Aleron MD. A LAGO Health company.</span>
+      <a href="mailto:apply@aleronmd.com">apply@aleronmd.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ Header scrolled state ============ */
+(function () {
+  function update() { document.body.classList.toggle('is-scrolled', window.scrollY > 24); }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+})();
+
+/* ============ Reveal on first view ============ */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = [].slice.call(document.querySelectorAll('.reveal'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('in-view'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  targets.forEach(function (el) { io.observe(el); });
+})();
+
+/* ============ Hero carousel: plane parallax + slide switch ============ */
+(function () {
+  var hero = document.getElementById('hero');
+  if (!hero) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slides = [].slice.call(hero.querySelectorAll('.hero-slide'));
+  var dots = [].slice.call(hero.querySelectorAll('.hero-dot'));
+  var countEl = document.getElementById('heroCount');
+  var active = 0, ticking = false, exitTimer = 0;
+
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+
+  function updateBlocks() {
+    if (!reduce) {
+      var h = hero.offsetHeight || 1;
+      var progress = clamp(window.scrollY / h, 0, 1);
+      var maxShift = Math.min(window.innerWidth * 0.1, 150);
+      hero.style.setProperty('--hero-block-shift', (progress * -maxShift) + 'px');
+    }
+    ticking = false;
+  }
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateBlocks);
+  }
+
+  function setSlide(next) {
+    if (next < 0) next = slides.length - 1;
+    if (next >= slides.length) next = 0;
+    if (next === active) return;
+    window.clearTimeout(exitTimer);
+    var prev = slides[active];
+    slides.forEach(function (s, i) {
+      s.classList.remove('is-active', 'is-exiting');
+      s.setAttribute('aria-hidden', i === next ? 'false' : 'true');
+    });
+    if (!reduce && prev) {
+      prev.classList.add('is-exiting');
+      exitTimer = window.setTimeout(function () { prev.classList.remove('is-exiting'); }, 980);
+    }
+    slides[next].classList.add('is-active');
+    active = next;
+    dots.forEach(function (d, i) {
+      d.classList.toggle('is-active', i === active);
+      d.setAttribute('aria-selected', i === active ? 'true' : 'false');
+    });
+    if (countEl) countEl.textContent = String(active + 1).padStart(3, '0');
+    requestUpdate();
+  }
+
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { setSlide(Number(d.dataset.heroTarget)); });
+  });
+  hero.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') setSlide(active + 1);
+    if (e.key === 'ArrowLeft') setSlide(active - 1);
+  });
+  var touchX = null;
+  hero.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  hero.addEventListener('touchend', function (e) {
+    if (touchX == null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 42) setSlide(active + (dx < 0 ? 1 : -1));
+    touchX = null;
+  }, { passive: true });
+
+  updateBlocks();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+})();
+
+/* ============ Capability curve: live chart engine + scroll stages ============
+   Engine adapted from the pitch deck's VO2max teaching tool. The curve is the
+   same physiology: conditioning templates, lifestyle multiplier, and an
+   effective-risk model that times a serious life event. */
+(function () {
+  var TEMPLATES = {
+    elite: { 30: 56, 40: 53, 50: 50, 60: 47, 65: 45, 70: 42, 75: 38, 80: 34, 85: 30, 90: 26 },
+    average: { 30: 38, 40: 35, 50: 33, 60: 31, 65: 29, 70: 26, 75: 22, 80: 19, 85: 16, 90: 13 },
+    deconditioned: { 30: 26, 40: 23, 50: 20, 60: 18, 65: 16, 70: 14, 75: 12, 80: 10, 85: 8, 90: 7 }
+  };
+  function templateAt(tmpl, age) {
+    var ages = Object.keys(tmpl).map(Number).sort(function (a, b) { return a - b; });
+    if (age <= ages[0]) return tmpl[ages[0]];
+    if (age >= ages[ages.length - 1]) return tmpl[ages[ages.length - 1]];
+    for (var i = 0; i < ages.length - 1; i++) {
+      var a0 = ages[i], a1 = ages[i + 1];
+      if (age >= a0 && age <= a1) {
+        var t = (age - a0) / (a1 - a0);
+        return tmpl[a0] * (1 - t) + tmpl[a1] * t;
+      }
+    }
+    return tmpl[ages[ages.length - 1]];
+  }
+  function conditioningCurve(cond, age) {
+    var dec = templateAt(TEMPLATES.deconditioned, age);
+    var avg = templateAt(TEMPLATES.average, age);
+    var eli = templateAt(TEMPLATES.elite, age);
+    if (cond <= 33) { var t = cond / 33; return dec * (1 - t) + avg * t; }
+    var t2 = (cond - 33) / 67; return avg * (1 - t2) + eli * t2;
+  }
+  function baseCapacity(cond, life, age) {
+    var baseline = conditioningCurve(cond, 30);
+    var unmodified = conditioningCurve(cond, age);
+    var mult = 1.10 - (life / 100) * 0.20;
+    return baseline + mult * (unmodified - baseline);
+  }
+  function effectiveRisk(cond, life, risk) {
+    return 0.55 * (risk / 100) + 0.35 * (1 - cond / 100) + 0.10 * (1 - life / 100);
+  }
+  function lerpAnchors(R, anchors) {
+    if (R <= anchors[0][0]) return anchors[0][1];
+    if (R >= anchors[anchors.length - 1][0]) return anchors[anchors.length - 1][1];
+    for (var i = 0; i < anchors.length - 1; i++) {
+      if (R >= anchors[i][0] && R <= anchors[i + 1][0]) {
+        var t = (R - anchors[i][0]) / (anchors[i + 1][0] - anchors[i][0]);
+        return anchors[i][1] * (1 - t) + anchors[i + 1][1] * t;
+      }
+    }
+    return anchors[anchors.length - 1][1];
+  }
+  function eventParams(R) {
+    return {
+      age: lerpAnchors(R, [[0.05, 84], [0.30, 77], [0.55, 69], [0.80, 61], [0.95, 56]]),
+      drop: 0.20 + 0.18 * R,
+      tau: 2.5
+    };
+  }
+  function eventedCapacity(cond, life, age, ev) {
+    var f = 1;
+    if (age >= ev.age) {
+      var ys = age - ev.age;
+      var residual = ev.drop * 0.72;
+      f = 1 - (residual + (ev.drop - residual) * Math.exp(-ys / ev.tau));
+    }
+    return Math.max(baseCapacity(cond, life, age) * f, 3);
+  }
+
+  var BANDS = [
+    { lo: 55, hi: 62, name: 'Endurance athlete' },
+    { lo: 40, hi: 55, name: 'Hard recreation' },
+    { lo: 30, hi: 40, name: 'Stairs without thinking' },
+    { lo: 22, hi: 30, name: 'Independent daily life' },
+    { lo: 18, hi: 22, name: 'Strained effort' },
+    { lo: 0,  hi: 18, name: 'Needs help' }
+  ];
+  var BAND_TINTS = [
+    'rgba(185,86,42,0.10)',
+    'rgba(205,148,83,0.13)',
+    'rgba(195,160,125,0.10)',
+    'rgba(150,140,135,0.10)',
+    'rgba(90,95,120,0.12)',
+    'rgba(30,42,74,0.14)'
+  ];
+
+  var AGE_MIN = 30, AGE_MAX = 90, VO2_MIN = 0, VO2_MAX = 62;
+  var W = 1080, H = 600, PAD = { l: 196, r: 34, t: 70, b: 58 };
+  var CW = W - PAD.l - PAD.r, CH = H - PAD.t - PAD.b;
+  function xAge(a) { return PAD.l + ((a - AGE_MIN) / (AGE_MAX - AGE_MIN)) * CW; }
+  function yV(v) { return PAD.t + (1 - (v - VO2_MIN) / (VO2_MAX - VO2_MIN)) * CH; }
+
+  function pathFrom(fn, from, to) {
+    var d = '';
+    for (var a = from; a <= to + 0.001; a += 0.5) {
+      var x = xAge(a).toFixed(1), y = yV(fn(a)).toFixed(1);
+      d += (d ? ' L ' : 'M ') + x + ' ' + y;
+    }
+    return d;
+  }
+
+  function condLabel(c) {
+    if (c <= 8) return 'Deconditioned';
+    if (c <= 28) return 'Below average';
+    if (c <= 38) return 'Average';
+    if (c <= 60) return 'Above average';
+    if (c <= 75) return 'Well-conditioned';
+    if (c <= 92) return 'Highly conditioned';
+    return 'Elite';
+  }
+  function lifeLabel(l) {
+    if (l <= 15) return 'Neglected';
+    if (l <= 40) return 'Below average';
+    if (l <= 60) return 'Maintained';
+    if (l <= 85) return 'Optimized';
+    return 'Highly optimized';
+  }
+  function riskLabel(r) {
+    if (r <= 15) return 'Very low';
+    if (r <= 35) return 'Low';
+    if (r < 50) return 'Below average';
+    if (r <= 65) return 'Average';
+    if (r <= 85) return 'High';
+    return 'Very high';
+  }
+
+  var svg = document.getElementById('qolChart');
+  var stageBox = document.getElementById('qolStage');
+  if (!svg || !stageBox) return;
+
+  function render() {
+    var cond = +document.getElementById('cond').value;
+    var life = +document.getElementById('life').value;
+    var risk = +document.getElementById('risk').value;
+
+    document.getElementById('condVal').textContent = condLabel(cond);
+    document.getElementById('lifeVal').textContent = lifeLabel(life);
+    document.getElementById('riskVal').textContent = riskLabel(risk);
+
+    var R = effectiveRisk(cond, life, risk);
+    var ev = eventParams(R);
+    var liftCond = Math.min(100, cond + 22);
+    var liftLife = Math.min(100, life + 28);
+
+    var base = function (a) { return baseCapacity(cond, life, a); };
+    var evented = function (a) { return eventedCapacity(cond, life, a, ev); };
+    var lift = function (a) { return Math.max(baseCapacity(liftCond, liftLife, a), base(a)); };
+
+    var s = '';
+    s += '<defs>';
+    s += '<linearGradient id="rampGrad" gradientUnits="userSpaceOnUse" x1="' + PAD.l + '" y1="0" x2="' + (W - PAD.r) + '" y2="0">';
+    s += '<stop offset="0%" stop-color="#B9562A"/><stop offset="45%" stop-color="#CD9453"/><stop offset="80%" stop-color="#7A6E7C"/><stop offset="100%" stop-color="#1E2A4A"/>';
+    s += '</linearGradient>';
+    s += '<linearGradient id="liftGrad" gradientUnits="userSpaceOnUse" x1="' + PAD.l + '" y1="0" x2="' + (W - PAD.r) + '" y2="0">';
+    s += '<stop offset="0%" stop-color="#B9562A"/><stop offset="62%" stop-color="#CD9453"/><stop offset="100%" stop-color="#8A6B4E"/>';
+    s += '</linearGradient>';
+    s += '</defs>';
+
+    // functional bands + labels
+    s += '<g class="g-bands">';
+    for (var i = 0; i < BANDS.length; i++) {
+      var b = BANDS[i];
+      var y0 = yV(b.hi), y1 = yV(b.lo);
+      s += '<rect x="' + PAD.l + '" y="' + y0 + '" width="' + CW + '" height="' + (y1 - y0) + '" fill="' + BAND_TINTS[i] + '"/>';
+      if (i > 0) s += '<line x1="' + PAD.l + '" y1="' + y0 + '" x2="' + (PAD.l + CW) + '" y2="' + y0 + '" stroke="rgba(10,10,11,0.08)" stroke-width="0.5"/>';
+      var yMid = (y0 + y1) / 2 + 5;
+      s += '<text x="' + (PAD.l - 14) + '" y="' + yMid + '" text-anchor="end" style="fill:#3F3A32;font-size:14.5px;font-family:Inter,sans-serif;font-weight:550">' + b.name + '</text>';
+    }
+    s += '</g>';
+
+    // zone labels
+    s += '<g class="g-zones" font-family="\'JetBrains Mono\',monospace" font-size="13" letter-spacing="2">';
+    s += '<text x="' + (PAD.l + CW / 2) + '" y="' + yV(48) + '" text-anchor="middle" fill="#6E3D1C">DO ANYTHING YOU WANT</text>';
+    s += '<text x="' + (PAD.l + CW / 2) + '" y="' + yV(9) + '" text-anchor="middle" fill="rgba(30,42,74,0.65)">DEPENDENT ON OTHERS</text>';
+    s += '</g>';
+
+    // axes
+    s += '<g>';
+    for (var v = 0; v <= 60; v += 10) {
+      var y = yV(v);
+      s += '<line x1="' + (PAD.l - 4) + '" y1="' + y + '" x2="' + PAD.l + '" y2="' + y + '" stroke="rgba(10,10,11,0.22)"/>';
+      s += '<text x="' + (PAD.l - 30) + '" y="' + (y + 4) + '" text-anchor="end" style="fill:#6E6E72;font-size:12px;font-family:\'JetBrains Mono\',monospace">' + v + '</text>';
+    }
+    s += '<text x="' + (PAD.l - 14) + '" y="' + (PAD.t - 36) + '" text-anchor="end" style="fill:#3F3A32;font-size:14px;font-weight:600;font-family:\'JetBrains Mono\',monospace">VO₂max</text>';
+    s += '<text x="' + (PAD.l - 14) + '" y="' + (PAD.t - 18) + '" text-anchor="end" style="fill:#6E6E72;font-size:12px;font-family:\'JetBrains Mono\',monospace">mL/kg/min</text>';
+    for (var a = AGE_MIN; a <= AGE_MAX; a += 10) {
+      var x = xAge(a);
+      s += '<line x1="' + x + '" y1="' + (PAD.t + CH) + '" x2="' + x + '" y2="' + (PAD.t + CH + 4) + '" stroke="rgba(10,10,11,0.22)"/>';
+      s += '<text x="' + x + '" y="' + (PAD.t + CH + 20) + '" text-anchor="middle" style="fill:#6E6E72;font-size:12px;font-family:\'JetBrains Mono\',monospace">' + a + '</text>';
+    }
+    s += '<text x="' + (PAD.l + CW / 2) + '" y="' + (PAD.t + CH + 44) + '" text-anchor="middle" style="fill:#6E6E72;font-size:12px;letter-spacing:2px;font-weight:600;font-family:\'JetBrains Mono\',monospace">AGE</text>';
+    s += '</g>';
+
+    // ghost of the unmodified curve (visible in stages 3 and 4)
+    s += '<path class="curve-ghost" d="' + pathFrom(base, AGE_MIN, AGE_MAX) + '" fill="none" stroke="#1E2A4A" stroke-width="2.5" stroke-dasharray="7 7"/>';
+
+    // main curve, rust at high capability fading to navy
+    s += '<path class="curve-base" pathLength="1000" d="' + pathFrom(base, AGE_MIN, AGE_MAX) + '" fill="none" stroke="url(#rampGrad)" stroke-width="5" stroke-linecap="round"/>';
+
+    // evented curve + serious life event marker (stage 3)
+    s += '<path class="curve-evented" d="' + pathFrom(evented, AGE_MIN, AGE_MAX) + '" fill="none" stroke="url(#rampGrad)" stroke-width="5" stroke-linecap="round"/>';
+    var exm = xAge(ev.age), eym = yV(base(ev.age));
+    var eyDrop = yV(evented(ev.age + 2.2));
+    s += '<g class="g-event">';
+    s += '<line x1="' + exm + '" y1="' + eym + '" x2="' + exm + '" y2="' + eyDrop + '" stroke="#922E20" stroke-width="1.5" stroke-dasharray="3 4"/>';
+    s += '<rect x="' + (exm - 7) + '" y="' + (eym - 7) + '" width="14" height="14" fill="#922E20"/>';
+    var elx = Math.min(exm + 14, PAD.l + CW - 190);
+    s += '<text x="' + elx + '" y="' + (eym - 14) + '" style="fill:#922E20;font-size:13px;font-weight:600;font-family:\'JetBrains Mono\',monospace">Serious Life Event</text>';
+    s += '</g>';
+
+    // lifted curve + stronger golden years marker (stage 4)
+    s += '<path class="curve-lift" pathLength="1000" d="' + pathFrom(lift, AGE_MIN, AGE_MAX) + '" fill="none" stroke="url(#liftGrad)" stroke-width="5.5" stroke-linecap="round"/>';
+    var gx = xAge(81), gy = yV(lift(81));
+    s += '<g class="g-lift">';
+    s += '<rect x="' + (gx - 7) + '" y="' + (gy - 7) + '" width="14" height="14" fill="#D9A765"/>';
+    s += '<text x="' + Math.min(gx - 2, PAD.l + CW - 230) + '" y="' + (gy - 26) + '" style="fill:#6E3D1C;font-size:13px;font-weight:600;font-family:\'JetBrains Mono\',monospace">Stronger Golden Years</text>';
+    s += '</g>';
+
+    // plot border
+    s += '<rect x="' + PAD.l + '" y="' + PAD.t + '" width="' + CW + '" height="' + CH + '" fill="none" stroke="rgba(10,10,11,0.16)" stroke-width="1"/>';
+
+    svg.innerHTML = s;
+  }
+
+  ['cond', 'life', 'risk'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      stageBox.classList.add('is-live');
+      render();
+    });
+  });
+  render();
+
+  // scroll stages drive the chart state and the rail
+  var steps = [].slice.call(document.querySelectorAll('.curve-step'));
+  var railItems = [].slice.call(document.querySelectorAll('.rail-item'));
+  var rail = document.getElementById('stageRail');
+
+  function setStage(n) {
+    stageBox.setAttribute('data-stage', String(n));
+    steps.forEach(function (st) { st.classList.toggle('is-active', +st.dataset.step === n); });
+    railItems.forEach(function (ri) { ri.classList.toggle('is-active', +ri.dataset.go === n); });
+    if (rail) rail.style.setProperty('--rail-progress', (n / 4 * 100) + '%');
+  }
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) setStage(+e.target.dataset.step);
+      });
+    }, { threshold: 0.4, rootMargin: '-18% 0px -18% 0px' });
+    steps.forEach(function (st) { io.observe(st); });
+
+    var drawIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { stageBox.classList.add('curve-drawn'); drawIo.disconnect(); }
+      });
+    }, { threshold: 0.25 });
+    drawIo.observe(stageBox);
+  } else {
+    setStage(4);
+    stageBox.classList.add('curve-drawn');
+  }
+
+  railItems.forEach(function (ri) {
+    ri.addEventListener('click', function () {
+      var target = steps[+ri.dataset.go - 1];
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+
+/* ============ Signal tableau: settle-in parallax ============ */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var stage = document.getElementById('signalStage');
+  if (!stage) return;
+  var objs = [].slice.call(stage.querySelectorAll('.signal-object'));
+  var depths = [0.5, 1, 1.4, 0.8];
+  var ticking = false;
+  function update() {
+    var rect = stage.getBoundingClientRect();
+    var vh = window.innerHeight || 1;
+    var p = Math.max(-1, Math.min(1, (rect.top + rect.height / 2 - vh / 2) / vh));
+    objs.forEach(function (o, i) {
+      if (!o.classList.contains('in-view')) return;
+      o.style.translate = '0 ' + (p * depths[i] * 18).toFixed(1) + 'px';
+    });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  }, { passive: true });
+})();
+
+/* ============ Experience carousel ============ */
+(function () {
+  var stage = document.getElementById('expStage');
+  if (!stage) return;
+  var tabs = [].slice.call(document.querySelectorAll('.exp-tab'));
+  var frames = [].slice.call(document.querySelectorAll('.exp-frame'));
+  var panes = [].slice.call(document.querySelectorAll('.exp-pane'));
+  var fill = document.getElementById('expProgFill');
+  var timer = null, idx = 0;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function go(i) {
+    idx = i;
+    tabs.forEach(function (t) {
+      var on = +t.dataset.i === i;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    frames.forEach(function (f) { f.classList.toggle('is-active', +f.dataset.i === i); });
+    panes.forEach(function (p) { p.classList.toggle('is-active', +p.dataset.i === i); });
+    if (fill) fill.style.width = ((i + 1) / tabs.length * 100) + '%';
+  }
+  function startAuto() {
+    stopAuto();
+    if (reduce) return;
+    timer = setInterval(function () { go((idx + 1) % tabs.length); }, 5000);
+  }
+  function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { stopAuto(); go(+t.dataset.i); });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.isIntersecting ? startAuto() : stopAuto(); });
+    }, { threshold: 0.35 });
+    io.observe(stage);
+  }
+  stage.addEventListener('mouseenter', stopAuto);
+  go(0);
+})();
+
+/* ============ Proof stats: count up once ============ */
+(function () {
+  var counts = [].slice.call(document.querySelectorAll('.count'));
+  if (!counts.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function run(el) {
+    var target = +el.dataset.count;
+    if (reduce) { el.textContent = String(target); return; }
+    var start = null, dur = 1200;
+    function tick(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(target * eased));
+      if (p < 1) window.requestAnimationFrame(tick);
+    }
+    window.requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counts.forEach(function (c) { io.observe(c); });
+  } else {
+    counts.forEach(function (c) { c.textContent = c.dataset.count; });
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+=== STAGE 1 Wed Jun 10 01:16:09 PDT 2026 ===
+[01:16:09] START brand-guide
+[01:17:39] START messaging
+[01:24:38] DONE messaging rc=0 subtype=success
+[01:28:00] DONE brand-guide rc=1 subtype=error_max_turns
+[01:28:00] RETRY brand-guide in 10m
+[01:38:00] START brand-guide
+[01:38:02] DONE brand-guide rc=1 subtype=success
+=== STAGE 2 Wed Jun 10 01:38:02 PDT 2026 ===
+[01:38:02] START landing-a
+[01:38:04] DONE landing-a rc=1 subtype=success
+[01:38:04] RETRY landing-a in 10m
+[01:40:02] START landing-b
+[01:40:03] DONE landing-b rc=1 subtype=success
+[01:40:03] RETRY landing-b in 10m
+[01:42:02] START landing-c
+[01:42:04] DONE landing-c rc=1 subtype=success
+[01:42:04] RETRY landing-c in 10m
+[01:48:04] START landing-a
+[01:48:06] DONE landing-a rc=1 subtype=success
+[01:50:03] START landing-b
+[01:50:05] DONE landing-b rc=1 subtype=success
+[01:52:04] START landing-c
+[01:52:05] DONE landing-c rc=1 subtype=success
+=== COMPLETE Wed Jun 10 01:52:05 PDT 2026 ===
+/Users/jasonyim/Projects/aleron-website-v1/jobs/brand-guide/:
+total 7048
+drwxr-xr-x   7 jasonyim  staff      224 Jun 10 01:27 .
+drwxr-xr-x   7 jasonyim  staff      224 Jun  9 21:21 ..
+-rw-------   1 jasonyim  staff     2616 Jun  9 21:20 BRIEF.md
+-rw-r--r--   1 jasonyim  staff   387275 Jun 10 01:27 _bottom.png
+drwxr-xr-x  14 jasonyim  staff      448 Jun 10 01:19 assets
+-rw-r--r--   1 jasonyim  staff    62644 Jun 10 01:23 brand-guide.html
+-rw-r--r--@  1 jasonyim  staff  2232521 Jun 10 01:27 proof.png
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-a/:
+total 8
+drwxr-xr-x  3 jasonyim  staff    96 Jun  9 21:21 .
+drwxr-xr-x  7 jasonyim  staff   224 Jun  9 21:21 ..
+-rw-------  1 jasonyim  staff  1817 Jun  9 21:21 BRIEF.md
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-b/:
+total 8
+drwxr-xr-x  3 jasonyim  staff    96 Jun  9 21:21 .
+drwxr-xr-x  7 jasonyim  staff   224 Jun  9 21:21 ..
+-rw-------  1 jasonyim  staff  2256 Jun  9 21:21 BRIEF.md
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-c/:
+total 8
+drwxr-xr-x  3 jasonyim  staff    96 Jun  9 21:21 .
+drwxr-xr-x  7 jasonyim  staff   224 Jun  9 21:21 ..
+-rw-------  1 jasonyim  staff  2187 Jun  9 21:21 BRIEF.md
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/messaging/:
+total 64
+drwxr-xr-x  5 jasonyim  staff    160 Jun 10 01:23 .
+drwxr-xr-x  7 jasonyim  staff    224 Jun  9 21:21 ..
+-rw-------  1 jasonyim  staff   2173 Jun  9 21:20 BRIEF.md
+-rw-r--r--  1 jasonyim  staff  18479 Jun 10 01:24 MESSAGING_RACK.md
+-rw-r--r--  1 jasonyim  staff   6673 Jun 10 01:24 RATIONALE.md
+=== STAGE 2 RELAUNCH Wed Jun 10 05:27:14 PDT 2026 ===
+[05:27:14] START landing-a attempt=1
+=== STAGE 2 RELAUNCH Wed Jun 10 05:27:25 PDT 2026 ===
+[05:27:25] START landing-a attempt=1
+[05:29:14] START landing-b attempt=1
+[05:29:26] START landing-b attempt=1
+[05:31:26] START landing-c attempt=1
+=== STAGE 2 RELAUNCH Wed Jun 10 05:32:30 PDT 2026 ===
+[05:32:30] START landing-a attempt=1
+[05:34:30] START landing-b attempt=1
+[05:36:30] START landing-c attempt=1
+[05:54:54] DONE landing-b subtype=success
+[05:55:18] DONE landing-a subtype=error_max_turns
+[05:56:02] DONE landing-c subtype=success
+=== COMPLETE Wed Jun 10 05:57:43 PDT 2026 ===
+/Users/jasonyim/Projects/aleron-website-v1/jobs/brand-guide/:
+total 5280
+drwxr-xr-x   8 jasonyim  staff      256 Jun 10 05:57 .
+drwxr-xr-x   7 jasonyim  staff      224 Jun  9 21:21 ..
+-rw-------   1 jasonyim  staff     2616 Jun  9 21:20 BRIEF.md
+-rw-r--r--   1 jasonyim  staff     5233 Jun 10 05:57 RATIONALE.md
+-rw-r--r--   1 jasonyim  staff   387275 Jun 10 01:27 _bottom.png
+drwxr-xr-x  14 jasonyim  staff      448 Jun 10 01:19 assets
+-rw-r--r--   1 jasonyim  staff    62644 Jun 10 01:23 brand-guide.html
+-rw-r--r--@  1 jasonyim  staff  2232521 Jun 10 01:27 proof.png
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-a/:
+total 1024
+drwxr-xr-x  8 jasonyim  staff     256 Jun 10 05:54 .
+drwxr-xr-x  7 jasonyim  staff     224 Jun  9 21:21 ..
+drwx------  9 jasonyim  staff     288 Jun 10 05:47 .gstack
+-rw-------  1 jasonyim  staff    1817 Jun  9 21:21 BRIEF.md
+drwxr-xr-x  9 jasonyim  staff     288 Jun 10 05:38 assets
+-rw-r--r--  1 jasonyim  staff   85206 Jun 10 05:54 index.html
+-rw-r--r--  1 jasonyim  staff  293617 Jun 10 05:46 proof-desktop.png
+-rw-r--r--  1 jasonyim  staff  136707 Jun 10 05:50 proof-mobile.png
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-b/:
+total 4016
+drwxr-xr-x  12 jasonyim  staff      384 Jun 10 05:54 .
+drwxr-xr-x   7 jasonyim  staff      224 Jun  9 21:21 ..
+drwx------   5 jasonyim  staff      160 Jun 10 05:54 .gstack
+-rw-------   1 jasonyim  staff     2256 Jun  9 21:21 BRIEF.md
+-rw-r--r--   1 jasonyim  staff     7138 Jun 10 05:54 RATIONALE.md
+drwxr-xr-x  10 jasonyim  staff      320 Jun 10 05:38 assets
+-rw-r--r--   1 jasonyim  staff    91140 Jun 10 05:52 index.html
+-rw-r--r--   1 jasonyim  staff  1264934 Jun 10 05:52 proof-1.png
+-rw-r--r--   1 jasonyim  staff   100926 Jun 10 05:52 proof-2.png
+-rw-r--r--   1 jasonyim  staff    94852 Jun 10 05:52 proof-3.png
+-rw-r--r--   1 jasonyim  staff   127578 Jun 10 05:52 proof-4.png
+-rw-r--r--   1 jasonyim  staff   350701 Jun 10 05:52 proof-mobile.png
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/landing-c/:
+total 16136
+drwxr-xr-x   8 jasonyim  staff      256 Jun 10 05:55 .
+drwxr-xr-x   7 jasonyim  staff      224 Jun  9 21:21 ..
+-rw-------   1 jasonyim  staff     2187 Jun  9 21:21 BRIEF.md
+-rw-r--r--   1 jasonyim  staff     7034 Jun 10 05:55 RATIONALE.md
+drwxr-xr-x  12 jasonyim  staff      384 Jun 10 05:55 assets
+-rw-r--r--   1 jasonyim  staff    62283 Jun 10 05:52 index.html
+-rw-r--r--@  1 jasonyim  staff  5032835 Jun 10 05:52 proof-desktop.png
+-rw-r--r--@  1 jasonyim  staff  2211112 Jun 10 05:53 proof-mobile.png
+
+/Users/jasonyim/Projects/aleron-website-v1/jobs/messaging/:
+total 64
+drwxr-xr-x  5 jasonyim  staff    160 Jun 10 01:23 .
+drwxr-xr-x  7 jasonyim  staff    224 Jun  9 21:21 ..
+-rw-------  1 jasonyim  staff   2173 Jun  9 21:20 BRIEF.md
+-rw-r--r--  1 jasonyim  staff  18479 Jun 10 01:24 MESSAGING_RACK.md
+-rw-r--r--  1 jasonyim  staff   6673 Jun 10 01:24 RATIONALE.md
