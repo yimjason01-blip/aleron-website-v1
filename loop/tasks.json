@@ -61,7 +61,7 @@
         "No em dashes; clinical values if any carry units",
         "Layout holds at 1440 and 390 widths (no overflow)"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T6",
@@ -72,7 +72,7 @@
         "Bottom of page: both lanes present and visually distinct",
         "No pill shapes introduced"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "T7",
@@ -84,7 +84,7 @@
         "Price if mentioned reads $4,200/yr",
         "Every section retains its job per MESSAGING_RACK.md spine"
       ],
-      "passes": false
+      "passes": true
     }
   ]
 }

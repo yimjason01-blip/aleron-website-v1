@@ -10,3 +10,12 @@ Next iteration: T4 can build scroll-assembly on top of the dynamic paths. Target
 T4: Added a one-time scroll draw to the live curve: .curve-base draws first, then .curve-lift follows after a short delay.
 T4: The completion class is necessary because renderCurve() replaces SVG paths; without it, slider input would replay the intro animation.
 Next iteration: T5 is a new physician profile section between signals/engine and proof. Keep the curve mechanics untouched unless verification fails.
+T5: Added a physician profile between ongoing membership and the voice section, using the existing numbered eyebrow plus figure caption pattern.
+T5: Kept the portrait as a square navy placeholder with no new image asset and verified 1440/390 widths have no document overflow.
+Next iteration: T6 is CTA contrast and the dual-lane close. Existing price copy was left untouched because it belongs outside T5.
+T6: Made the individual close lane navy with an inverse CTA, leaving the employer/broker lane light so the two paths read separately.
+T6: Hero CTA computed contrast is 15.36:1, and the close lane capture now shows both lanes and CTAs in one viewport.
+Next iteration: T7 is the full-page copy pass. Check the competitor price context before deciding whether it belongs in final copy.
+T7: Removed the competitor price range fine print so the page only shows the binding $4,200/yr price.
+T7: The page already had zero banned phrases, zero em dashes, and square interactive controls before the final verification pass.
+Next iteration: All listed loop tasks are now marked passing. Do a final full-page QA sweep before expanding scope.
