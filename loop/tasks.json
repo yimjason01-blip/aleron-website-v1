@@ -1,0 +1,90 @@
+{
+  "project": "aleron-landing-loop",
+  "base": "jobs/landing-loop/index.html",
+  "notes": "Base is a copy of landing-c (Editorial Practice). Tasks ordered. Work ONE task per iteration. Mark passes:true only after verification commands succeed.",
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Fix hero image clipping (runner's head + rust block)",
+      "detail": "In the hero's right image panel: the runner's head is clipped at the top edge of the photo container, and the rust/terracotta geometric block is awkwardly cut off at the right edge. Fix the image crop/object-position so the subject's full head is visible with breathing room, and make the rust block either bleed cleanly to the viewport edge or sit fully inside the panel. Do not change imagery files; CSS only.",
+      "criteria": [
+        "Headless Chrome screenshot at 1440x900: runner's full head visible, >=24px air above crown",
+        "Rust block edge is either flush with viewport right edge or fully inside the image panel; no mid-air cut",
+        "No layout regression elsewhere in hero (text column unchanged)"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T2",
+      "title": "Hero copy restraint pass",
+      "detail": "Apply the Neko restraint standard. Keep headline 'Your best days are still ahead.' Cut the subhead to one sentence maximum (currently two). The hero must affirm, not explain. Keep CTAs ('Apply for Membership' primary, secondary scroll link) and the CALIFORNIA / TEXAS / MEMBERSHIP OPENS IN WAVES microcopy.",
+      "criteria": [
+        "Hero total visible word count (headline + subhead + CTAs + microcopy) <= 30 words",
+        "Headline unchanged",
+        "CTA labels unchanged; no 'Join' anywhere",
+        "No em dashes introduced"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T3",
+      "title": "Port the interactive capability-curve slider from landing-a",
+      "detail": "jobs/landing-a/index.html contains an interactive three-slider capability-curve module (sourced from the QoL tool). Port that interactive module into the curve section of the loop page, replacing or augmenting the static Figure 01 chart. Adapt its styles to this page's editorial design system (cream panel, bordered rectangle, figure caption convention). The visitor must be able to move sliders and see their own trajectory bend.",
+      "criteria": [
+        "Sliders render and respond to input (verify via headless Chrome + JS: dispatch input event, assert SVG path 'd' attribute changes)",
+        "Module visually consistent with the page (cream background, square edges, serif/sans pairing, navy/bronze/rust palette)",
+        "Static Figure 01 either removed or merged; no duplicate curve charts",
+        "Y-axis keeps lived-capability labels (Endurance Athlete ... Needs Help)",
+        "No browser console errors"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T4",
+      "title": "Scroll-assembly for the curve section",
+      "detail": "Compress landing-b's scrollytelling idea into this single section: as the curve section enters the viewport, the trajectory lines draw in sequence (baseline decline first, then the early-caught trajectory bending upward). Use IntersectionObserver + CSS/SVG stroke animation. Subtle and restrained; runs once; respects prefers-reduced-motion.",
+      "criteria": [
+        "Lines animate on first scroll into view (verify via headless Chrome scripted scroll + screenshot sequence showing partial then complete draw)",
+        "prefers-reduced-motion: reduce disables animation (curve fully drawn immediately)",
+        "No scroll-jacking; page scrolls normally",
+        "No console errors"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T5",
+      "title": "Physician-as-person section",
+      "detail": "Add an editorial profile section for the physician between the engine/signals section and proof. Magazine-profile treatment, not a team-page card: name placeholder 'Dr. Mizani, MD', one paragraph in first person about how they think about a member's whole picture, and one specific concrete detail (e.g. reviewing the connections between genome, blood, wearables, history before a first conversation). Square portrait placeholder block (navy) with figure-caption convention. The section makes $4,200/yr feel like hiring a person, not subscribing to software.",
+      "criteria": [
+        "Section exists, uses section-number + small-caps label convention matching the page",
+        "First-person paragraph passes confidence-not-vanity: zero superlative adjectives (no 'world-class', 'leading', 'renowned')",
+        "No em dashes; clinical values if any carry units",
+        "Layout holds at 1440 and 390 widths (no overflow)"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T6",
+      "title": "Hero CTA contrast + dual-lane close",
+      "detail": "Two smaller fixes: (1) ensure primary hero CTA 'Apply for Membership' has >=4.5:1 contrast ratio against its background and reads clearly. (2) Verify the page bottom has the dual close: individual 'Apply for Membership' AND a distinct employer/broker lane link; if the employer lane is weak or missing, add a restrained one-line section ('For employers and brokers' + link).",
+      "criteria": [
+        "Computed contrast of CTA text vs button background >= 4.5:1 (measure via JS getComputedStyle)",
+        "Bottom of page: both lanes present and visually distinct",
+        "No pill shapes introduced"
+      ],
+      "passes": false
+    },
+    {
+      "id": "T7",
+      "title": "Full-page copy pass against VISION.md verifier tests",
+      "detail": "Read loop/VISION.md. Audit every section's copy against the five verifier tests. Rewrite any sentence that explains instead of affirms, uses generic longevity filler, or leans on adjectives instead of specific true things. Keep the messaging rack's section structure intact (jobs/messaging/MESSAGING_RACK.md is the copy SOT; prefer its final copy where the page deviates without reason).",
+      "criteria": [
+        "grep for banned phrases returns zero: 'best life', 'optimize your health', 'unlock', 'journey', 'empower', 'holistic'",
+        "Zero em dashes in file",
+        "Price if mentioned reads $4,200/yr",
+        "Every section retains its job per MESSAGING_RACK.md spine"
+      ],
+      "passes": false
+    }
+  ]
+}
