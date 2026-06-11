@@ -51,7 +51,7 @@
     {
       "id": "T5",
       "title": "Verbal decision spreads D7-D9",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "D7: weak/strong rewrite grid with 5 pairs; weak modeled on real longevity-market filler, strong says the specific true thing; every clinical value carries its unit at every mention (e.g. Lp(a) 72 nmol/L); plus a units violation specimen (value without unit, struck)",
         "D8: both lane cards fully rendered with live buttons; individual on navy with $4,200/yr visible and 'Apply for Membership'; employer/broker on light with 'For Employers'; individual visually dominant; violation pane shows the banned four-letter verb treatment struck",

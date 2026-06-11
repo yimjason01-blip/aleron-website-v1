@@ -378,6 +378,66 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .d6-vio img { width: 100%; height: 220px; object-fit: cover; object-position: 72% 28%; filter: grayscale(.7) contrast(1.08) brightness(1.05); }
 .d6-vio .cool { position: absolute; inset: 0; z-index: 2; background: rgba(30, 42, 74, 0.32); }
 
+/* D7: the rewrite grid */
+.rw-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); border-bottom: 1px solid var(--amd-color-border-subtle); }
+.rw-pair:last-child { border-bottom: 0; }
+@media (max-width: 760px) { .rw-pair { grid-template-columns: 1fr; } }
+.rw-cell { position: relative; padding: clamp(16px, 2.2vw, 26px) clamp(16px, 2.5vw, 32px); display: grid; gap: var(--amd-space-2); align-content: start; }
+.rw-cell.weak { border-right: 1px solid var(--amd-color-border-subtle); background: var(--amd-color-surface-paper); }
+@media (max-width: 760px) { .rw-cell.weak { border-right: 0; border-bottom: 1px solid var(--amd-color-border-subtle); } }
+.rw-k { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.rw-cell.weak .rw-k { color: var(--amd-color-rust); }
+.rw-cell.weak p {
+  font-family: var(--amd-font-serif); font-style: italic;
+  font-size: 16px; line-height: 1.5; color: var(--amd-color-text-tertiary);
+  text-decoration: line-through; text-decoration-color: var(--amd-color-rust); text-decoration-thickness: 1.5px;
+  max-width: 38ch;
+}
+.rw-cell.strong p { font-size: 15.5px; line-height: var(--amd-type-body-line); color: var(--amd-color-text-primary); max-width: 52ch; }
+.d7-vio { display: grid; gap: var(--amd-space-2); padding: clamp(20px, 3vw, 32px); justify-items: start; }
+.d7-vio .vl { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.d7-vio .vv { font-family: var(--amd-font-display); font-weight: 600; font-size: 40px; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+
+/* D8: the dual-lane close, lifted from landing-loop S7 */
+.d8-bar {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--amd-space-4);
+  padding: 12px clamp(16px, 2.5vw, 24px);
+  border-bottom: 1px solid var(--amd-color-border-subtle); background: var(--amd-color-surface-card);
+}
+.d8-bar .actions { display: flex; gap: var(--amd-space-3); align-items: center; flex-wrap: wrap; }
+.d8-paths { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(20px, 2.5vw, 32px); padding: clamp(24px, 3.5vw, 48px); background: var(--amd-color-surface-paper); }
+@media (max-width: 820px) { .d8-paths { grid-template-columns: 1fr; } }
+.d8-path { position: relative; border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); padding: clamp(28px, 3.6vw, 56px); display: grid; gap: var(--amd-space-5); align-content: start; justify-items: start; }
+.d8-path.primary { background: var(--amd-color-navy); border-color: var(--amd-color-navy); color: var(--amd-color-text-inverse); }
+.d8-path .plabel { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--amd-color-text-accent); }
+.d8-path.primary .plabel { color: var(--amd-color-text-accent-on-dark); }
+.d8-path h3 { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; letter-spacing: -.02em; max-width: 18ch; }
+.d8-path p { color: var(--amd-color-text-secondary); font-size: 15.5px; max-width: 44ch; }
+.d8-path .price { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(22px, 2vw, 28px); letter-spacing: -.02em; }
+.d8-path .price small { display: block; font-family: var(--amd-font-mono); font-weight: 400; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); margin-top: 6px; }
+.d8-vio { min-height: 180px; background: var(--amd-color-navy); display: grid; place-items: center; padding: var(--amd-space-6); }
+
+/* D9: the price stage */
+.d9-stage { position: relative; background: var(--amd-color-navy); color: var(--amd-color-text-inverse); padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 72px); display: grid; gap: var(--amd-space-4); justify-items: start; }
+.d9-stage .pl { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--amd-color-text-accent-on-dark); }
+.d9-price { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(44px, 6.5vw, 96px); line-height: .95; letter-spacing: var(--amd-type-display-track); font-variant-numeric: tabular-nums; }
+.d9-allin { font-family: var(--amd-font-mono); font-size: clamp(12px, 1.3vw, 15px); letter-spacing: .22em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); }
+.d9-anchor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 48px); width: 100%; margin-top: var(--amd-space-4); padding-top: var(--amd-space-5); border-top: 1px solid var(--amd-color-border-inverse); }
+@media (max-width: 760px) { .d9-anchor { grid-template-columns: 1fr; } }
+.d9-anchor .an { display: grid; gap: 6px; align-content: start; }
+.d9-anchor .an b { font-family: var(--amd-font-display); font-weight: 600; font-size: clamp(18px, 1.8vw, 24px); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.d9-anchor .an.ours b { color: var(--amd-color-text-accent-on-dark); }
+.d9-anchor .an span { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); }
+.d9-vio { display: grid; gap: var(--amd-space-3); padding: clamp(24px, 3vw, 36px); justify-items: start; }
+.d9-vio .vt { font-family: var(--amd-font-display); font-weight: 600; font-size: 20px; letter-spacing: -.02em; }
+.d9-vio p { font-size: 14px; color: var(--amd-color-text-secondary); max-width: 38ch; }
+.d9-anchor .an.ours span {
+  text-transform: none; letter-spacing: -.01em;
+  font-family: var(--amd-font-display); font-weight: 600; font-size: 13px;
+  color: var(--amd-color-text-inverse);
+}
+.d9-anchor .an.ours span sup { font-size: .6em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
+
 /* ===================== footer, both lanes ===================== */
 .site-foot { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); padding-block: var(--amd-space-8); }
 .ft-wrap {
@@ -739,6 +799,198 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
         <p class="vio-note">Cold grade, tight desk crop: telehealth stock, not a life.</p>
       </aside>
       <p class="capstrip"><span>Edge: kit and product shots stay warm, indoors allowed.</span><span>Changes if golden hour fails production quality; the treatment bends before the age band.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread" id="d7" aria-label="Decision D7">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D7 · Voice</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">Say the specific true thing: no adjectives doing the work of facts, no em dashes, and clinical values carry units at every mention.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">Five rewrites · strong lines from landing-loop copy</span></div>
+      <div class="spec-body">
+        <div class="rw-pair">
+          <div class="rw-cell weak">
+            <span class="rw-k">Weak · Adjectives as facts</span>
+            <p>Cutting-edge biomarker testing to optimize your healthspan jou&#114;ney.</p>
+          </div>
+          <div class="rw-cell strong">
+            <span class="rw-k">Strong</span>
+            <p>The Elite panel through Quest: ApoB, Lp(a), fasting insulin, and 80+ markers most physicals never order.</p>
+            <span class="mk" style="left:-11px; top:38%" aria-hidden="true">1</span>
+          </div>
+        </div>
+        <div class="rw-pair">
+          <div class="rw-cell weak">
+            <span class="rw-k">Weak · Generic genetics filler</span>
+            <p>Comprehensive genetic insights that emp&#111;wer whole-person wellness.</p>
+          </div>
+          <div class="rw-cell strong">
+            <span class="rw-k">Strong</span>
+            <p>Spit in the tube, drop it in the prepaid mailer. The 163-gene Invitae panel screens for the variants that actually change a care plan.</p>
+          </div>
+        </div>
+        <div class="rw-pair">
+          <div class="rw-cell weak">
+            <span class="rw-k">Weak · Trend without a number</span>
+            <p>Your inflammation markers are moving in the right direction.</p>
+          </div>
+          <div class="rw-cell strong">
+            <span class="rw-k">Strong</span>
+            <p>hsCRP 0.8 mg/L this quarter, down from 2.4 mg/L last year. The plan that moved it stays.</p>
+            <span class="mk" style="left:-11px; top:38%" aria-hidden="true">2</span>
+          </div>
+        </div>
+        <div class="rw-pair">
+          <div class="rw-cell weak">
+            <span class="rw-k">Weak · Could fit any clinic</span>
+            <p>Unl&#111;ck concierge access and a h&#111;listic standard of care.</p>
+            <span class="mk" style="right:-11px; top:38%" aria-hidden="true">3</span>
+          </div>
+          <div class="rw-cell strong">
+            <span class="rw-k">Strong</span>
+            <p>A physician in your corner, on your schedule. Onboarding takes fifteen minutes, from your couch.</p>
+          </div>
+        </div>
+        <div class="rw-pair">
+          <div class="rw-cell weak">
+            <span class="rw-k">Weak · Aspiration as offer</span>
+            <p>El&#101;vate your everyday and start living your best life.</p>
+          </div>
+          <div class="rw-cell strong">
+            <span class="rw-k">Strong</span>
+            <p>Lp(a) 72 nmol/L gets a named plan, not a pamphlet. Membership is $4,200/yr, all in.</p>
+          </div>
+        </div>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Named lab, named panel, named markers: information.</li>
+        <li><span class="n">2</span>The unit rides every value, both mentions.</li>
+        <li><span class="n">3</span>Fits any clinic anywhere, so it informs nothing.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D7 broken</span></div>
+        <div class="vio-body d7-vio">
+          <span class="vl">The same value, no unit</span>
+          <span class="vv">Lp&#40;a&#41; 72</span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">A clinical value without its unit is an adjective.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: member quotes run verbatim; the contract binds our voice, not theirs.</span><span>Changes never; new filler is appended to the banned list as the market invents it.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread on-paper" id="d8" aria-label="Decision D8">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D8 · CTA and lanes</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">Acquisition says Apply for Membership, the header says Log In, and every page closes with both lanes, individual dominant.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">landing-loop header and S9 dual-path close, live buttons</span></div>
+      <div class="spec-body">
+        <div class="d8-bar">
+          <span class="brand">aleron<sup>MD</sup></span>
+          <div class="actions">
+            <span class="mk" style="position:static" aria-hidden="true">1</span>
+            <a class="btn btn-ghost" href="#">Log In</a>
+            <a class="btn btn-primary" href="#">Apply for Membership</a>
+          </div>
+        </div>
+        <div class="d8-paths">
+          <div class="d8-path primary">
+            <span class="plabel">For individuals</span>
+            <h3>One physician, your full data picture, and a plan that keeps working between visits.</h3>
+            <div class="price">$4,200/yr<small>All in. No add-on billing.</small></div>
+            <a class="btn btn-cream" href="#">Apply for Membership</a>
+            <span class="mk" style="right:-11px; top:34px" aria-hidden="true">2</span>
+            <span class="mk" style="left:-11px; bottom:52px" aria-hidden="true">3</span>
+          </div>
+          <div class="d8-path">
+            <span class="plabel">For employers and brokers</span>
+            <h3>Bring physician-led preventive care to the people you cover.</h3>
+            <p>We'll show you how Aleron fits alongside your existing benefits.</p>
+            <a class="btn btn-ghost" href="#">For Employers</a>
+            <span class="mk" style="right:-11px; top:34px" aria-hidden="true">4</span>
+          </div>
+        </div>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>The header verb is Log In, two words, always.</li>
+        <li><span class="n">2</span>Navy, wider, first: the individual lane dominates.</li>
+        <li><span class="n">3</span>Acquisition asks to apply; admission comes in waves.</li>
+        <li><span class="n">4</span>Employers get a quieter door, never the hero.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D8 broken</span></div>
+        <div class="vio-body d8-vio">
+          <span class="btn btn-cream">J&#111;in</span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">The four-letter verb sells a club; Aleron admits applicants.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: Apply may stand alone where space is tight, never another verb.</span><span>Changes when admission stops coming in waves; the language follows reality.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread" id="d9" aria-label="Decision D9">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D9 · The price</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">The price is $4,200/yr, stated plainly, all in, no add-on billing, never hidden behind a call.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">The number in the open, field anchors beside it</span></div>
+      <div class="spec-body">
+        <div class="d9-stage">
+          <span class="pl">Membership · California and Texas</span>
+          <p class="d9-price">$4,200/yr</p>
+          <p class="d9-allin">All in. No add-on billing.</p>
+          <div class="d9-anchor">
+            <div class="an">
+              <b>$8,000 to $98,000/yr</b>
+              <span>Human Longevity</span>
+            </div>
+            <div class="an">
+              <b>from $15,000/yr</b>
+              <span>Fountain Life</span>
+            </div>
+            <div class="an ours">
+              <b>$4,200/yr</b>
+              <span>aleron<sup>MD</sup></span>
+            </div>
+          </div>
+          <span class="mk" style="left:-11px; top:32%" aria-hidden="true">1</span>
+          <span class="mk" style="left:-11px; bottom:16%" aria-hidden="true">2</span>
+        </div>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Display scale, no asterisk, no starting-at hedge.</li>
+        <li><span class="n">2</span>The field charges more to say less; comparison sells.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D9 broken</span></div>
+        <div class="vio-body d9-vio">
+          <span class="vt">Personalized pricing</span>
+          <p>Every membership is tailored to your goals. Speak with an advisor to review options.</p>
+          <span class="btn btn-ghost">Book a call</span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">A hidden number promises it will hurt.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: employer lanes quote per census; the individual number stays public.</span><span>Changes when the actual price changes; the presentation survives any number.</span></p>
     </div>
   </div>
 </section>
