@@ -192,6 +192,192 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .rc-row .rc-rule { grid-column: 1 / -1; }
 }
 
+/* ===================== decision spreads ===================== */
+.spread { padding-block: var(--amd-layout-section-y); border-bottom: 1px solid var(--amd-color-border-default); }
+.spread.on-paper { background: var(--amd-color-surface-paper); }
+.sp-head { display: grid; gap: var(--amd-space-4); margin-bottom: var(--amd-space-7); }
+.sp-flags { display: flex; align-items: center; gap: var(--amd-space-4); flex-wrap: wrap; }
+.sp-rule {
+  font-family: var(--amd-font-serif); font-weight: 500;
+  font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track);
+  max-width: 44ch;
+}
+
+.specimen { border: 1px solid var(--amd-color-border-default); background: var(--amd-color-surface-card); }
+.spec-cap {
+  display: flex; justify-content: space-between; gap: var(--amd-space-4); flex-wrap: wrap;
+  padding: 10px 14px; border-bottom: 1px solid var(--amd-color-border-subtle);
+  font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+}
+.spec-cap .k { color: var(--amd-color-text-accent); }
+.spec-cap .src { color: var(--amd-color-text-tertiary); letter-spacing: .06em; }
+.spec-body { position: relative; }
+.mk {
+  position: absolute; z-index: 7; display: grid; place-items: center;
+  width: 22px; height: 22px;
+  background: var(--amd-color-surface-page); color: var(--amd-color-text-primary);
+  border: 1px solid var(--amd-color-text-primary);
+  font-family: var(--amd-font-mono); font-size: 11px;
+}
+.annos { border-top: 1px solid var(--amd-color-border-subtle); }
+.annos li {
+  display: grid; grid-template-columns: 22px 1fr; gap: var(--amd-space-4); align-items: center;
+  padding: 10px 16px; border-bottom: 1px solid var(--amd-color-border-subtle);
+  font-size: 14px; color: var(--amd-color-text-secondary);
+}
+.annos li:last-child { border-bottom: 0; }
+.annos .n {
+  width: 22px; height: 22px; display: grid; place-items: center;
+  font-family: var(--amd-font-mono); font-size: 11px;
+  color: var(--amd-color-text-accent); border: 1px solid var(--amd-color-border-default);
+}
+
+.sp-bottom {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(24px, 4vw, 64px); align-items: start; margin-top: var(--amd-space-6);
+}
+@media (max-width: 880px) { .sp-bottom { grid-template-columns: 1fr; } }
+.vio { position: relative; max-width: 560px; border: 1px solid var(--amd-color-rust); background: var(--amd-color-surface-card); }
+.vio-cap {
+  display: flex; justify-content: space-between; gap: var(--amd-space-3);
+  padding: 8px 12px; border-bottom: 1px solid rgba(185, 86, 42, 0.28);
+  font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--amd-color-rust);
+}
+.vio-body { position: relative; overflow: hidden; }
+.vio-strike { position: absolute; inset: 0; z-index: 8; width: 100%; height: 100%; pointer-events: none; }
+.vio-note { padding: 10px 12px; border-top: 1px solid rgba(185, 86, 42, 0.28); font-size: 13px; color: var(--amd-color-text-secondary); }
+.capstrip {
+  display: grid; gap: var(--amd-space-2); padding-top: var(--amd-space-2);
+  font-family: var(--amd-font-serif); font-style: italic;
+  font-size: 15px; line-height: var(--amd-type-body-line); color: var(--amd-color-text-tertiary);
+  max-width: 52ch;
+}
+
+/* D1: the live hero as specimen */
+.d1-hero { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); min-height: 440px; }
+.d1-copy { display: flex; flex-direction: column; justify-content: center; gap: var(--amd-space-5); padding: clamp(24px, 4vw, 64px); }
+.d1-display {
+  font-family: var(--amd-font-serif); font-weight: 500;
+  font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line); letter-spacing: var(--amd-type-h2-track);
+  max-width: 12ch;
+}
+.d1-lede { font-size: var(--amd-type-body-lg-size); line-height: var(--amd-type-body-lg-line); color: var(--amd-color-text-secondary); max-width: 30ch; }
+.d1-meta { font-family: var(--amd-font-mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.d1-art { position: relative; overflow: hidden; background: var(--amd-color-navy); min-height: 380px; }
+.d1-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 48% 45%; }
+.d1-art .scrim { position: absolute; inset: 0; z-index: 2; background: linear-gradient(200deg, rgba(30,42,74,0) 55%, rgba(30,42,74,.38) 100%); }
+.blk { position: absolute; z-index: 3; }
+.blk-navy { left: -1px; bottom: 16%; width: 30%; height: 11%; background: var(--amd-color-navy); opacity: .92; }
+.blk-rust { right: clamp(40px, 8vw, 120px); bottom: 9%; width: min(38%, 240px); height: 8%; background: var(--amd-color-rust); opacity: .78; }
+@media (max-width: 880px) { .d1-hero { grid-template-columns: 1fr; } .d1-art { order: -1; min-height: 56vw; } }
+.d1-vio { min-height: 230px; background: var(--amd-color-navy); }
+.d1-vio img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.5) brightness(.55); }
+.d1-vio .line {
+  position: absolute; z-index: 4; left: 6%; right: 6%; bottom: 10%;
+  color: var(--amd-color-text-inverse);
+  font-family: var(--amd-font-serif); font-weight: 500;
+  font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track);
+}
+
+/* D2: the age band, full-bleed crop */
+.d2-fig img { width: 100%; height: clamp(360px, 40vw, 540px); object-fit: cover; object-position: 50% 28%; }
+.pass-tag {
+  position: absolute; left: 0; top: clamp(16px, 3vw, 28px); z-index: 6;
+  background: var(--amd-color-navy); color: var(--amd-color-text-inverse);
+  font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  padding: 10px 16px;
+}
+.pass-tag b { color: var(--amd-color-text-accent-on-dark); font-weight: 500; }
+.d2-vio img { width: 100%; height: 220px; object-fit: cover; object-position: 50% 18%; filter: saturate(1.6) contrast(.72) brightness(1.25) blur(1px); }
+
+/* D3: the type rack */
+.type-row {
+  display: grid; grid-template-columns: 250px 1fr; gap: clamp(20px, 3vw, 48px);
+  padding: clamp(18px, 2.5vw, 28px) clamp(16px, 2.5vw, 32px);
+  border-bottom: 1px solid var(--amd-color-border-subtle); align-items: center;
+}
+@media (max-width: 760px) { .type-row { grid-template-columns: 1fr; gap: var(--amd-space-3); } }
+.type-spec {
+  display: grid; grid-template-columns: 22px 1fr; gap: var(--amd-space-3); align-items: start;
+  font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--amd-color-text-tertiary); line-height: 1.6;
+}
+.type-spec .n {
+  width: 22px; height: 22px; display: grid; place-items: center;
+  font-size: 11px; letter-spacing: 0;
+  color: var(--amd-color-text-accent); border: 1px solid var(--amd-color-border-default);
+}
+.type-spec b { display: block; color: var(--amd-color-text-accent); font-weight: 500; }
+.t-display { font-family: var(--amd-font-serif); font-weight: 500; font-size: var(--amd-type-display-size); line-height: var(--amd-type-display-line); letter-spacing: var(--amd-type-display-track); }
+.t-h2 { font-family: var(--amd-font-serif); font-weight: 500; font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line); letter-spacing: var(--amd-type-h2-track); max-width: 24ch; }
+.t-body { font-family: var(--amd-font-body); font-size: var(--amd-type-body-size); line-height: var(--amd-type-body-line); color: var(--amd-color-text-secondary); max-width: 54ch; }
+.t-data { display: flex; gap: var(--amd-space-7); }
+.t-data b { display: block; font-family: var(--amd-font-display); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.t-data span { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-tertiary); }
+.t-label { font-family: var(--amd-font-mono); font-size: var(--amd-type-label-size); letter-spacing: var(--amd-type-label-track); text-transform: uppercase; color: var(--amd-color-text-accent); }
+.d3a {
+  display: flex; gap: var(--amd-space-4); align-items: baseline; flex-wrap: wrap;
+  padding: 14px clamp(16px, 2.5vw, 32px);
+  background: var(--amd-color-surface-paper);
+  font-size: 14px; color: var(--amd-color-text-secondary);
+}
+.d3-vio-body { display: grid; gap: var(--amd-space-4); padding: clamp(20px, 3vw, 32px); }
+.d3-vio-head { font-family: var(--amd-font-mono); font-size: 18px; letter-spacing: .14em; text-transform: uppercase; }
+.d3-vio-label { font-family: var(--amd-font-serif); font-style: italic; font-size: var(--amd-type-body-lg-size); color: var(--amd-color-text-secondary); }
+
+/* D4: swatches + the membership card in context */
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--amd-color-border-subtle); }
+@media (max-width: 880px) { .swatches { grid-template-columns: 1fr 1fr; } .sw:nth-child(2) { border-right: 0; } }
+.sw { border-right: 1px solid var(--amd-color-border-subtle); }
+.sw:last-child { border-right: 0; }
+.sw .chip { height: 110px; }
+.sw-meta { padding: 12px 14px 14px; display: grid; gap: 4px; }
+.sw-hex { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .06em; }
+.sw-role { font-weight: 600; font-size: 14px; }
+.sw-job { font-size: 13px; color: var(--amd-color-text-secondary); line-height: 1.55; }
+.d4-ctx { position: relative; padding: clamp(24px, 4vw, 56px); background: var(--amd-color-surface-paper); }
+.d4-eyebrow { font-family: var(--amd-font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--amd-color-rust); }
+.d4-h {
+  margin-top: 14px;
+  font-family: var(--amd-font-serif); font-weight: 500;
+  font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track);
+  max-width: 24ch;
+}
+.d4-card {
+  position: relative;
+  margin-top: var(--amd-space-5); max-width: 440px;
+  background: var(--amd-color-navy); color: var(--amd-color-text-inverse);
+  padding: clamp(20px, 3vw, 36px); display: grid; gap: 10px; justify-items: start;
+}
+.d4-card .pl { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--amd-color-text-accent-on-dark); }
+.d4-card .price { font-family: var(--amd-font-display); font-weight: 600; font-size: 28px; letter-spacing: -0.02em; }
+.d4-card .ps { font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--amd-color-text-inverse-muted); }
+.d4-card .btn { margin-top: var(--amd-space-2); }
+.d4-vio { min-height: 200px; background: var(--amd-color-rust); display: grid; place-items: center; padding: var(--amd-space-5); }
+.d4-vio p { font-family: var(--amd-font-serif); font-style: italic; font-weight: 500; font-size: var(--amd-type-h3-size); color: var(--amd-color-text-accent-on-dark); }
+
+/* D5: blocks earning jobs */
+.d5-fig img { width: 100%; height: clamp(360px, 42vw, 560px); object-fit: cover; object-position: 50% 35%; }
+.ftag {
+  position: absolute; left: 0; top: clamp(16px, 3vw, 32px); z-index: 6;
+  background: var(--amd-color-navy); color: var(--amd-color-text-inverse);
+  font-family: var(--amd-font-mono); font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase;
+  padding: 10px 16px;
+}
+.d5-vio { display: grid; place-items: center; min-height: 200px; padding: var(--amd-space-5); }
+.d5-vio svg { width: 240px; height: auto; }
+
+/* D6: the photography band */
+.d6-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .d6-grid { grid-template-columns: 1fr; } .d6-cell { border-right: 0; border-bottom: 1px solid var(--amd-color-border-subtle); } }
+.d6-cell { position: relative; border-right: 1px solid var(--amd-color-border-subtle); }
+.d6-cell:last-child { border-right: 0; }
+.d6-cell img { width: 100%; height: clamp(240px, 24vw, 340px); object-fit: cover; }
+.d6-vio { min-height: 220px; }
+.d6-vio img { width: 100%; height: 220px; object-fit: cover; object-position: 72% 28%; filter: grayscale(.7) contrast(1.08) brightness(1.05); }
+.d6-vio .cool { position: absolute; inset: 0; z-index: 2; background: rgba(30, 42, 74, 0.32); }
+
 /* ===================== footer, both lanes ===================== */
 .site-foot { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); padding-block: var(--amd-space-8); }
 .ft-wrap {
@@ -282,7 +468,280 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   </div>
 </section>
 
-<!-- ============ DECISION SPREADS D1 to D10: built in T4, T5, T6 ============ -->
+<!-- ============ DECISION SPREADS D1 to D6 ============ -->
+
+<section class="spread" id="d1" aria-label="Decision D1">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D1 · The thesis</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">The brand sells one belief, that you might be just getting started, and every surface embodies disciplined vitality.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">landing-loop S1, the live hero</span></div>
+      <div class="spec-body d1-hero">
+        <div class="d1-copy">
+          <p class="d1-display">Your best days are still ahead.</p>
+          <p class="d1-lede">A physician-led plan for the decades you intend to have.</p>
+          <div><a class="btn btn-primary" href="#d8">Apply for Membership</a></div>
+          <p class="d1-meta">California · Texas · Membership opens in waves</p>
+        </div>
+        <div class="d1-art">
+          <img src="../landing-loop/assets/hero-runner.jpg" alt="A mid-life man trail running above a coastline at first light" />
+          <span class="scrim" aria-hidden="true"></span>
+          <span class="blk blk-navy" aria-hidden="true"></span>
+          <span class="blk blk-rust" aria-hidden="true"></span>
+          <span class="mk" style="left:54%; top:28%" aria-hidden="true">2</span>
+          <span class="mk" style="left:32%; bottom:19%" aria-hidden="true">3</span>
+        </div>
+        <span class="mk" style="left:3.5%; top:24%" aria-hidden="true">1</span>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>The promise is a beginning, never a rescue.</li>
+        <li><span class="n">2</span>Mid-stride at first light, ten reachable years out.</li>
+        <li><span class="n">3</span>Square blocks discipline the frame; the light carries vitality.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D1 broken</span></div>
+        <div class="vio-body d1-vio">
+          <img src="../landing-loop/assets/hero-runner.jpg" alt="" />
+          <p class="line">Aging is coming. Don't run out of time.</p>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Fear of decline sells a click, never a decade.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: clinical UI runs quieter; the belief still shows.</span><span>Changes when positioning leaves prevention-first medicine, and only then.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread on-paper" id="d2" aria-label="Decision D2">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D2 · The age band</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">Hero subjects read 45 to 60, mid-experience, golden hour, visibly fitter than the viewer at five honest years of work, not a different species.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">landing-loop hero-runner.jpg, the live crop</span></div>
+      <div class="spec-body d2-fig">
+        <img src="../landing-loop/assets/hero-runner.jpg" alt="A mid-life man trail running above a coastline at first light" />
+        <span class="pass-tag"><b>Pass</b> · Age band 45 to 60</span>
+        <span class="mk" style="left:41%; top:23%" aria-hidden="true">1</span>
+        <span class="mk" style="right:12%; top:38%" aria-hidden="true">2</span>
+        <span class="mk" style="left:40%; bottom:16%" aria-hidden="true">3</span>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Reads early 50s, the buyer one decade out.</li>
+        <li><span class="n">2</span>Golden hour, coast present, environment doing half the work.</li>
+        <li><span class="n">3</span>Fitter by five honest years, not a different species.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D2 broken</span></div>
+        <div class="vio-body">
+          <img class="d2-vio-img" src="../landing-loop/assets/hero-runner.jpg" alt="" style="width:100%; height:220px; object-fit:cover; object-position:50% 18%; filter:saturate(1.6) contrast(.72) brightness(1.25) blur(1px);" />
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Airbrushed toward immortal: a species, not a destination.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: the 70s live in curve and copy, never in casting.</span><span>Changes when buyer research moves the band, never past 60.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread" id="d3" aria-label="Decision D3">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D3 · Typography</span><span class="tag proposed">Proposed</span></div>
+      <h2 class="sp-rule">Serif carries the thesis and headlines, sans carries body and data, and mono earns exactly one job, short uppercase wayfinding labels.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">Live faces, copy verbatim from landing-loop</span></div>
+      <div class="type-row">
+        <span class="type-spec"><span class="n">1</span><span><b>Serif · Display</b>Carries the thesis and every headline.</span></span>
+        <p class="t-display">Your best days are still ahead.</p>
+      </div>
+      <div class="type-row">
+        <span class="type-spec"><span class="n">2</span><span><b>Serif · Section</b>Section scale, still the voice.</span></span>
+        <p class="t-h2">The story of your future is written on top of this curve.</p>
+      </div>
+      <div class="type-row">
+        <span class="type-spec"><span class="n">3</span><span><b>Sans · Body</b>Body explains the path.</span></span>
+        <p class="t-body">Spit in the tube, drop it in the prepaid mailer. The 163-gene Invitae panel screens for the variants that actually change a care plan.</p>
+      </div>
+      <div class="type-row">
+        <span class="type-spec"><span class="n">4</span><span><b>Sans · Data</b>Data stays tabular and quiet.</span></span>
+        <div class="t-data"><div><b>163 genes</b><span>Invitae panel</span></div><div><b>~3 weeks</b><span>results return</span></div></div>
+      </div>
+      <div class="type-row">
+        <span class="type-spec"><span class="n">5</span><span><b>Mono · Label</b>Wayfinding labels only, uppercase, short.</span></span>
+        <p class="t-label">Step 02 · Genetics</p>
+      </div>
+      <div class="d3a">
+        <span class="tag proposed">D3a · Flagged</span>
+        <span>The mono face stays because wayfinding labels must read as instrumentation, not voice; if that argument fails ratification, sans takes labels and the third face is cut.</span>
+      </div>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D3 broken</span></div>
+        <div class="vio-body d3-vio-body">
+          <p class="d3-vio-head">Your best days are still ahead.</p>
+          <p class="d3-vio-label">Step 02 · Genetics</p>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">The instrument took the microphone, the voice took the signage.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: serif may quote at body scale.</span><span>Changes when Jason ratifies; reopens only if serif headlines underperform live.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread on-paper" id="d4" aria-label="Decision D4">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D4 · Color roles</span><span class="tag locked">Locked</span></div>
+      <h2 class="sp-rule">Four colors, four jobs: navy is authority, bronze is accent, rust is signal, cream is ground, and no fifth color enters.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">Values verbatim from landing-loop tokens · card from S9</span></div>
+      <div class="swatches">
+        <div class="sw">
+          <div class="chip" style="background:#1E2A4A"></div>
+          <div class="sw-meta"><span class="sw-hex">#1E2A4A</span><span class="sw-role">Navy · Authority</span><span class="sw-job">Dark fields, the membership card, the footer.</span></div>
+        </div>
+        <div class="sw">
+          <div class="chip" style="background:#CD9453"></div>
+          <div class="sw-meta"><span class="sw-hex">#CD9453 · on dark #D9A765</span><span class="sw-role">Bronze · Accent</span><span class="sw-job">The MD, labels on navy, never a field.</span></div>
+        </div>
+        <div class="sw">
+          <div class="chip" style="background:#B9562A"></div>
+          <div class="sw-meta"><span class="sw-hex">#B9562A</span><span class="sw-role">Rust · Signal</span><span class="sw-job">Risk, eyebrows, proposed flags, never a wash.</span></div>
+        </div>
+        <div class="sw">
+          <div class="chip" style="background:#EFEAE0; border-bottom:1px solid rgba(36,36,38,.1)"></div>
+          <div class="sw-meta"><span class="sw-hex">#EFEAE0 · paper #F6F4EE</span><span class="sw-role">Cream · Ground</span><span class="sw-job">The warm field everything sits on.</span></div>
+        </div>
+      </div>
+      <div class="spec-body d4-ctx">
+        <p class="d4-eyebrow">07 · Membership</p>
+        <h3 class="d4-h">Your curve is already being written. Decide who holds the pen.</h3>
+        <div class="d4-card">
+          <span class="pl">For individuals</span>
+          <span class="price">$4,200/yr</span>
+          <span class="ps">All in. No add-on billing.</span>
+          <a class="btn btn-cream" href="#d8">Apply for Membership</a>
+          <span class="mk" style="right:-11px; top:45%" aria-hidden="true">2</span>
+          <span class="mk" style="left:-11px; top:30px" aria-hidden="true">3</span>
+        </div>
+        <span class="mk" style="left:2.5%; top:9%" aria-hidden="true">1</span>
+        <span class="mk" style="right:5%; bottom:12%" aria-hidden="true">4</span>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Rust eyebrow signals the turn, never a wash.</li>
+        <li><span class="n">2</span>Navy card carries authority and the number.</li>
+        <li><span class="n">3</span>Bronze label, the mandatory accent on dark.</li>
+        <li><span class="n">4</span>Cream ground, editorial, never clinical white.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D4 broken</span></div>
+        <div class="vio-body d4-vio">
+          <p>Wellness, reimagined.</p>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#EFEAE0" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Rust as wallpaper, bronze as mood: decoration, not jobs.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: alpha tints of the four may draw lines and scrims.</span><span>Changes at a full rebrand, never a season, feature, or partner.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread" id="d5" aria-label="Decision D5">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D5 · Block grammar</span><span class="tag proposed">Proposed</span></div>
+      <h2 class="sp-rule">Square geometry only: zero border-radius, no pills, and every block earns one of three jobs, frame, anchor, or label.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">landing-loop hero art, surfer slide</span></div>
+      <div class="spec-body d5-fig">
+        <img src="../landing-loop/assets/surfer.jpg" alt="A silver-haired man carving a wave on a surfboard" />
+        <span class="ftag" aria-hidden="true">Members in motion</span>
+        <span class="blk blk-navy" aria-hidden="true"></span>
+        <span class="blk blk-rust" aria-hidden="true"></span>
+        <span class="mk" style="left:31%; bottom:18%" aria-hidden="true">1</span>
+        <span class="mk" style="right:9%; bottom:12%" aria-hidden="true">2</span>
+        <span class="mk" style="left:13.5em; top:clamp(18px, 3vw, 34px)" aria-hidden="true">3</span>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Anchor: navy bleeds off the edge, pinning the photograph.</li>
+        <li><span class="n">2</span>Frame: rust holds the corner where the action lands.</li>
+        <li><span class="n">3</span>Label: mono on navy locates the reader, square, quiet.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D5 broken</span></div>
+        <div class="vio-body d5-vio">
+          <svg viewBox="0 0 250 70" role="img" aria-label="A pill-shaped tag, struck out">
+            <rect x="3" y="11" width="244" height="48" rx="24" fill="none" stroke="#B9562A" stroke-width="2" />
+            <text x="125" y="41" text-anchor="middle" fill="#6E6E72" font-family="JetBrains Mono, monospace" font-size="13" letter-spacing="3">LONGEVITY+</text>
+          </svg>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">The pill is the universal wellness costume.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: a source asset can physically require a radius.</span><span>Changes then, and nothing else reopens it.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="spread on-paper" id="d6" aria-label="Decision D6">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D6 · Photography</span><span class="tag proposed">Proposed</span></div>
+      <h2 class="sp-rule">Photography is golden-hour warm, motion or mid-experience, environment present, never clinical, never posed at camera, never stock happy senior.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">landing-loop assets, untouched</span></div>
+      <div class="d6-grid">
+        <div class="d6-cell">
+          <img src="../landing-loop/assets/hero-rain.jpg" alt="A father and daughter laughing in heavy rain on a forest trail" />
+          <span class="mk" style="left:12px; top:12px" aria-hidden="true">1</span>
+        </div>
+        <div class="d6-cell">
+          <img src="../landing-loop/assets/exp-03-bloodwork.jpg" alt="A man rolls up his sleeve over a small bandage as he leaves a patient service center in the sun" />
+          <span class="mk" style="left:12px; top:12px" aria-hidden="true">2</span>
+        </div>
+        <div class="d6-cell">
+          <img src="../landing-loop/assets/exp-05-loop.jpg" alt="A man at home at dusk reading a message from his care team on his phone" />
+          <span class="mk" style="left:12px; top:12px" aria-hidden="true">3</span>
+        </div>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>Rain, motion, family: the environment is loud.</li>
+        <li><span class="n">2</span>Sunlit street, mid-errand, no exam room in sight.</li>
+        <li><span class="n">3</span>Dusk at home, care arriving inside a real life.</li>
+      </ol>
+    </figure>
+    <div class="sp-bottom">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>D6 broken</span></div>
+        <div class="vio-body d6-vio">
+          <img src="../landing-loop/assets/exp-04-consult.jpg" alt="" />
+          <span class="cool" aria-hidden="true"></span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Cold grade, tight desk crop: telehealth stock, not a life.</p>
+      </aside>
+      <p class="capstrip"><span>Edge: kit and product shots stay warm, indoors allowed.</span><span>Changes if golden hour fails production quality; the treatment bends before the age band.</span></p>
+    </div>
+  </div>
+</section>
 
 </main>
 

@@ -38,7 +38,7 @@
     {
       "id": "T4",
       "title": "Visual decision spreads D1-D6",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "Each of D1-D6 has: rule headline (byte-match BRAND.md), one in-context specimen built from real landing-loop sections or existing repo photo assets, numbered annotations ≤12 words each pointing at where the rule lives, caption strip ≤2 lines containing ONLY edge case + change condition",
         "Each of D1-D6 has a violation pane: same surface with the rule broken, struck square treatment, one caption line; violation visually quieter than the correct specimen",
