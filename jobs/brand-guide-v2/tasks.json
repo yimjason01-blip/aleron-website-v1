@@ -73,7 +73,7 @@
     {
       "id": "T7",
       "title": "Full-page visual QA + self-demonstration pass",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "Full-page screenshot at 1440px wide rendered (tall window or stitched) AFTER all edits, and actually examined",
         "Verified from the screenshot: deliberate vertical rhythm between spreads, aligned annotation system, no overlapping text, no broken images, violations quieter than correct specimens, nothing reads as a template slide; fix and re-render until true",
