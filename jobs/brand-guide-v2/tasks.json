@@ -15,7 +15,7 @@
     {
       "id": "T2",
       "title": "check.sh harness + baseline runs",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "check.sh implements every [MECH] check from BRAND.md against $1; exit 0 on pass, nonzero printing violated rule IDs with line numbers",
         "Covers at minimum: em dash =0, border-radius only 0/absent, banned words (journey/unlock/empower/holistic/elevate) =0 as standalone words case-insensitive, 'Log In' exact (no Login/Sign In), '$4,200/yr' exact, lowercase aleron lockup markup, clinical values carry units",
