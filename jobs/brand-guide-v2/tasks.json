@@ -26,7 +26,7 @@
     {
       "id": "T3",
       "title": "Page scaffold + rule card skim layer",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "index.html scaffold built using ONLY hex/typeface/spacing values verbatim from ../landing-loop/index.html CSS custom properties; zero invented tokens",
         "Rule card section: all 10 rules as single lines with square LOCKED/PROPOSED tags, fits one 1440x900 viewport, zero body prose",

@@ -34,7 +34,7 @@ CHANGES-WHEN: A full rebrand, never a season, a feature, or a partner.
 ## D5 / PROPOSED / [MECH]
 
 RULE: Square geometry only: zero border-radius, no pills, and every block earns one of three jobs, frame, anchor, or label.
-CHECK: grep -n 'border-radius' "$1" | grep -vE 'border-radius:[[:space:]]*0(px)?[[:space:]]*[;}"]'
+CHECK: grep -nE 'border-radius[[:space:]]*:' "$1" | grep -vE 'border-radius[[:space:]]*:[[:space:]]*0(px)?[[:space:]]*[;}"]'
 CHANGES-WHEN: A source asset physically requires a radius; nothing else reopens this.
 
 ## D6 / PROPOSED / [JUDG]

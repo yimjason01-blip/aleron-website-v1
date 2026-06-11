@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aleron MD · Brand Decisions</title>
+<meta name="description" content="The Aleron MD brand contract as a proof sheet. Ten decisions, each rule shown doing its work on a real surface." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   aleron MD brand decisions, the proof sheet.
+   Every token below is inlined verbatim from the custom properties in
+   ../landing-loop/index.html (gradient tokens omitted, unused here).
+   No new hex values, no new typefaces, no new spacing tokens.
+   Square geometry throughout. This page must pass its own check.sh.
+   ===================================================================== */
+:root {
+  color-scheme: light;
+
+  --amd-color-surface-page: #FFFEFB;
+  --amd-color-surface-paper: #F6F4EE;
+  --amd-color-surface-cream: #EFEAE0;
+  --amd-color-surface-bone: #ECE5D6;
+  --amd-color-surface-dark: #242426;
+  --amd-color-surface-deep: #232426;
+  --amd-color-surface-card: #FFFFFF;
+  --amd-color-text-primary: #242426;
+  --amd-color-text-secondary: #565659;
+  --amd-color-text-secondary-on-paper: #4D4D50;
+  --amd-color-text-tertiary: #6E6E72;
+  --amd-color-text-accent: #6E3D1C;
+  --amd-color-text-accent-on-dark: #D9A765;
+  --amd-color-text-inverse: #FFFEFB;
+  --amd-color-text-inverse-muted: rgba(255, 254, 251, 0.78);
+  --amd-color-border-default: rgba(36, 36, 38, 0.14);
+  --amd-color-border-subtle: rgba(36, 36, 38, 0.08);
+  --amd-color-border-inverse: rgba(255, 254, 251, 0.22);
+  --amd-color-rust: #B9562A;
+  --amd-color-gold-reference: #CD9453;
+  --amd-color-navy: #1E2A4A;
+  --amd-color-grid: #DED8CC;
+
+  --amd-action-primary-bg: var(--amd-color-surface-dark);
+  --amd-action-primary-text: var(--amd-color-text-inverse);
+  --amd-action-primary-hover-bg: #8E3F1E;
+  --amd-focus-ring: 0 0 0 3px rgba(185, 86, 42, 0.22);
+
+  --amd-font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+  --amd-font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --amd-font-serif: "Source Serif 4", Georgia, serif;
+  --amd-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --amd-type-display-size: clamp(56px, 8vw, 108px);
+  --amd-type-display-line: 0.97;
+  --amd-type-display-track: -0.045em;
+  --amd-type-h2-size: clamp(34px, 4.7vw, 62px);
+  --amd-type-h2-line: 1.04;
+  --amd-type-h2-track: -0.032em;
+  --amd-type-h3-size: clamp(24px, 2.8vw, 36px);
+  --amd-type-h3-line: 1.12;
+  --amd-type-h3-track: -0.024em;
+  --amd-type-body-lg-size: clamp(18px, 1.4vw, 22px);
+  --amd-type-body-lg-line: 1.55;
+  --amd-type-body-size: 16px;
+  --amd-type-body-line: 1.6;
+  --amd-type-label-size: 12px;
+  --amd-type-label-track: 0.16em;
+
+  --amd-space-1: 4px;  --amd-space-2: 8px;  --amd-space-3: 12px;
+  --amd-space-4: 16px; --amd-space-5: 24px; --amd-space-6: 32px;
+  --amd-space-7: 48px; --amd-space-8: 64px; --amd-space-9: 96px; --amd-space-10: 128px;
+
+  --amd-layout-max: 1240px;
+  --amd-layout-measure: 68ch;
+  --amd-layout-gutter: clamp(20px, 4vw, 64px);
+  --amd-layout-section-y: clamp(80px, 10vw, 148px);
+
+  --amd-shadow-soft: 0 18px 48px -30px rgba(36, 36, 38, 0.28);
+
+  --amd-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --amd-duration-fast: 160ms;
+  --amd-duration-standard: 280ms;
+  --amd-duration-slow: 520ms;
+}
+
+/* ===================== base ===================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body {
+  margin: 0;
+  background: var(--amd-color-surface-page);
+  color: var(--amd-color-text-primary);
+  font-family: var(--amd-font-body);
+  font-size: var(--amd-type-body-size);
+  line-height: var(--amd-type-body-line);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4, p, figure { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.wrap { max-width: var(--amd-layout-max); margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+
+.eyebrow {
+  font-family: var(--amd-font-mono);
+  font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track);
+  text-transform: uppercase;
+  color: var(--amd-color-text-accent);
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 0 20px;
+  border: 1px solid currentColor; border-radius: 0;
+  font-family: var(--amd-font-body); font-size: 13px; font-weight: 600; letter-spacing: .02em;
+  text-decoration: none; cursor: pointer;
+  transition: background var(--amd-duration-standard) var(--amd-ease-standard),
+              border-color var(--amd-duration-standard) var(--amd-ease-standard),
+              color var(--amd-duration-standard) var(--amd-ease-standard);
+}
+.btn:focus-visible { outline: none; box-shadow: var(--amd-focus-ring); }
+.btn-primary { background: var(--amd-action-primary-bg); color: var(--amd-action-primary-text); border-color: var(--amd-action-primary-bg); }
+.btn-primary:hover { background: var(--amd-action-primary-hover-bg); border-color: var(--amd-action-primary-hover-bg); }
+.btn-ghost { background: transparent; color: var(--amd-color-text-primary); border-color: rgba(36,36,38,.34); }
+.btn-ghost:hover { border-color: var(--amd-color-text-primary); }
+.btn-ghost.on-dark { color: var(--amd-color-text-inverse); border-color: var(--amd-color-border-inverse); }
+.btn-ghost.on-dark:hover { border-color: var(--amd-color-text-inverse); }
+.btn-cream { background: var(--amd-color-surface-cream); color: var(--amd-color-navy); border-color: var(--amd-color-surface-cream); }
+.btn-cream:hover { background: var(--amd-color-gold-reference); border-color: var(--amd-color-gold-reference); color: var(--amd-color-surface-dark); }
+
+/* ===================== header ===================== */
+.site-header {
+  position: sticky; top: 0; z-index: 80;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--amd-space-5);
+  min-height: 72px;
+  padding: var(--amd-space-3) var(--amd-layout-gutter);
+  background: rgba(255, 254, 251, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--amd-color-border-subtle);
+}
+.brand {
+  font-family: var(--amd-font-display); font-weight: 600; font-size: 20px;
+  letter-spacing: var(--amd-type-h3-track); text-decoration: none; white-space: nowrap;
+}
+.brand sup { font-size: .6em; letter-spacing: .02em; color: var(--amd-color-text-accent); margin-left: .06em; }
+.head-label {
+  font-family: var(--amd-font-mono); font-size: 11.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--amd-color-text-tertiary);
+}
+.site-header .actions { display: flex; gap: var(--amd-space-3); align-items: center; }
+@media (max-width: 760px) { .head-label { display: none; } }
+
+/* ===================== rule card, the skim layer ===================== */
+.rulecard { padding-block: var(--amd-space-7) var(--amd-space-8); border-bottom: 1px solid var(--amd-color-border-default); }
+.rc-wrap { max-width: 1480px; margin-inline: auto; padding-inline: var(--amd-layout-gutter); }
+.rc-head { display: grid; gap: var(--amd-space-3); margin-bottom: var(--amd-space-6); }
+.rc-title {
+  font-family: var(--amd-font-serif); font-weight: 500;
+  font-size: var(--amd-type-h3-size); line-height: var(--amd-type-h3-line); letter-spacing: var(--amd-type-h3-track);
+}
+.rc-list { border-top: 1px solid var(--amd-color-border-default); counter-reset: rule; }
+.rc-row {
+  display: grid; grid-template-columns: 6ch 14ch 1fr;
+  column-gap: var(--amd-space-5); align-items: baseline;
+  padding-block: var(--amd-space-3);
+  border-bottom: 1px solid var(--amd-color-border-subtle);
+}
+.rc-id {
+  font-family: var(--amd-font-mono); font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track); color: var(--amd-color-text-tertiary);
+}
+.tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--amd-space-1) var(--amd-space-2);
+  font-family: var(--amd-font-mono); font-size: var(--amd-type-label-size);
+  letter-spacing: var(--amd-type-label-track); text-transform: uppercase; white-space: nowrap;
+}
+.tag.locked { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); }
+.tag.proposed { background: transparent; color: var(--amd-color-rust); border: 1px solid var(--amd-color-rust); }
+.rc-rule {
+  font-family: var(--amd-font-serif);
+  font-size: 15px; line-height: var(--amd-type-body-line);
+}
+@media (max-width: 880px) {
+  .rc-row { grid-template-columns: 6ch 1fr; row-gap: var(--amd-space-1); }
+  .rc-row .rc-rule { grid-column: 1 / -1; }
+}
+
+/* ===================== footer, both lanes ===================== */
+.site-foot { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); padding-block: var(--amd-space-8); }
+.ft-wrap {
+  max-width: var(--amd-layout-max); margin-inline: auto; padding-inline: var(--amd-layout-gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--amd-space-6); flex-wrap: wrap;
+}
+.ft-mark {
+  font-family: var(--amd-font-display); font-weight: 600;
+  letter-spacing: var(--amd-type-display-track);
+  font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line);
+}
+.ft-mark sup { font-size: .3em; letter-spacing: .02em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
+.ft-lanes { display: flex; gap: var(--amd-space-3); align-items: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#rules" aria-label="aleron MD brand decisions">aleron<sup>MD</sup></a>
+  <span class="head-label">Brand decisions · Proof sheet</span>
+  <div class="actions">
+    <a class="btn btn-ghost" href="#">Log In</a>
+    <a class="btn btn-primary" href="#">Apply for Membership</a>
+  </div>
+</header>
+
+<main id="rules">
+
+<!-- ============ RULE CARD: ten rules, one screen, no prose ============ -->
+<section class="rulecard" aria-label="The ten rules">
+  <div class="rc-wrap">
+    <header class="rc-head">
+      <p class="eyebrow">Brand contract · Ten decisions</p>
+      <h1 class="rc-title">Brand decisions.</h1>
+    </header>
+    <ol class="rc-list">
+      <li class="rc-row">
+        <span class="rc-id">D1</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">The brand sells one belief, that you might be just getting started, and every surface embodies disciplined vitality.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D2</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">Hero subjects read 45 to 60, mid-experience, golden hour, visibly fitter than the viewer at five honest years of work, not a different species.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D3</span>
+        <span class="tag proposed">Proposed</span>
+        <span class="rc-rule">Serif carries the thesis and headlines, sans carries body and data, and mono earns exactly one job, short uppercase wayfinding labels.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D4</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">Four colors, four jobs: navy is authority, bronze is accent, rust is signal, cream is ground, and no fifth color enters.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D5</span>
+        <span class="tag proposed">Proposed</span>
+        <span class="rc-rule">Square geometry only: zero border-radius, no pills, and every block earns one of three jobs, frame, anchor, or label.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D6</span>
+        <span class="tag proposed">Proposed</span>
+        <span class="rc-rule">Photography is golden-hour warm, motion or mid-experience, environment present, never clinical, never posed at camera, never stock happy senior.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D7</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">Say the specific true thing: no adjectives doing the work of facts, no em dashes, and clinical values carry units at every mention.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D8</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">Acquisition says Apply for Membership, the header says Log In, and every page closes with both lanes, individual dominant.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D9</span>
+        <span class="tag locked">Locked</span>
+        <span class="rc-rule">The price is $4,200/yr, stated plainly, all in, no add-on billing, never hidden behind a call.</span>
+      </li>
+      <li class="rc-row">
+        <span class="rc-id">D10</span>
+        <span class="tag proposed">Proposed</span>
+        <span class="rc-rule">The lockup is lowercase aleron with a superscript bronze MD, on navy or cream only, with no glow, gradient, or recolor.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ DECISION SPREADS D1 to D10: built in T4, T5, T6 ============ -->
+
+</main>
+
+<footer class="site-foot">
+  <div class="ft-wrap">
+    <div class="ft-mark" aria-label="aleron MD">aleron<sup>MD</sup></div>
+    <div class="ft-lanes">
+      <a class="btn btn-cream" href="#">Apply for Membership</a>
+      <a class="btn btn-ghost on-dark" href="#">For Employers</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

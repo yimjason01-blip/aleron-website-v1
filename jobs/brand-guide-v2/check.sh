@@ -45,9 +45,11 @@ else
   echo "WARN D4: $LANDING not readable, palette check skipped" >&2
 fi
 
-# D5 [MECH]: border-radius only 0 or absent. No pills.
+# D5 [MECH]: border-radius declarations only 0 or absent. No pills.
+# Matches declarations only (border-radius followed by a colon) so a prose
+# mention of the property name, as in the D5 rule sentence itself, cannot trip it.
 fail_if_found D5 "non-zero border-radius" \
-  "$(grep -n 'border-radius' "$SURFACE" | grep -vE 'border-radius:[[:space:]]*0(px)?[[:space:]]*[;}"]')"
+  "$(grep -nE 'border-radius[[:space:]]*:' "$SURFACE" | grep -vE 'border-radius[[:space:]]*:[[:space:]]*0(px)?[[:space:]]*[;}"]')"
 
 # D7 [MECH]: no em dashes.
 fail_if_found D7 "em dash found" \
