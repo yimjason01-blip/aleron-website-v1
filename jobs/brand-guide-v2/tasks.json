@@ -1,0 +1,85 @@
+{
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "BRAND.md verifier contract",
+      "passes": true,
+      "criteria": [
+        "BRAND.md exists in jobs/brand-guide-v2/ with 10 decisions D1-D10, statuses carried over exactly (D1,D2,D4,D7,D8,D9 LOCKED; D3,D5,D6,D10 PROPOSED)",
+        "Each entry has ID / STATUS / RULE (one testable sentence) / CHECK (concrete grep command or exact vision question) / CHANGES-WHEN (one line)",
+        "Every rule tagged [MECH] or [JUDG]; [MECH] checks are literally runnable as written",
+        "D3 fixed: mono typeface either argued for in one line with its job, or cut, as an explicit flagged sub-decision; no undefined jargon anywhere (no 'surgeon test' without a one-line definition)",
+        "Total file ≤120 lines; no em dashes; no strategy essay"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "check.sh harness + baseline runs",
+      "passes": false,
+      "criteria": [
+        "check.sh implements every [MECH] check from BRAND.md against $1; exit 0 on pass, nonzero printing violated rule IDs with line numbers",
+        "Covers at minimum: em dash =0, border-radius only 0/absent, banned words (journey/unlock/empower/holistic/elevate) =0 as standalone words case-insensitive, 'Log In' exact (no Login/Sign In), '$4,200/yr' exact, lowercase aleron lockup markup, clinical values carry units",
+        "bash check.sh against ../landing-loop/index.html executed; if failures, VIOLATIONS.md written with rule IDs + line numbers and landing-loop NOT edited",
+        "check.sh itself committed and runs clean under bash -n"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "Page scaffold + rule card skim layer",
+      "passes": false,
+      "criteria": [
+        "index.html scaffold built using ONLY hex/typeface/spacing values verbatim from ../landing-loop/index.html CSS custom properties; zero invented tokens",
+        "Rule card section: all 10 rules as single lines with square LOCKED/PROPOSED tags, fits one 1440x900 viewport, zero body prose",
+        "Every rule line byte-matches its BRAND.md RULE sentence (write rulecard-sync.sh proving it; commit the script)",
+        "bash check.sh index.html exits 0 on the scaffold",
+        "Headless Chrome screenshot taken and examined; rule card legible, no overflow"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "Visual decision spreads D1-D6",
+      "passes": false,
+      "criteria": [
+        "Each of D1-D6 has: rule headline (byte-match BRAND.md), one in-context specimen built from real landing-loop sections or existing repo photo assets, numbered annotations ≤12 words each pointing at where the rule lives, caption strip ≤2 lines containing ONLY edge case + change condition",
+        "Each of D1-D6 has a violation pane: same surface with the rule broken, struck square treatment, one caption line; violation visually quieter than the correct specimen",
+        "D3 spread shows the actual type scale as live specimens in the real faces with one-line role labels; the mono sub-decision rendered as flagged",
+        "D4 spread shows the four swatches with hex values AND one in-context use (real card from landing-loop) AND a violation (decorative/off-palette use, struck)",
+        "No new images sourced or generated; existing repo assets only",
+        "bash check.sh index.html exits 0; screenshot taken and examined for composition, alignment, broken images"
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Verbal decision spreads D7-D9",
+      "passes": false,
+      "criteria": [
+        "D7: weak/strong rewrite grid with 5 pairs; weak modeled on real longevity-market filler, strong says the specific true thing; every clinical value carries its unit at every mention (e.g. Lp(a) 72 nmol/L); plus a units violation specimen (value without unit, struck)",
+        "D8: both lane cards fully rendered with live buttons; individual on navy with $4,200/yr visible and 'Apply for Membership'; employer/broker on light with 'For Employers'; individual visually dominant; violation pane shows the banned four-letter verb treatment struck",
+        "D9: price card rendered: $4,200/yr, ALL IN, no add-on billing; competitor anchor written without em dashes (Human Longevity $8,000 to $98,000/yr; Fountain Life from $15,000/yr); violation pane: price hidden behind 'book a call' pattern, struck",
+        "bash check.sh index.html exits 0; screenshot examined"
+      ]
+    },
+    {
+      "id": "T6",
+      "title": "D10 wordmark spread + word budget enforcement",
+      "passes": false,
+      "criteria": [
+        "D10: lockup rendered at 3 sizes on navy AND on cream (lowercase aleron, superscript bronze MD); violation row with mixed case, glow, gradient fill, off-palette recolor, each struck with one-line caption",
+        "Word-count script committed: visible words outside rendered specimens ≤500; current count printed and passing",
+        "All 10 spreads re-checked for prose creep: no sentence restates what its adjacent specimen shows; delete any that do",
+        "bash check.sh index.html exits 0; bash rulecard-sync.sh exits 0"
+      ]
+    },
+    {
+      "id": "T7",
+      "title": "Full-page visual QA + self-demonstration pass",
+      "passes": false,
+      "criteria": [
+        "Full-page screenshot at 1440px wide rendered (tall window or stitched) AFTER all edits, and actually examined",
+        "Verified from the screenshot: deliberate vertical rhythm between spreads, aligned annotation system, no overlapping text, no broken images, violations quieter than correct specimens, nothing reads as a template slide; fix and re-render until true",
+        "The page passes every rule it states: bash check.sh index.html exit 0, rulecard-sync pass, word budget pass, all run in this iteration after the final edit",
+        "Final report appended to LEARNINGS.md: what passed, what was fixed in QA, any honest residual concerns"
+      ]
+    }
+  ]
+}
