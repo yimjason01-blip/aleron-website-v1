@@ -62,7 +62,7 @@
     {
       "id": "T6",
       "title": "D10 wordmark spread + word budget enforcement",
-      "passes": false,
+      "passes": true,
       "criteria": [
         "D10: lockup rendered at 3 sizes on navy AND on cream (lowercase aleron, superscript bronze MD); violation row with mixed case, glow, gradient fill, off-palette recolor, each struck with one-line caption",
         "Word-count script committed: visible words outside rendered specimens ≤500; current count printed and passing",

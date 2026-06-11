@@ -438,6 +438,29 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .d9-anchor .an.ours span sup { font-size: .6em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
 
+/* D10: the lockup wall */
+.d10-grid { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 760px) { .d10-grid { grid-template-columns: 1fr; } }
+.d10-col { position: relative; display: grid; gap: var(--amd-space-6); align-content: center; justify-items: start; padding: clamp(28px, 4vw, 64px); min-height: 360px; }
+.d10-col.on-navy { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); }
+.d10-col.on-cream { background: var(--amd-color-surface-cream); color: var(--amd-color-text-primary); }
+.d10-mark { font-family: var(--amd-font-display); font-weight: 600; letter-spacing: var(--amd-type-h3-track); line-height: 1; white-space: nowrap; }
+.d10-mark sup { font-size: .6em; letter-spacing: .02em; margin-left: .06em; color: var(--amd-color-text-accent); }
+.on-navy .d10-mark sup, .d10-mark.on-dark sup { color: var(--amd-color-text-accent-on-dark); }
+.d10-mark.s1 { font-size: var(--amd-type-h2-size); }
+.d10-mark.s2 { font-size: 28px; }
+.d10-mark.s3 { font-size: 20px; }
+.d10-vios { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--amd-space-4); margin-top: var(--amd-space-6); }
+@media (max-width: 880px) { .d10-vios { grid-template-columns: 1fr 1fr; } }
+.d10-vios .vio { max-width: none; }
+.d10-vio-body { display: grid; place-items: center; min-height: 132px; padding: var(--amd-space-4); }
+.d10-vio-body.on-navy { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); }
+.d10-vio-body.on-cream { background: var(--amd-color-surface-cream); color: var(--amd-color-text-primary); }
+.d10-vio-body .d10-mark { font-size: 26px; }
+.d10-vio-body .glow { text-shadow: 0 0 12px rgba(217, 167, 101, 0.95), 0 0 30px rgba(217, 167, 101, 0.55); }
+.d10-vio-body svg:not(.vio-strike) { width: min(220px, 100%); height: auto; }
+#d10 .capstrip { margin-top: var(--amd-space-5); }
+
 /* ===================== footer, both lanes ===================== */
 .site-foot { background: var(--amd-color-navy); color: var(--amd-color-text-inverse); padding-block: var(--amd-space-8); }
 .ft-wrap {
@@ -449,7 +472,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   letter-spacing: var(--amd-type-display-track);
   font-size: var(--amd-type-h2-size); line-height: var(--amd-type-h2-line);
 }
-.ft-mark sup { font-size: .3em; letter-spacing: .02em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
+.ft-mark sup { font-size: .6em; letter-spacing: .02em; color: var(--amd-color-text-accent-on-dark); margin-left: .06em; }
 .ft-lanes { display: flex; gap: var(--amd-space-3); align-items: center; flex-wrap: wrap; }
 </style>
 </head>
@@ -992,6 +1015,76 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
       </aside>
       <p class="capstrip"><span>Edge: employer lanes quote per census; the individual number stays public.</span><span>Changes when the actual price changes; the presentation survives any number.</span></p>
     </div>
+  </div>
+</section>
+
+<section class="spread on-paper" id="d10" aria-label="Decision D10">
+  <div class="wrap">
+    <header class="sp-head">
+      <div class="sp-flags"><span class="eyebrow">D10 · The wordmark</span><span class="tag proposed">Proposed</span></div>
+      <h2 class="sp-rule">The lockup is lowercase aleron with a superscript bronze MD, on navy or cream only, with no glow, gradient, or recolor.</h2>
+    </header>
+    <figure class="specimen" data-specimen>
+      <div class="spec-cap"><span class="k">Specimen</span><span class="src">The lockup at three sizes, both grounds</span></div>
+      <div class="spec-body d10-grid">
+        <div class="d10-col on-navy">
+          <span class="d10-mark s1">aleron<sup>MD</sup></span>
+          <span class="d10-mark s2">aleron<sup>MD</sup></span>
+          <span class="d10-mark s3">aleron<sup>MD</sup></span>
+          <span class="mk" style="left:18px; top:47%" aria-hidden="true">1</span>
+          <span class="mk" style="right:-11px; top:58%" aria-hidden="true">3</span>
+        </div>
+        <div class="d10-col on-cream">
+          <span class="d10-mark s1">aleron<sup>MD</sup></span>
+          <span class="d10-mark s2">aleron<sup>MD</sup></span>
+          <span class="d10-mark s3">aleron<sup>MD</sup></span>
+          <span class="mk" style="left:308px; top:96px" aria-hidden="true">2</span>
+        </div>
+      </div>
+      <ol class="annos">
+        <li><span class="n">1</span>One drawing at every size; nothing redraws when small.</li>
+        <li><span class="n">2</span>The bronze MD shifts value per ground, never hue.</li>
+        <li><span class="n">3</span>Photography and clinical white are never grounds.</li>
+      </ol>
+    </figure>
+    <div class="d10-vios">
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>Case</span></div>
+        <div class="vio-body d10-vio-body on-navy">
+          <span class="d10-mark on-dark">Aler&#111;n<sup>MD</sup></span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Title case borrows an authority the mark does not need.</p>
+      </aside>
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>Glow</span></div>
+        <div class="vio-body d10-vio-body on-navy">
+          <span class="d10-mark on-dark glow">aleron<sup>MD</sup></span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">Glow is the wellness aura; this mark sits flat.</p>
+      </aside>
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>Gradient</span></div>
+        <div class="vio-body d10-vio-body on-cream">
+          <svg viewBox="0 0 300 84" role="img" aria-label="Gradient-filled lockup, struck out">
+            <defs><linearGradient id="d10grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CD9453"/><stop offset="1" stop-color="#B9562A"/></linearGradient></defs>
+            <text x="42" y="56" fill="url(#d10grad)" font-family="Inter Tight, sans-serif" font-weight="600" font-size="42" letter-spacing="-1">aleron<tspan dy="-14" font-size="25">MD</tspan></text>
+          </svg>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">A gradient turns the name into decoration.</p>
+      </aside>
+      <aside class="vio">
+        <div class="vio-cap"><span>Violation</span><span>Recolor</span></div>
+        <div class="vio-body d10-vio-body on-cream">
+          <span class="d10-mark" style="color:#1E2A4A; filter:hue-rotate(-95deg) saturate(2.2)">aleron<sup>MD</sup></span>
+          <svg class="vio-strike" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="100" x2="100" y2="0" stroke="#B9562A" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="vio-note">A recolor exits the four-color contract.</p>
+      </aside>
+    </div>
+    <p class="capstrip"><span>Edge: prose may say Aleron MD; the lockup never mixes case.</span><span>Changes when Jason ratifies; reopens only if a trademark conflict forces a redraw.</span></p>
   </div>
 </section>
 
